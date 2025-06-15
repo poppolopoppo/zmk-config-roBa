@@ -69,9 +69,9 @@
         default_layer {
             bindings = <
 &kp Q             &kp W           &kp E             &kp R        &kp T                                             &kp Y        &kp U        &lt 5 I            &kp O            &kp P
-&mt LEFT_GUI A    &mt LEFT_ALT S  &mt LEFT_SHIFT D  &mt LCTRL F  &kp G  &kp LG(LS(S))               &kp MINUS      &kp H        &mt RCTRL J  &mt RIGHT_SHIFT K  &mt RIGHT_ALT L  &mt RIGHT_GUI SQT
+&kp A             &mt LEFT_ALT S  &mt LEFT_SHIFT D  &mt LCTRL F  &kp G  &kp LG(LS(S))               &kp MINUS      &kp H        &mt RCTRL J  &mt RIGHT_SHIFT K  &mt RIGHT_ALT L  &mt RIGHT_GUI SQT
 &mt LEFT_SHIFT Z  &kp X           &kp C             &kp V        &kp B  &kp COLON                   &kp SEMICOLON  &kp N        &kp M        &kp COMMA          &kp DOT          &kp SLASH
-&kp LCTRL         &kp LEFT_WIN    &kp LEFT_ALT      &mo 6        &mo 2  &lt_to_layer_0 3 SPACE      &kp BACKSPACE  &lt 1 ENTER                                                   &lt 7 DEL
+&kp LCTRL         &kp LEFT_WIN    &kp LEFT_ALT      &mo 6        &mo 2  &lt_to_layer_0 3 SPACE      &kp BACKSPACE  &lt 1 ENTER                                                   &lt_to_layer_0 7 DEL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
@@ -139,7 +139,7 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &mkp MB4  &mkp MB5
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
             >;
         };

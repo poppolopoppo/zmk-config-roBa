@@ -6,6 +6,7 @@
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
+    retro-tap;
 };
 
 / {
@@ -32,11 +33,6 @@
             key-positions = <24 25>;
         };
 
-        plus {
-            bindings = <&kp PLUS>;
-            key-positions = <16 28>;
-        };
-
         ctrl+alt+del {
             bindings = <&kp LC(LA(DELETE))>;
             key-positions = <34 42>;
@@ -61,6 +57,15 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        mt_to_layer_0: mt_to_layer_0 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MT_TO_LAYER_0";
+            bindings = <&mt>, <&to_layer_0>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     keymap {
@@ -68,10 +73,10 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W           &kp E             &kp R        &kp T                                             &kp Y        &kp U        &lt 5 I            &kp O            &kp P
-&kp A             &mt LEFT_ALT S  &mt LEFT_SHIFT D  &mt LCTRL F  &kp G  &kp LG(LS(S))               &kp MINUS      &kp H        &mt RCTRL J  &mt RIGHT_SHIFT K  &mt RIGHT_ALT L  &mt RIGHT_GUI SQT
-&mt LEFT_SHIFT Z  &kp X           &kp C             &kp V        &kp B  &kp COLON                   &kp SEMICOLON  &kp N        &kp M        &kp COMMA          &kp DOT          &kp SLASH
-&kp LCTRL         &kp LEFT_WIN    &kp LEFT_ALT      &mo 6        &mo 2  &lt_to_layer_0 3 SPACE      &kp BACKSPACE  &lt 1 ENTER                                                   &lt_to_layer_0 7 DEL
+&kp Q                        &kp W                      &kp E                        &kp R                   &kp T                                             &kp Y        &kp U                   &lt 5 I                       &kp O                       &kp P
+&kp A                        &mt_to_layer_0 LEFT_ALT S  &mt_to_layer_0 LEFT_SHIFT D  &mt_to_layer_0 LCTRL F  &kp G  &kp LG(LS(S))               &kp MINUS      &kp H        &mt_to_layer_0 RCTRL J  &mt_to_layer_0 RIGHT_SHIFT K  &mt_to_layer_0 RIGHT_ALT L  &mt_to_layer_0 RIGHT_GUI SQT
+&mt_to_layer_0 LEFT_SHIFT Z  &kp X                      &kp C                        &kp V                   &kp B  &kp COLON                   &kp SEMICOLON  &kp N        &kp M                   &kp COMMA                     &kp DOT                     &kp SLASH
+&kp LCTRL                    &kp LEFT_WIN               &kp LEFT_ALT                 &mo 6                   &mo 2  &lt_to_layer_0 3 SPACE      &kp BACKSPACE  &lt 1 ENTER                                                                                    &lt_to_layer_0 7 DEL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
@@ -99,10 +104,10 @@
 
         ARROW {
             bindings = <
-&kp ESCAPE      &kp LC(LS(TAB))     &kp UP_ARROW    &kp LC(TAB)          &trans                       &trans    &trans        &kp UP    &trans         &kp BACKSPACE
-&kp HOME        &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW      &kp END  &trans      &trans  &kp HOME  &kp LEFT      &kp DOWN  &kp RIGHT      &kp END
-&kp LEFT_SHIFT  &kp LG(LEFT_ARROW)  &trans          &kp LG(RIGHT_ARROW)  &trans   &trans      &trans  &trans    &kp LG(LEFT)  &trans    &kp LG(RIGHT)  &trans
-&trans          &trans              &trans          &trans               &trans   &trans      &trans  &trans                                           &trans
+&kp ESCAPE      &kp LC(LS(TAB))     &kp UP_ARROW    &kp LC(TAB)          &trans                              &trans    &kp LS(LA(TAB))  &kp UP    &kp LA(TAB)  &kp BACKSPACE
+&kp HOME        &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW      &kp END  &trans      &kp PAGE_UP    &kp HOME  &kp LEFT         &kp DOWN  &kp RIGHT    &kp END
+&kp LEFT_SHIFT  &kp LG(LEFT_ARROW)  &trans          &kp LG(RIGHT_ARROW)  &trans   &trans      &kp PAGE_DOWN  &trans    &none            &trans    &none        &caps_word
+&trans          &trans              &trans          &trans               &trans   &trans      &trans         &trans                                            &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;

@@ -6,7 +6,6 @@
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
-    retro-tap;
 };
 
 / {
@@ -56,6 +55,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
+            retro-tap;
         };
 
         mt_to_layer_0: mt_to_layer_0 {
@@ -65,6 +65,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
+            retro-tap;
         };
     };
 
@@ -73,10 +74,10 @@
 
         default_layer {
             bindings = <
-&kp Q                        &kp W                      &kp E                        &kp R                   &kp T                                             &kp Y        &kp U                   &lt 5 I                       &kp O                       &kp P
-&kp A                        &mt_to_layer_0 LEFT_ALT S  &mt_to_layer_0 LEFT_SHIFT D  &mt_to_layer_0 LCTRL F  &kp G  &kp LG(LS(S))               &kp MINUS      &kp H        &mt_to_layer_0 RCTRL J  &mt_to_layer_0 RIGHT_SHIFT K  &mt_to_layer_0 RIGHT_ALT L  &mt_to_layer_0 RIGHT_GUI SQT
-&mt_to_layer_0 LEFT_SHIFT Z  &kp X                      &kp C                        &kp V                   &kp B  &kp COLON                   &kp SEMICOLON  &kp N        &kp M                   &kp COMMA                     &kp DOT                     &kp SLASH
-&kp LCTRL                    &kp LEFT_WIN               &kp LEFT_ALT                 &mo 6                   &mo 2  &lt_to_layer_0 3 SPACE      &kp BACKSPACE  &lt 1 ENTER                                                                                    &lt_to_layer_0 7 DEL
+&kp Q                        &kp W           &kp E             &kp R        &kp T                                             &kp Y        &kp U        &lt 5 I            &kp O            &kp P
+&kp A                        &mt LEFT_ALT S  &mt LEFT_SHIFT D  &mt LCTRL F  &kp G  &kp LG(LS(S))               &kp MINUS      &kp H        &mt RCTRL J  &mt RIGHT_SHIFT K  &mt RIGHT_ALT L  &mt_to_layer_0 RIGHT_GUI SQT
+&mt_to_layer_0 LEFT_SHIFT Z  &kp X           &kp C             &kp V        &kp B  &kp COLON                   &kp SEMICOLON  &kp N        &kp M        &kp COMMA          &kp DOT          &kp SLASH
+&kp LCTRL                    &kp LEFT_WIN    &kp LEFT_ALT      &mo 6        &mo 2  &lt_to_layer_0 3 SPACE      &kp BACKSPACE  &lt 1 ENTER                                                   &lt_to_layer_0 7 DEL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;

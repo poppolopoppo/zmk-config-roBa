@@ -6,6 +6,12 @@
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
+    require-prior-idle-ms = <125>;
+};
+
+&lt {
+    require-prior-idle-ms = <125>;
+    flavor = "balanced";
 };
 
 / {

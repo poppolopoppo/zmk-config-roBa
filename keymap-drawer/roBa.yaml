@@ -12,18 +12,18 @@ layers:
     - O
     - P
   - - A
-    - {t: S, h: LEFT ALT}
-    - {t: D, h: LEFT SHIFT}
-    - {t: F, h: LCTRL}
+    - {t: '&to_layer_0 S', h: '&mt LEFT_ALT'}
+    - {t: '&to_layer_0 D', h: '&mt LEFT_SHIFT'}
+    - {t: '&to_layer_0 F', h: '&mt LCTRL'}
     - G
     - Gui+Sft+S
     - '-'
     - H
-    - {t: J, h: RCTRL}
-    - {t: K, h: RIGHT SHIFT}
-  - - {t: L, h: RIGHT ALT}
-    - {t: '''', h: RIGHT GUI}
-    - {t: Z, h: LEFT SHIFT}
+    - {t: '&to_layer_0 J', h: '&mt RCTRL'}
+    - {t: '&to_layer_0 K', h: '&mt RIGHT_SHIFT'}
+  - - {t: '&to_layer_0 L', h: '&mt RIGHT_ALT'}
+    - {t: '&to_layer_0 SQT', h: '&mt RIGHT_GUI'}
+    - {t: '&to_layer_0 Z', h: '&mt LEFT_SHIFT'}
     - X
     - C
     - V
@@ -99,7 +99,7 @@ layers:
     - KP 3
     - .
     - '='
-    - {t: ▽, type: trans}
+    - {t: '`', type: trans}
     - '['
   - - ']'
     - '{'
@@ -121,9 +121,9 @@ layers:
     - Ctl+TAB
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+    - {t: Sft+Alt+TAB, type: trans}
     - {t: UP, type: trans}
-    - {t: ▽, type: trans}
+    - {t: Alt+TAB, type: trans}
     - {t: BACKSPACE, type: trans}
   - - HOME
     - LEFT ARROW
@@ -131,7 +131,7 @@ layers:
     - RIGHT ARROW
     - END
     - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+    - {t: PAGE UP, type: trans}
     - {t: HOME, type: trans}
     - {t: LEFT, type: trans}
     - {t: DOWN, type: trans}
@@ -143,12 +143,12 @@ layers:
     - Gui+RIGHT ARROW
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+    - {t: PAGE DOWN, type: trans}
     - {t: ▽, type: trans}
   - - {t: Gui+LEFT, type: trans}
     - {t: ▽, type: trans}
     - {t: Gui+RIGHT, type: trans}
-    - {t: ▽, type: trans}
+    - {t: '&caps_word', type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
@@ -262,7 +262,7 @@ layers:
     - {t: PLAY PAUSE, type: trans}
     - {t: NEXT, type: trans}
     - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
+    - {t: '&bootloader', type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
@@ -275,7 +275,7 @@ layers:
     - '3'
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - '&bootloader'
+    - {t: ▽, type: trans}
     - {t: ▽, type: trans}
   - - {t: ▽, type: trans}
     - {t: ▽, type: trans}
@@ -343,7 +343,5 @@ combos:
   k: '"'
 - p: [24, 25]
   k: '='
-- p: [16, 28]
-  k: +
 - p: [34, 42]
   k: Ctl+Alt+DELETE

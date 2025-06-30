@@ -43,6 +43,11 @@
             bindings = <&kp LC(LA(DELETE))>;
             key-positions = <34 42>;
         };
+
+        Gaming {
+            bindings = <&tog 8>;
+            key-positions = <0 1 8 9>;
+        };
     };
 
     macros {
@@ -144,6 +149,17 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &mkp MB4  &mkp MB5
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
             >;
+        };
+
+        Gaming {
+            bindings = <
+&kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N4                           &kp N5     &kp N6  &kp N7  &kp N8    &kp N9
+&kp TAB    &kp Q   &kp W   &kp E   &kp R   &kp T          &kp Y     &kp U      &kp I   &kp O   &kp P     &kp LBKT
+&kp LSHFT  &kp A   &kp S   &kp D   &kp F   &kp G          &kp H     &kp J      &kp K   &kp L   &kp SEMI  &kp APOS
+&kp LCTRL  &kp Z   &kp X   &kp C   &kp V   &kp SPACE      &kp BSPC  &kp ENTER                            &kp LALT
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
     };
 };

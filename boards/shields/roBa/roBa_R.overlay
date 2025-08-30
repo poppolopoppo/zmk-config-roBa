@@ -1,4 +1,4 @@
-#include "roBa.dtsi"
+﻿#include "roBa.dtsi"
 
 &default_transform {
     col-offset = <6>;
@@ -16,9 +16,9 @@
 
 / {
     trackball_listener {
+        status = "okay";
         compatible = "zmk,input-listener";
         device = <&trackball>;
-
     };
 };
 
@@ -59,8 +59,5 @@
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         automouse-layer = <4>;
         scroll-layers = <5>;
-        snipe-layers = <7>;
     };
 };
-
-

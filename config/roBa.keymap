@@ -3,20 +3,15 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-#define COMBO_TERM 30
-#define TAPPING_TERM 200
-#define QUICK_TAP_TERM 175
-#define ADAPTIVE_KEY_TIMEOUT 2000
-
 &mt {
-    tapping-term-ms = <TAPPING_TERM>;
+    tapping-term-ms = <200>;
     flavor = "tap-preferred";
-    quick-tap-ms = <QUICK_TAP_TERM>;
+    quick-tap-ms = <175>;
     global-quick-tap;
 };
 
 &lt {
-    tapping-term-ms = <TAPPING_TERM>;
+    tapping-term-ms = <200>;
     flavor = "tap-preferred";
 };
 
@@ -97,9 +92,9 @@
             compatible = "zmk,behavior-hold-tap";
             label = "homehow-mods";
             #binding-cells = <2>;
-            tapping-term-ms = <TAPPING_TERM>;
+            tapping-term-ms = <200>;
             flavor = "tap-preferred";
-            quick-tap-ms = <QUICK_TAP_TERM>;
+            quick-tap-ms = <175jj>;
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
@@ -107,18 +102,18 @@
             compatible = "zmk,behavior-hold-tap";
             label = "layer-tap-with-stick-layer";
             #binding-cells = <2>;
-            tapping-term-ms = <TAPPING_TERM>;
+            tapping-term-ms = <200>;
             flavor = "tap-preferred";
-            quick-tap-ms = <QUICK_TAP_TERM>;
+            quick-tap-ms = <175jj>;
             bindings = <&mo>, <&sl>;
         };
         msk: layer-tap-with-stick-key {
             compatible = "zmk,behavior-hold-tap";
             label = "layer-tap-with-stick-key";
             #binding-cells = <2>;
-            tapping-term-ms = <TAPPING_TERM>;
+            tapping-term-ms = <200>;
             flavor = "tap-preferred";
-            quick-tap-ms = <QUICK_TAP_TERM>;
+            quick-tap-ms = <175jj>;
             bindings = <&mo>, <&sk>;
         };
         lt_to_layer_0: lt_to_layer_0 {
@@ -127,7 +122,7 @@
             bindings = <&mo>, <&to_layer_0>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <TAPPING_TERM>;
+            tapping-term-ms = <200>;
         };
     };
 
@@ -413,7 +408,7 @@
 
         ACCENTS {
             bindings = <
-&trans     &trans  &ac_egrv   &e_eacu   &trans                        &trans  &ac_ugrv   &trans     &ac_ocir   &trans
+&trans     &trans  &ac_egrv   &ac_eacu   &trans                        &trans  &ac_ugrv   &trans     &ac_ocir   &trans
 &ac_agrv   &trans  &trans     &trans    &trans    &trans      &trans  &trans  &trans     &trans     &trans     &trans
 &trans     &trans  &trans     &trans    &trans    &trans      &trans  &trans  &trans     &trans     &trans     &trans
 &trans     &trans  &trans     &trans    &ac_ccdi  &trans      &trans  &trans                                   &trans

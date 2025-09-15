@@ -1,0 +1,74 @@
+/*
+*
+* Copyright (c) 2022 Rafael Romão
+* SPDX-License-Identifier: MIT
+* https://github.com/rafaelromao/keyboards/blob/ec7f58f8380f54c78ba007f021ed73066ad0b3ef/src/zmk/keyboards/zen/rafaelromao/features/behaviors.dtsi
+*
+*/
+
+&mt {
+    tapping-term-ms = <TAPPING_TERM>;
+    flavor = "tap-preferred";
+    quick-tap-ms = <QUICK_TAP_TERM>;
+    global-quick-tap;
+};
+
+&lt {
+    tapping-term-ms = <TAPPING_TERM>;
+    flavor = "tap-preferred";
+};
+
+&sl {
+    release-after-ms = <2000>;
+    quick-release;
+};
+
+&sk {
+    release-after-ms = <2000>;
+    quick-release;
+};
+
+&caps_word {
+  continue-list = <UNDERSCORE MINUS BACKSPACE DELETE>;
+};
+
+/ {
+    behaviors {
+        hm: homerow-mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "homehow-mods";
+            #binding-cells = <2>;
+            tapping-term-ms = <TAPPING_TERM>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <QUICK_TAP_TERM>;
+            global-quick-tap;
+            bindings = <&kp>, <&kp>;
+        };
+        msl: layer-tap-with-stick-layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "layer-tap-with-stick-layer";
+            #binding-cells = <2>;
+            tapping-term-ms = <TAPPING_TERM>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <QUICK_TAP_TERM>;
+            bindings = <&mo>, <&sl>;
+        };
+        msk: layer-tap-with-stick-key {
+            compatible = "zmk,behavior-hold-tap";
+            label = "layer-tap-with-stick-key";
+            #binding-cells = <2>;
+            tapping-term-ms = <TAPPING_TERM>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <QUICK_TAP_TERM>;
+            bindings = <&mo>, <&sk>;
+        };
+        lt_to_layer_0: lt_to_layer_0 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_TAP_TO_0";
+            bindings = <&mo>, <&to_layer_0>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <TAPPING_TERM>;
+        };
+    };
+};

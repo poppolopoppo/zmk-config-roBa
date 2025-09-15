@@ -1,0 +1,18 @@
+
+&trackball {
+    automouse-layer = <4>;
+    scroll-layers = <5>;
+    snipe-layers = <7>;
+
+    // arrows {
+    //     layers = <3>;
+    //     bindings =
+    //         <&kp RIGHT_ARROW>,
+    //         <&kp LEFT_ARROW>,
+    //         <&kp UP_ARROW>,
+    //         <&kp DOWN_ARROW>;
+    //     tick = <10>;
+    //     wait-ms = <5>;
+    //     tap-ms = <5>;
+    // };
+};

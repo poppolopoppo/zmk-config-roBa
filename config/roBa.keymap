@@ -3,187 +3,24 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-&mt {
-    flavor = "balanced";
-    quick-tap-ms = <0>;
-    require-prior-idle-ms = <125>;
-};
+#define COMBO_TERM 30
+#define TAPPING_TERM 250
+#define QUICK_TAP_TERM 175
+#define ADAPTIVE_KEY_TIMEOUT 2000
 
-&lt {
-    require-prior-idle-ms = <125>;
-    flavor = "tap-preferred";
-    quick-tap-ms = <0>;
-};
-
-&trackball {
-    automouse-layer = <4>;
-    scroll-layers = <5>;
-    snipe-layers = <7>;
-
-    // arrows {
-    //     layers = <3>;
-    //     bindings =
-    //         <&kp RIGHT_ARROW>,
-    //         <&kp LEFT_ARROW>,
-    //         <&kp UP_ARROW>,
-    //         <&kp DOWN_ARROW>;
-    //     tick = <10>;
-    //     wait-ms = <5>;
-    //     tap-ms = <5>;
-    // };
-};
+#include "features/accents.dtsi"
+#include "features/behaviors.dtsi"
+#include "features/combos.dtsi"
+#include "features/shortcuts.dtsi"
+#include "features/trackball.dtsi"
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        tab {
-            bindings = <&kp TAB>;
-            key-positions = <11 12>;
-            layers = <0>;
-        };
-
-        shift_tab {
-            bindings = <&kp LS(TAB)>;
-            key-positions = <12 13>;
-            layers = <0>;
-        };
-
-        double_quotation {
-            bindings = <&kp DOUBLE_QUOTES>;
-            key-positions = <20 21>;
-        };
-
-        eq {
-            bindings = <&kp EQUAL>;
-            key-positions = <24 25>;
-            layers = <0 2>;
-        };
-
-        ctrl+alt+del {
-            bindings = <&kp LC(LA(DELETE))>;
-            key-positions = <34 42>;
-        };
-
-        Gaming {
-            bindings = <&tog 8>;
-            key-positions = <0 1 8 9>;
-        };
-    };
-
     macros {
         to_layer_0: to_layer_0 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
-        };
-
-        a_gr: a_gr {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp RIGHT_ALT>,
-                <&macro_tap>,
-                <&kp GRAVE>,
-                <&macro_release>,
-                <&kp RALT>,
-                <&macro_tap>,
-                <&kp A>;
-
-            label = "A_GR";
-        };
-
-        e_gr: e_gr {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp RIGHT_ALT>,
-                <&macro_tap>,
-                <&kp GRAVE>,
-                <&macro_release>,
-                <&kp RALT>,
-                <&macro_tap>,
-                <&kp E>;
-
-            label = "E_GR";
-        };
-
-        i_gr: i_gr {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp RIGHT_ALT>,
-                <&macro_tap>,
-                <&kp GRAVE>,
-                <&macro_release>,
-                <&kp RALT>,
-                <&macro_tap>,
-                <&kp I>;
-
-            label = "I_GR";
-        };
-
-        o_gr: o_gr {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp RIGHT_ALT>,
-                <&macro_tap>,
-                <&kp GRAVE>,
-                <&macro_release>,
-                <&kp RALT>,
-                <&macro_tap>,
-                <&kp O>;
-
-            label = "O_GR";
-        };
-
-        u_gr: u_gr {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp RIGHT_ALT>,
-                <&macro_tap>,
-                <&kp GRAVE>,
-                <&macro_release>,
-                <&kp RALT>,
-                <&macro_tap>,
-                <&kp U>;
-
-            label = "U_GR";
-        };
-
-        e_ac: e_ac {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp RIGHT_ALT>,
-                <&macro_tap>,
-                <&kp E>,
-                <&macro_release>,
-                <&kp RALT>,
-                <&macro_tap>,
-                <&kp E>;
-
-            label = "E_AC";
-        };
-    };
-
-    behaviors {
-        lt_to_layer_0: lt_to_layer_0 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_TO_0";
-            bindings = <&mo>, <&to_layer_0>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
         };
     };
 
@@ -281,10 +118,10 @@
 
         ACCENTS {
             bindings = <
-&trans  &trans  &e_gr   &e_ac   &trans                      &trans  &u_gr   &i_gr   &o_gr   &trans
-&a_gr   &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&trans     &trans  &ac_egrv   &e_eacu   &trans                      &trans  &ac_ugrv   &trans     &ac_ocir   &trans
+&ac_agrv   &trans  &trans     &trans    &trans  &trans      &trans  &trans  &trans     &trans     &trans     &trans
+&trans     &trans  &trans     &trans    &trans  &trans      &trans  &trans  &trans     &trans     &trans     &trans
+&trans     &trans  &trans     &trans    &trans  &trans      &trans  &trans                                   &trans
             >;
         };
     };

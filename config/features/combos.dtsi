@@ -1,0 +1,39 @@
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <11 12>;
+            layers = <0>;
+        };
+
+        shift_tab {
+            bindings = <&kp LS(TAB)>;
+            key-positions = <12 13>;
+            layers = <0>;
+        };
+
+        double_quotation {
+            bindings = <&kp DOUBLE_QUOTES>;
+            key-positions = <20 21>;
+        };
+
+        eq {
+            bindings = <&kp EQUAL>;
+            key-positions = <24 25>;
+            layers = <0 2>;
+        };
+
+        ctrl+alt+del {
+            bindings = <&kp LC(LA(DELETE))>;
+            key-positions = <34 42>;
+        };
+
+        Gaming {
+            bindings = <&tog 8>;
+            key-positions = <0 1 8 9>;
+        };
+    };
+};

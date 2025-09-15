@@ -94,7 +94,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
-            quick-tap-ms = <175jj>;
+            quick-tap-ms = <175>;
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
@@ -104,7 +104,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
-            quick-tap-ms = <175jj>;
+            quick-tap-ms = <175>;
             bindings = <&mo>, <&sl>;
         };
         msk: layer-tap-with-stick-key {
@@ -113,7 +113,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
-            quick-tap-ms = <175jj>;
+            quick-tap-ms = <175>;
             bindings = <&mo>, <&sk>;
         };
         lt_to_layer_0: lt_to_layer_0 {

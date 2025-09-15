@@ -4,18 +4,313 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #define COMBO_TERM 30
-#define TAPPING_TERM 250
+#define TAPPING_TERM 200
 #define QUICK_TAP_TERM 175
 #define ADAPTIVE_KEY_TIMEOUT 2000
 
-#include "features/accents.dtsi"
-#include "features/behaviors.dtsi"
-#include "features/combos.dtsi"
-#include "features/shortcuts.dtsi"
-#include "features/trackball.dtsi"
+&mt {
+    tapping-term-ms = <TAPPING_TERM>;
+    flavor = "tap-preferred";
+    quick-tap-ms = <QUICK_TAP_TERM>;
+    global-quick-tap;
+};
+
+&lt {
+    tapping-term-ms = <TAPPING_TERM>;
+    flavor = "tap-preferred";
+};
+
+&sl {
+    release-after-ms = <2000>;
+    quick-release;
+};
+
+&sk {
+    release-after-ms = <2000>;
+    quick-release;
+};
+
+&caps_word {
+  continue-list = <UNDERSCORE MINUS BACKSPACE DELETE>;
+};
+
+&trackball {
+    automouse-layer = <4>;
+    scroll-layers = <5>;
+    snipe-layers = <7>;
+
+    // arrows {
+    //     layers = <3>;
+    //     bindings =
+    //         <&kp RIGHT_ARROW>,
+    //         <&kp LEFT_ARROW>,
+    //         <&kp UP_ARROW>,
+    //         <&kp DOWN_ARROW>;
+    //     tick = <10>;
+    //     wait-ms = <5>;
+    //     tap-ms = <5>;
+    // };
+};
 
 / {
+    #define ACCENTED_KEY(NAME, LABEL_U, LABEL_L, LABEL, KEY, DEAD_KEY) \
+        ac_##NAME##_l: ac_##NAME##_l { \
+            wait-ms = <0>; \
+            tap-ms = <0>; \
+            label = LABEL_L; \
+            compatible = "zmk,behavior-macro"; \
+            #binding-cells = <0>; \
+            bindings \
+                = <&macro_press &kp LALT> \
+                , <&macro_tap &kp DEAD_KEY> \
+                , <&macro_release &kp LALT> \
+                , <&macro_tap &kp KEY> \
+                ; \
+        }; \
+        ac_##NAME##_u: ac_##NAME##_u { \
+            wait-ms = <0>; \
+            tap-ms = <0>; \
+            label = LABEL_U; \
+            compatible = "zmk,behavior-macro"; \
+            #binding-cells = <0>; \
+            bindings \
+                = <&macro_release &kp LSHFT> \
+                , <&macro_press &kp LALT> \
+                , <&macro_tap &kp DEAD_KEY> \
+                , <&macro_release &kp LALT> \
+                , <&macro_press &kp LSHFT> \
+                , <&macro_tap &kp KEY> \
+                , <&macro_release &kp LSHFT> \
+                ; \
+        }; \
+        ac_##NAME: ac_##NAME { \
+            label = LABEL; \
+            compatible = "zmk,behavior-mod-morph"; \
+            #binding-cells = <0>; \
+            bindings = <&ac_##NAME##_l>, <&ac_##NAME##_u>; \
+            mods = <(MOD_LSFT|MOD_RSFT)>; \
+            keep-mods = <(MOD_LSFT|MOD_RSFT)>; \
+        };
+
+    behaviors {
+        hm: homerow-mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "homehow-mods";
+            #binding-cells = <2>;
+            tapping-term-ms = <TAPPING_TERM>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <QUICK_TAP_TERM>;
+            global-quick-tap;
+            bindings = <&kp>, <&kp>;
+        };
+        msl: layer-tap-with-stick-layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "layer-tap-with-stick-layer";
+            #binding-cells = <2>;
+            tapping-term-ms = <TAPPING_TERM>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <QUICK_TAP_TERM>;
+            bindings = <&mo>, <&sl>;
+        };
+        msk: layer-tap-with-stick-key {
+            compatible = "zmk,behavior-hold-tap";
+            label = "layer-tap-with-stick-key";
+            #binding-cells = <2>;
+            tapping-term-ms = <TAPPING_TERM>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <QUICK_TAP_TERM>;
+            bindings = <&mo>, <&sk>;
+        };
+        lt_to_layer_0: lt_to_layer_0 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_TAP_TO_0";
+            bindings = <&mo>, <&to_layer_0>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <TAPPING_TERM>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <11 12>;
+            layers = <0>;
+        };
+
+        shift_tab {
+            bindings = <&kp LS(TAB)>;
+            key-positions = <12 13>;
+            layers = <0>;
+        };
+
+        double_quotation {
+            bindings = <&kp DOUBLE_QUOTES>;
+            key-positions = <20 21>;
+        };
+
+        eq {
+            bindings = <&kp EQUAL>;
+            key-positions = <24 25>;
+            layers = <0 2>;
+        };
+
+        ctrl+alt+del {
+            bindings = <&kp LC(LA(DELETE))>;
+            key-positions = <34 42>;
+        };
+
+        Gaming {
+            bindings = <&tog 8>;
+            key-positions = <0 1 8 9>;
+        };
+    };
+
     macros {
+        ACCENTED_KEY(agrv, "à", "À", "àÀ", A, GRAVE)
+        ACCENTED_KEY(aacu, "á", "Á", "áÁ", A, E)
+        ACCENTED_KEY(atil, "ã", "Ã", "ãÃ", A, N)
+        ACCENTED_KEY(acir, "â", "Â", "âÂ", A, I)
+        ACCENTED_KEY(egrv, "è", "È", "èÈ", E, GRAVE)
+        ACCENTED_KEY(eacu, "é", "É", "éÉ", E, E)
+        ACCENTED_KEY(ecir, "ê", "Ê", "êÊ", E, I)
+        ACCENTED_KEY(iacu, "í", "Í", "íÍ", I, E)
+        ACCENTED_KEY(oacu, "ó", "Ó", "óÓ", O, E)
+        ACCENTED_KEY(otil, "õ", "Õ", "õÕ", O, N)
+        ACCENTED_KEY(ocir, "ô", "Ô", "ôÔ", O, I)
+        ACCENTED_KEY(ugrv, "ù", "Ù", "ùÙ", U, GRAVE)
+        ACCENTED_KEY(uacu, "ú", "Ú", "úÚ", U, E)
+
+        ac_ccdi: ac_ccdi {
+            wait-ms = <0>;
+            tap-ms = <0>;
+            label = "ç";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp C>
+                , <&macro_release &kp LALT>
+                ;
+        };
+
+        mc_fullscr: mc_fullscr {
+            label = "Full Screen";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_press &kp LCMD>
+                , <&macro_tap &kp F>
+                , <&macro_release &kp LCMD>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+        mc_find: mc_find {
+            label = "Find";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCMD>
+                , <&macro_tap &kp F>
+                , <&macro_release &kp LCMD>
+                ;
+        };
+        mc_selall: mc_selall {
+            label = "Select All";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCMD>
+                , <&macro_tap &kp A>
+                , <&macro_release &kp LCMD>
+                ;
+        };
+        mc_undo: mc_undo {
+            label = "Undo";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCMD>
+                , <&macro_tap &kp Z>
+                , <&macro_release &kp LCMD>
+                ;
+        };
+        mc_copy: mc_copy {
+            label = "Copy";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCMD>
+                , <&macro_tap &kp C>
+                , <&macro_release &kp LCMD>
+                ;
+        };
+        mc_paste: mc_paste {
+            label = "Paste";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCMD>
+                , <&macro_tap &kp V>
+                , <&macro_release &kp LCMD>
+                ;
+        };
+        mc_save: mc_save {
+            label = "Save";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCMD>
+                , <&macro_tap &kp S>
+                , <&macro_release &kp LCMD>
+                ;
+        };
+        mc_save_esc: mc_save_esc {
+            label = "Save + Esc";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCMD>
+                , <&macro_tap &kp S>
+                , <&macro_release &kp LCMD>
+                , <&macro_tap &kp ESC>
+                ;
+        };
+        mc_seln: mc_seln {
+            label = "Select Line";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp HOME>
+                , <&macro_press &kp LSHFT>
+                , <&macro_tap &kp END>
+                , <&macro_release &kp LSHFT>
+                ;
+        };
+        mc_zout: mc_zout {
+            label = "Zoom Out";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LGUI>
+                , <&macro_tap &kp MINUS>
+                , <&macro_release &kp LGUI>
+                ;
+        };
+        mc_zin: mc_zin {
+            label = "Zoom In";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LGUI>
+                , <&macro_tap &kp PLUS>
+                , <&macro_release &kp LGUI>
+                ;
+        };
+
         to_layer_0: to_layer_0 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
@@ -118,10 +413,10 @@
 
         ACCENTS {
             bindings = <
-&trans     &trans  &ac_egrv   &e_eacu   &trans                      &trans  &ac_ugrv   &trans     &ac_ocir   &trans
-&ac_agrv   &trans  &trans     &trans    &trans  &trans      &trans  &trans  &trans     &trans     &trans     &trans
-&trans     &trans  &trans     &trans    &trans  &trans      &trans  &trans  &trans     &trans     &trans     &trans
-&trans     &trans  &trans     &trans    &trans  &trans      &trans  &trans                                   &trans
+&trans     &trans  &ac_egrv   &e_eacu   &trans                        &trans  &ac_ugrv   &trans     &ac_ocir   &trans
+&ac_agrv   &trans  &trans     &trans    &trans    &trans      &trans  &trans  &trans     &trans     &trans     &trans
+&trans     &trans  &trans     &trans    &trans    &trans      &trans  &trans  &trans     &trans     &trans     &trans
+&trans     &trans  &trans     &trans    &ac_ccdi  &trans      &trans  &trans                                   &trans
             >;
         };
     };

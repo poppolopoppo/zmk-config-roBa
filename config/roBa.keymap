@@ -91,20 +91,56 @@
             label = "TO_LAYER_0";
         };
 
-        ac_ccdi: ac_ccdi {
+        ac_ccdi_l: ac_ccdi_l {
             wait-ms = <0>;
             tap-ms = <0>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LALT>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&kp COMMA>,
+                <&macro_release>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&kp C>;
+
+            label = "ç";
+        };
+
+        ac_ccdi_u: ac_ccdi_u {
+            wait-ms = <0>;
+            tap-ms = <0>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_release>,
+                <&kp LSHFT>,
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&kp COMMA>,
+                <&macro_release>,
+                <&kp LCTRL>,
+                <&macro_press>,
+                <&kp LSHFT>,
                 <&macro_tap>,
                 <&kp C>,
                 <&macro_release>,
-                <&kp LALT>;
+                <&kp LSHFT>;
 
-            label = "ç";
+            label = "Ç";
+        };
+
+        ac_ccdi: ac_agrv {
+            label = "çÇ";
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&ac_ccdi_l>, <&ac_ccdi_u>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         ac_agrv_l: ac_agrv_l {
@@ -114,11 +150,11 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LALT>,
+                <&kp LCTRL>,
                 <&macro_tap>,
                 <&kp GRAVE>,
                 <&macro_release>,
-                <&kp LALT>,
+                <&kp LCTRL>,
                 <&macro_tap>,
                 <&kp A>;
 
@@ -134,11 +170,11 @@
                 <&macro_release>,
                 <&kp LSHFT>,
                 <&macro_press>,
-                <&kp LALT>,
+                <&kp LCTRL>,
                 <&macro_tap>,
                 <&kp GRAVE>,
                 <&macro_release>,
-                <&kp LALT>,
+                <&kp LCTRL>,
                 <&macro_press>,
                 <&kp LSHFT>,
                 <&macro_tap>,
@@ -166,11 +202,11 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LALT>,
+                <&kp LCTRL>,
                 <&macro_tap>,
                 <&kp GRAVE>,
                 <&macro_release>,
-                <&kp LALT>,
+                <&kp LCTRL>,
                 <&macro_tap>,
                 <&kp E>;
 
@@ -186,11 +222,11 @@
                 <&macro_release>,
                 <&kp LSHFT>,
                 <&macro_press>,
-                <&kp LALT>,
+                <&kp LCTRL>,
                 <&macro_tap>,
                 <&kp GRAVE>,
                 <&macro_release>,
-                <&kp LALT>,
+                <&kp LCTRL>,
                 <&macro_press>,
                 <&kp LSHFT>,
                 <&macro_tap>,
@@ -218,11 +254,11 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LALT>,
+                <&kp LCTRL>,
                 <&macro_tap>,
-                <&kp E>,
+                <&kp APOSTROPHE>,
                 <&macro_release>,
-                <&kp LALT>,
+                <&kp LCTRL>,
                 <&macro_tap>,
                 <&kp E>;
 
@@ -238,11 +274,11 @@
                 <&macro_release>,
                 <&kp LSHFT>,
                 <&macro_press>,
-                <&kp LALT>,
+                <&kp LCTRL>,
                 <&macro_tap>,
-                <&kp E>,
+                <&kp APOSTROPHE>,
                 <&macro_release>,
-                <&kp LALT>,
+                <&kp LCTRL>,
                 <&macro_press>,
                 <&kp LSHFT>,
                 <&macro_tap>,
@@ -270,11 +306,11 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LALT>,
+                <&kp LCTRL>,
                 <&macro_tap>,
                 <&kp GRAVE>,
                 <&macro_release>,
-                <&kp LALT>,
+                <&kp LCTRL>,
                 <&macro_tap>,
                 <&kp U>;
 
@@ -290,11 +326,11 @@
                 <&macro_release>,
                 <&kp LSHFT>,
                 <&macro_press>,
-                <&kp LALT>,
+                <&kp LCTRL>,
                 <&macro_tap>,
                 <&kp GRAVE>,
                 <&macro_release>,
-                <&kp LALT>,
+                <&kp LCTRL>,
                 <&macro_press>,
                 <&kp LSHFT>,
                 <&macro_tap>,
@@ -322,11 +358,11 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LALT>,
+                <&kp LCTRL>,
                 <&macro_tap>,
-                <&kp I>,
+                <&kp CARET>,
                 <&macro_release>,
-                <&kp LALT>,
+                <&kp LCTRL>,
                 <&macro_tap>,
                 <&kp O>;
 
@@ -342,11 +378,11 @@
                 <&macro_release>,
                 <&kp LSHFT>,
                 <&macro_press>,
-                <&kp LALT>,
+                <&kp LCTRL>,
                 <&macro_tap>,
-                <&kp I>,
+                <&kp CARET>,
                 <&macro_release>,
-                <&kp LALT>,
+                <&kp LCTRL>,
                 <&macro_press>,
                 <&kp LSHFT>,
                 <&macro_tap>,
@@ -361,7 +397,7 @@
             label = "ôÔ";
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&ac_ugrv_l>, <&ac_ugrv_u>;
+            bindings = <&ac_ocir_l>, <&ac_ocir_u>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -373,11 +409,11 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LCMD>,
+                <&kp LCTRL>,
                 <&macro_tap>,
                 <&kp F>,
                 <&macro_release>,
-                <&kp LCMD>;
+                <&kp LCTRL>;
         };
 
         mc_selall: mc_selall {
@@ -386,11 +422,11 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LCMD>,
+                <&kp LCTRL>,
                 <&macro_tap>,
                 <&kp A>,
                 <&macro_release>,
-                <&kp LCMD>;
+                <&kp LCTRL>;
         };
 
         mc_undo: mc_undo {
@@ -399,11 +435,11 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LCMD>,
+                <&kp LCTRL>,
                 <&macro_tap>,
                 <&kp Z>,
                 <&macro_release>,
-                <&kp LCMD>;
+                <&kp LCTRL>;
         };
 
         mc_copy: mc_copy {
@@ -412,11 +448,11 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LCMD>,
+                <&kp LCTRL>,
                 <&macro_tap>,
                 <&kp C>,
                 <&macro_release>,
-                <&kp LCMD>;
+                <&kp LCTRL>;
         };
 
         mc_paste: mc_paste {
@@ -425,11 +461,11 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LCMD>,
+                <&kp LCTRL>,
                 <&macro_tap>,
                 <&kp V>,
                 <&macro_release>,
-                <&kp LCMD>;
+                <&kp LCTRL>;
         };
 
         mc_save: mc_save {
@@ -438,11 +474,11 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LCMD>,
+                <&kp LCTRL>,
                 <&macro_tap>,
                 <&kp S>,
                 <&macro_release>,
-                <&kp LCMD>;
+                <&kp LCTRL>;
         };
 
         mc_save_esc: mc_save_esc {
@@ -451,11 +487,11 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LCMD>,
+                <&kp LCTRL>,
                 <&macro_tap>,
                 <&kp S>,
                 <&macro_release>,
-                <&kp LCMD>,
+                <&kp LCTRL>,
                 <&macro_tap>,
                 <&kp ESC>;
         };

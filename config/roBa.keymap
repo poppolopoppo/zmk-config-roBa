@@ -295,9 +295,120 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        mc_find: mc_find {
+            label = "Find";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCMD>
+                , <&macro_tap &kp F>
+                , <&macro_release &kp LCMD>
+                ;
+        };
+        mc_selall: mc_selall {
+            label = "Select All";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCMD>
+                , <&macro_tap &kp A>
+                , <&macro_release &kp LCMD>
+                ;
+        };
+        mc_undo: mc_undo {
+            label = "Undo";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCMD>
+                , <&macro_tap &kp Z>
+                , <&macro_release &kp LCMD>
+                ;
+        };
+        mc_copy: mc_copy {
+            label = "Copy";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCMD>
+                , <&macro_tap &kp C>
+                , <&macro_release &kp LCMD>
+                ;
+        };
+        mc_paste: mc_paste {
+            label = "Paste";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCMD>
+                , <&macro_tap &kp V>
+                , <&macro_release &kp LCMD>
+                ;
+        };
+        mc_save: mc_save {
+            label = "Save";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCMD>
+                , <&macro_tap &kp S>
+                , <&macro_release &kp LCMD>
+                ;
+        };
+        mc_save_esc: mc_save_esc {
+            label = "Save + Esc";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCMD>
+                , <&macro_tap &kp S>
+                , <&macro_release &kp LCMD>
+                , <&macro_tap &kp ESC>
+                ;
+        };
+        mc_seln: mc_seln {
+            label = "Select Line";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp HOME>
+                , <&macro_press &kp LSHFT>
+                , <&macro_tap &kp END>
+                , <&macro_release &kp LSHFT>
+                ;
+        };
     };
 
     behaviors {
+        hm: homerow-mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "homehow-mods";
+            #binding-cells = <2>;
+            tapping-term-ms = <175>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <200>;
+            global-quick-tap;
+            bindings = <&kp>, <&kp>;
+        };
+        msl: layer-tap-with-stick-layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "layer-tap-with-stick-layer";
+            #binding-cells = <2>;
+            tapping-term-ms = <175>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <200>;
+            bindings = <&mo>, <&sl>;
+        };
+        msk: layer-tap-with-stick-key {
+            compatible = "zmk,behavior-hold-tap";
+            label = "layer-tap-with-stick-key";
+            #binding-cells = <2>;
+            tapping-term-ms = <175>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <200>;
+            bindings = <&mo>, <&sk>;
+        };
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";

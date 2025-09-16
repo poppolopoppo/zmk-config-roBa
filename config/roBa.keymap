@@ -4,15 +4,29 @@
 #include <dt-bindings/zmk/pointing.h>
 
 &mt {
-    flavor = "balanced";
-    quick-tap-ms = <0>;
-    require-prior-idle-ms = <125>;
+    tapping-term-ms = <175>;
+    flavor = "tap-preferred";
+    quick-tap-ms = <200>;
+    global-quick-tap;
 };
 
 &lt {
-    require-prior-idle-ms = <125>;
     flavor = "tap-preferred";
-    quick-tap-ms = <0>;
+    tapping-term-ms = <175>;
+};
+
+&sl {
+    release-after-ms = <2000>;
+    quick-release;
+};
+
+&sk {
+    release-after-ms = <2000>;
+    quick-release;
+};
+
+&caps_word {
+  continue-list = <UNDERSCORE MINUS BACKSPACE DELETE>;
 };
 
 &trackball {

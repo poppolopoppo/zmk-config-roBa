@@ -25,9 +25,7 @@
     quick-release;
 };
 
-&caps_word {
-  continue-list = <UNDERSCORE MINUS BACKSPACE DELETE>;
-};
+&caps_word { continue-list = <UNDERSCORE MINUS BACKSPACE DELETE>; };
 
 &trackball {
     automouse-layer = <4>;
@@ -98,11 +96,14 @@
             tap-ms = <0>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LALT>
-                , <&macro_tap &kp C>
-                , <&macro_release &kp LALT>
-                ;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp C>,
+                <&macro_release>,
+                <&kp LALT>;
+
             label = "ç";
         };
 
@@ -111,35 +112,49 @@
             tap-ms = <0>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LALT>
-                , <&macro_tap &kp GRAVE>
-                , <&macro_release &kp LALT>
-                , <&macro_tap &kp A>
-                ;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp GRAVE>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp A>;
+
             label = "à";
         };
+
         ac_agrv_u: ac_agrv_u {
             wait-ms = <0>;
             tap-ms = <0>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_release &kp LSHFT>
-                , <&macro_press &kp LALT>
-                , <&macro_tap &kp GRAVE>
-                , <&macro_release &kp LALT>
-                , <&macro_press &kp LSHFT>
-                , <&macro_tap &kp A>
-                , <&macro_release &kp LSHFT>
-                ;
+            bindings =
+                <&macro_release>,
+                <&kp LSHFT>,
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp GRAVE>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_press>,
+                <&kp LSHFT>,
+                <&macro_tap>,
+                <&kp A>,
+                <&macro_release>,
+                <&kp LSHFT>;
+
             label = "À";
         };
+
         ac_agrv: ac_agrv {
             label = "àÀ";
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&ac_agrv_l>, <&ac_agrv_u>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LSFT|MOD_RSFT)>;
         };
@@ -149,35 +164,49 @@
             tap-ms = <0>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LALT>
-                , <&macro_tap &kp GRAVE>
-                , <&macro_release &kp LALT>
-                , <&macro_tap &kp E>
-                ;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp GRAVE>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp E>;
+
             label = "è";
         };
+
         ac_egrv_u: ac_egrv_u {
             wait-ms = <0>;
             tap-ms = <0>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_release &kp LSHFT>
-                , <&macro_press &kp LALT>
-                , <&macro_tap &kp GRAVE>
-                , <&macro_release &kp LALT>
-                , <&macro_press &kp LSHFT>
-                , <&macro_tap &kp E>
-                , <&macro_release &kp LSHFT>
-                ;
+            bindings =
+                <&macro_release>,
+                <&kp LSHFT>,
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp GRAVE>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_press>,
+                <&kp LSHFT>,
+                <&macro_tap>,
+                <&kp E>,
+                <&macro_release>,
+                <&kp LSHFT>;
+
             label = "È";
         };
+
         ac_egrv: ac_egrv {
             label = "èÈ";
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&ac_egrv_l>, <&ac_egrv_u>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LSFT|MOD_RSFT)>;
         };
@@ -187,35 +216,49 @@
             tap-ms = <0>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LALT>
-                , <&macro_tap &kp E>
-                , <&macro_release &kp LALT>
-                , <&macro_tap &kp E>
-                ;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp E>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp E>;
+
             label = "é";
         };
+
         ac_eacu_u: ac_eacu_u {
             wait-ms = <0>;
             tap-ms = <0>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_release &kp LSHFT>
-                , <&macro_press &kp LALT>
-                , <&macro_tap &kp E>
-                , <&macro_release &kp LALT>
-                , <&macro_press &kp LSHFT>
-                , <&macro_tap &kp E>
-                , <&macro_release &kp LSHFT>
-                ;
+            bindings =
+                <&macro_release>,
+                <&kp LSHFT>,
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp E>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_press>,
+                <&kp LSHFT>,
+                <&macro_tap>,
+                <&kp E>,
+                <&macro_release>,
+                <&kp LSHFT>;
+
             label = "É";
         };
+
         ac_eacu: ac_eacu {
             label = "éÉ";
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&ac_eacu_l>, <&ac_eacu_u>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LSFT|MOD_RSFT)>;
         };
@@ -225,35 +268,49 @@
             tap-ms = <0>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LALT>
-                , <&macro_tap &kp GRAVE>
-                , <&macro_release &kp LALT>
-                , <&macro_tap &kp U>
-                ;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp GRAVE>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp U>;
+
             label = "ù";
         };
+
         ac_ugrv_u: ac_ugrv_u {
             wait-ms = <0>;
             tap-ms = <0>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_release &kp LSHFT>
-                , <&macro_press &kp LALT>
-                , <&macro_tap &kp GRAVE>
-                , <&macro_release &kp LALT>
-                , <&macro_press &kp LSHFT>
-                , <&macro_tap &kp U>
-                , <&macro_release &kp LSHFT>
-                ;
+            bindings =
+                <&macro_release>,
+                <&kp LSHFT>,
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp GRAVE>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_press>,
+                <&kp LSHFT>,
+                <&macro_tap>,
+                <&kp U>,
+                <&macro_release>,
+                <&kp LSHFT>;
+
             label = "Ù";
         };
+
         ac_ugrv: ac_ugrv {
             label = "ùÙ";
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&ac_ugrv_l>, <&ac_ugrv_u>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LSFT|MOD_RSFT)>;
         };
@@ -263,35 +320,49 @@
             tap-ms = <0>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LALT>
-                , <&macro_tap &kp I>
-                , <&macro_release &kp LALT>
-                , <&macro_tap &kp O>
-                ;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp I>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp O>;
+
             label = "ô";
         };
+
         ac_ocir_u: ac_ocir_u {
             wait-ms = <0>;
             tap-ms = <0>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_release &kp LSHFT>
-                , <&macro_press &kp LALT>
-                , <&macro_tap &kp I>
-                , <&macro_release &kp LALT>
-                , <&macro_press &kp LSHFT>
-                , <&macro_tap &kp O>
-                , <&macro_release &kp LSHFT>
-                ;
+            bindings =
+                <&macro_release>,
+                <&kp LSHFT>,
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp I>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_press>,
+                <&kp LSHFT>,
+                <&macro_tap>,
+                <&kp O>,
+                <&macro_release>,
+                <&kp LSHFT>;
+
             label = "Ô";
         };
+
         ac_ocir: ac_ocir {
             label = "ôÔ";
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&ac_ugrv_l>, <&ac_ugrv_u>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LSFT|MOD_RSFT)>;
         };
@@ -300,83 +371,108 @@
             label = "Find";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCMD>
-                , <&macro_tap &kp F>
-                , <&macro_release &kp LCMD>
-                ;
+            bindings =
+                <&macro_press>,
+                <&kp LCMD>,
+                <&macro_tap>,
+                <&kp F>,
+                <&macro_release>,
+                <&kp LCMD>;
         };
+
         mc_selall: mc_selall {
             label = "Select All";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCMD>
-                , <&macro_tap &kp A>
-                , <&macro_release &kp LCMD>
-                ;
+            bindings =
+                <&macro_press>,
+                <&kp LCMD>,
+                <&macro_tap>,
+                <&kp A>,
+                <&macro_release>,
+                <&kp LCMD>;
         };
+
         mc_undo: mc_undo {
             label = "Undo";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCMD>
-                , <&macro_tap &kp Z>
-                , <&macro_release &kp LCMD>
-                ;
+            bindings =
+                <&macro_press>,
+                <&kp LCMD>,
+                <&macro_tap>,
+                <&kp Z>,
+                <&macro_release>,
+                <&kp LCMD>;
         };
+
         mc_copy: mc_copy {
             label = "Copy";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCMD>
-                , <&macro_tap &kp C>
-                , <&macro_release &kp LCMD>
-                ;
+            bindings =
+                <&macro_press>,
+                <&kp LCMD>,
+                <&macro_tap>,
+                <&kp C>,
+                <&macro_release>,
+                <&kp LCMD>;
         };
+
         mc_paste: mc_paste {
             label = "Paste";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCMD>
-                , <&macro_tap &kp V>
-                , <&macro_release &kp LCMD>
-                ;
+            bindings =
+                <&macro_press>,
+                <&kp LCMD>,
+                <&macro_tap>,
+                <&kp V>,
+                <&macro_release>,
+                <&kp LCMD>;
         };
+
         mc_save: mc_save {
             label = "Save";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCMD>
-                , <&macro_tap &kp S>
-                , <&macro_release &kp LCMD>
-                ;
+            bindings =
+                <&macro_press>,
+                <&kp LCMD>,
+                <&macro_tap>,
+                <&kp S>,
+                <&macro_release>,
+                <&kp LCMD>;
         };
+
         mc_save_esc: mc_save_esc {
             label = "Save + Esc";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCMD>
-                , <&macro_tap &kp S>
-                , <&macro_release &kp LCMD>
-                , <&macro_tap &kp ESC>
-                ;
+            bindings =
+                <&macro_press>,
+                <&kp LCMD>,
+                <&macro_tap>,
+                <&kp S>,
+                <&macro_release>,
+                <&kp LCMD>,
+                <&macro_tap>,
+                <&kp ESC>;
         };
+
         mc_seln: mc_seln {
             label = "Select Line";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp HOME>
-                , <&macro_press &kp LSHFT>
-                , <&macro_tap &kp END>
-                , <&macro_release &kp LSHFT>
-                ;
+            bindings =
+                <&macro_tap>,
+                <&kp HOME>,
+                <&macro_press>,
+                <&kp LSHFT>,
+                <&macro_tap>,
+                <&kp END>,
+                <&macro_release>,
+                <&kp LSHFT>;
         };
     };
 
@@ -391,6 +487,7 @@
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
+
         msl: layer-tap-with-stick-layer {
             compatible = "zmk,behavior-hold-tap";
             label = "layer-tap-with-stick-layer";
@@ -400,6 +497,7 @@
             quick-tap-ms = <200>;
             bindings = <&mo>, <&sl>;
         };
+
         msk: layer-tap-with-stick-key {
             compatible = "zmk,behavior-hold-tap";
             label = "layer-tap-with-stick-key";
@@ -409,6 +507,7 @@
             quick-tap-ms = <200>;
             bindings = <&mo>, <&sk>;
         };
+
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
@@ -424,10 +523,10 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W         &kp E         &kp R  &kp T                                                          &kp Y        &kp U  &lt 5 I    &kp O    &kp P
-&kp A             &kp S         &kp D         &kp F  &kp G  &kp LG(LS(S))               &kp MINUS                   &kp H        &kp J  &kp K      &kp L    &kp SQT
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V  &kp B  &kp COLON                   &lt_to_layer_0 9 SEMICOLON  &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &mo 6  &mo 2  &lt_to_layer_0 3 SPACE      &kp BACKSPACE               &lt 1 ENTER                             &lt_to_layer_0 7 DEL
+&kp Q             &kp W         &kp E         &kp R  &kp T                                                          &kp Y        &kp U        &lt 5 I    &kp O       &kp P
+&kp A             &kp S         &kp D         &kp F  &kp G  &kp LG(LS(S))               &kp MINUS                   &kp H        &hm RCTRL J  &kp K      &hm RALT L  &kp SQT
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V  &kp B  &kp COLON                   &lt_to_layer_0 9 SEMICOLON  &kp N        &kp M        &kp COMMA  &kp DOT     &mt RIGHT_SHIFT SLASH
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &mo 6  &mo 2  &lt_to_layer_0 3 SPACE      &kp BACKSPACE               &lt 1 ENTER                                      &lt_to_layer_0 7 DEL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
@@ -513,10 +612,10 @@
 
         ACCENTS {
             bindings = <
-&trans     &trans  &ac_egrv   &ac_eacu   &trans                      &trans  &ac_ugrv   &trans   &ac_ocir   &trans
-&ac_agrv   &trans  &trans     &trans     &trans  &trans      &trans  &trans  &trans     &trans   &trans     &trans
-&trans     &trans  &trans     &trans     &trans  &trans      &trans  &trans  &trans     &trans   &trans     &trans
-&trans     &trans  &trans     &ac_ccdi   &trans  &trans      &trans  &trans                                 &trans
+&trans    &trans  &ac_egrv  &ac_eacu  &trans                      &trans  &ac_ugrv  &trans  &ac_ocir  &trans
+&ac_agrv  &trans  &trans    &trans    &trans  &trans      &trans  &trans  &trans    &trans  &trans    &trans
+&trans    &trans  &trans    &trans    &trans  &trans      &trans  &trans  &trans    &trans  &trans    &trans
+&trans    &trans  &trans    &ac_ccdi  &trans  &trans      &trans  &trans                              &trans
             >;
         };
     };

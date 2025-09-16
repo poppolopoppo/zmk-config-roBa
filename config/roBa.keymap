@@ -133,7 +133,7 @@
             label = "Ç";
         };
 
-        ac_ccdi: ac_agrv {
+        ac_ccdi: ac_ccdi {
             label = "çÇ";
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;

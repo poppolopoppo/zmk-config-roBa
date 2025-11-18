@@ -78,7 +78,7 @@
         };
 
         Gaming {
-            bindings = <&tog 9>;
+            bindings = <&tog 8>;
             key-positions = <0 1 8 9>;
         };
     };
@@ -599,7 +599,7 @@
 &kp Q             &kp W         &kp E         &kp R  &kp T                                                          &kp Y        &kp U        &lt 5 I    &kp O       &kp P
 &kp A             &kp S         &kp D         &kp F  &kp G  &kp LG(LS(S))               &kp MINUS                   &kp H        &hm RCTRL J  &kp K      &hm RALT L  &kp SQT
 &hm LEFT_SHIFT Z  &kp X         &kp C         &kp V  &kp B  &kp COLON                   &lt_to_layer_0 9 SEMICOLON  &kp N        &kp M        &kp COMMA  &kp DOT     &hm RIGHT_SHIFT SLASH
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &mo 6  &mo 2  &lt_to_layer_0 3 SPACE      &kp BACKSPACE               &lt 1 ENTER                                      &lt_to_layer_0 8 DEL
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &mo 6  &mo 2  &lt_to_layer_0 3 SPACE      &kp BACKSPACE               &lt 1 ENTER                                      &lt_to_layer_0 7 DEL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;

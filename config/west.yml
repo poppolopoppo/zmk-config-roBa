@@ -2,15 +2,15 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: kumamuk-git
-      url-base: https://github.com/kumamuk-git
+    - name: poppolopoppo # kumamuk-git
+      url-base: https://github.com/poppolopoppo # https://github.com/kumamuk-git
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: zmk-pmw3610-driver
-      remote: kumamuk-git
+    - name: zmk-pmw3610-driver # Forked mouse driver to fix compilation issues (https://github.com/zmkfirmware/zmk/pull/2717/)
+      remote: poppolopoppo # kumamuk-git
       revision: main
   self:
     path: config

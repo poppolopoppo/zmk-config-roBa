@@ -17,9 +17,9 @@
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,    // SCLK: P0.05 (from PCB analysis)
-                <NRF_PSEL(SPIM_MOSI, 0, 4)>,       // MOSI: P0.04 (SDIO from PCB)
-                <NRF_PSEL(SPIM_MISO, 1, 14)>;      // MISO: P1.14 (D9, standard SPI MISO pin)
+            psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,    // SCLK: P0.05
+                <NRF_PSEL(SPIM_MOSI, 0, 4)>,       // MOSI: P0.04 (SDIO - bidirectional for 3-wire SPI)
+                <NRF_PSEL(SPIM_MISO, 0, 4)>;       // MISO: P0.04 (SDIO - same pin for 3-wire SPI mode)
         };
     };
 
@@ -27,7 +27,7 @@
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,    // SCLK: P0.05
                 <NRF_PSEL(SPIM_MOSI, 0, 4)>,       // MOSI: P0.04 (SDIO)
-                <NRF_PSEL(SPIM_MISO, 1, 14)>;      // MISO: P1.14
+                <NRF_PSEL(SPIM_MISO, 0, 4)>;       // MISO: P0.04 (SDIO - same pin for 3-wire SPI)
             low-power-enable;
         };
     };
@@ -47,12 +47,12 @@
         status = "okay";
         compatible = "pixart,pmw3610";
         reg = <0>;
-        spi-max-frequency = <2000000>;
+        spi-max-frequency = <1000000>;  // Reduced from 2MHz for better stability
         motion-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         res-cpi = <800>;
         invert-x;
         invert-y;
-        smart-mode;
+        // smart-mode; // Disabled - can cause erratic/teleporting behavior
         zephyr,axis-x = <INPUT_REL_X>;
         zephyr,axis-y = <INPUT_REL_Y>;
     };

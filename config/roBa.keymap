@@ -590,9 +590,7 @@
 
         snipe_scaler: snipe_scaler {
             compatible = "zmk,input-processor-scaler";
-            #input-processor-cells = <1>;
-            x-scaler = <4>;
-            y-scaler = <4>;
+            #input-processor-cells = <2>;
         };
     };
 
@@ -606,7 +604,7 @@
 
         snipe_layer {
             layers = <7>;
-            input-processors = <&snipe_scaler 0>;
+            input-processors = <&snipe_scaler 4 4>;
         };
     };
 

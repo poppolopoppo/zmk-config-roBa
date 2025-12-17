@@ -27,24 +27,6 @@
 
 &caps_word { continue-list = <UNDERSCORE MINUS BACKSPACE DELETE>; };
 
-&trackball {
-    automouse-layer = <4>;
-    scroll-layers = <5>;
-    snipe-layers = <7>;
-
-    // arrows {
-    //     layers = <3>;
-    //     bindings =
-    //         <&kp RIGHT_ARROW>,
-    //         <&kp LEFT_ARROW>,
-    //         <&kp UP_ARROW>,
-    //         <&kp DOWN_ARROW>;
-    //     tick = <10>;
-    //     wait-ms = <5>;
-    //     tap-ms = <5>;
-    // };
-};
-
 / {
     combos {
         compatible = "zmk,combos";
@@ -588,6 +570,43 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
+        };
+    };
+
+    input_processors {
+        temp_layer: temp_layer {
+            compatible = "zmk,input-processor-temp-layer";
+            #input-processor-cells = <2>;
+            require-prior-idle-ms = <0>;
+        };
+
+        scroll_transform: scroll_transform {
+            compatible = "zmk,input-processor-transform";
+            #input-processor-cells = <1>;
+            type = <INPUT_EV_REL>;
+            x-codes = <INPUT_REL_HWHEEL>;
+            y-codes = <INPUT_REL_WHEEL>;
+        };
+
+        snipe_scaler: snipe_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <1>;
+            x-scaler = <4>;
+            y-scaler = <4>;
+        };
+    };
+
+    trackball_listener: trackball_listener {
+        input-processors = <&temp_layer 4 600>;
+
+        scroll_layer {
+            layers = <5>;
+            input-processors = <&scroll_transform 0>;
+        };
+
+        snipe_layer {
+            layers = <7>;
+            input-processors = <&snipe_scaler 0>;
         };
     };
 

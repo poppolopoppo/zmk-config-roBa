@@ -2,7 +2,7 @@ file_format: "1"
 id: roBa
 name: roBa
 type: shield
-url: https://github.com/kumamuk-git/zmk-config-roBa
+url: https://github.com/poppolopoppo/zmk-config-roBa
 requires: [xiao_ble]
 features:
   - keys

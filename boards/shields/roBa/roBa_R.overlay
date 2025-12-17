@@ -1,4 +1,4 @@
-﻿#include "roBa.dtsi"
+#include "roBa.dtsi"
 
 &default_transform {
     col-offset = <6>;
@@ -14,28 +14,20 @@
             ;
 };
 
-/ {
-    trackball_listener {
-        status = "okay";
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
-    };
-};
-
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 4)>,
-                <NRF_PSEL(SPIM_MISO, 0, 4)>;
+            psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,    // SCLK: P0.05 (from PCB analysis)
+                <NRF_PSEL(SPIM_MOSI, 0, 4)>,       // MOSI: P0.04 (SDIO from PCB)
+                <NRF_PSEL(SPIM_MISO, 1, 14)>;      // MISO: P1.14 (D9, standard SPI MISO pin)
         };
     };
 
     spi0_sleep: spi0_sleep {
         group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 4)>,
-                <NRF_PSEL(SPIM_MISO, 0, 4)>;
+            psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,    // SCLK: P0.05
+                <NRF_PSEL(SPIM_MOSI, 0, 4)>,       // MOSI: P0.04 (SDIO)
+                <NRF_PSEL(SPIM_MISO, 1, 14)>;      // MISO: P1.14
             low-power-enable;
         };
     };

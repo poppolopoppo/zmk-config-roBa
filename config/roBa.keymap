@@ -7,7 +7,6 @@
     tapping-term-ms = <175>;
     flavor = "tap-preferred";
     quick-tap-ms = <200>;
-    global-quick-tap;
 };
 
 &lt {
@@ -70,7 +69,6 @@
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
-            label = "TO_LAYER_0";
         };
 
         // For windows:
@@ -94,8 +92,6 @@
                 <&kp KP_NUMBER_4>,
                 <&macro_release>,
                 <&kp LALT>;
-
-            label = "à";
         };
 
         // À (Alt+0192)
@@ -118,8 +114,6 @@
                 <&kp KP_NUMBER_2>,
                 <&macro_release>,
                 <&kp LALT>;
-
-            label = "À";
         };
 
         // è (Alt+0232)
@@ -142,8 +136,6 @@
                 <&kp KP_NUMBER_2>,
                 <&macro_release>,
                 <&kp LALT>;
-
-            label = "è";
         };
 
         // È (Alt+0200)
@@ -166,8 +158,6 @@
                 <&kp KP_NUMBER_0>,
                 <&macro_release>,
                 <&kp LALT>;
-
-            label = "È";
         };
 
         // é (Alt+0233)
@@ -190,8 +180,6 @@
                 <&kp KP_NUMBER_3>,
                 <&macro_release>,
                 <&kp LALT>;
-
-            label = "é";
         };
 
         // É (Alt+0201)
@@ -214,8 +202,6 @@
                 <&kp KP_NUMBER_1>,
                 <&macro_release>,
                 <&kp LALT>;
-
-            label = "É";
         };
 
         // ù (Alt+0249)
@@ -238,8 +224,6 @@
                 <&kp KP_NUMBER_9>,
                 <&macro_release>,
                 <&kp LALT>;
-
-            label = "ù";
         };
 
         // Ù (Alt+0217)
@@ -262,8 +246,6 @@
                 <&kp KP_NUMBER_7>,
                 <&macro_release>,
                 <&kp LALT>;
-
-            label = "Ù";
         };
 
         // ô (Alt+0244)
@@ -286,8 +268,6 @@
                 <&kp KP_NUMBER_4>,
                 <&macro_release>,
                 <&kp LALT>;
-
-            label = "ô";
         };
 
         // Ô (Alt+0212)
@@ -310,8 +290,6 @@
                 <&kp KP_NUMBER_2>,
                 <&macro_release>,
                 <&kp LALT>;
-
-            label = "Ô";
         };
 
         // ç (Alt+0231)
@@ -334,8 +312,6 @@
                 <&kp KP_NUMBER_1>,
                 <&macro_release>,
                 <&kp LALT>;
-
-            label = "ç";
         };
 
         // Ç (Alt+0199)
@@ -358,12 +334,9 @@
                 <&kp KP_NUMBER_9>,
                 <&macro_release>,
                 <&kp LALT>;
-
-            label = "Ç";
         };
 
         ac_ccdi: ac_ccdi {
-            label = "çÇ";
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&ac_ccdi_l>, <&ac_ccdi_u>;
@@ -373,7 +346,6 @@
         };
 
         ac_agrv: ac_agrv {
-            label = "àÀ";
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&ac_agrv_l>, <&ac_agrv_u>;
@@ -383,7 +355,6 @@
         };
 
         ac_egrv: ac_egrv {
-            label = "èÈ";
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&ac_egrv_l>, <&ac_egrv_u>;
@@ -393,7 +364,6 @@
         };
 
         ac_eacu: ac_eacu {
-            label = "éÉ";
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&ac_eacu_l>, <&ac_eacu_u>;
@@ -403,7 +373,6 @@
         };
 
         ac_ugrv: ac_ugrv {
-            label = "ùÙ";
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&ac_ugrv_l>, <&ac_ugrv_u>;
@@ -413,7 +382,6 @@
         };
 
         ac_ocir: ac_ocir {
-            label = "ôÔ";
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&ac_ocir_l>, <&ac_ocir_u>;
@@ -423,7 +391,6 @@
         };
 
         mc_find: mc_find {
-            label = "Find";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -436,7 +403,6 @@
         };
 
         mc_selall: mc_selall {
-            label = "Select All";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -449,7 +415,6 @@
         };
 
         mc_undo: mc_undo {
-            label = "Undo";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -462,7 +427,6 @@
         };
 
         mc_copy: mc_copy {
-            label = "Copy";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -475,7 +439,6 @@
         };
 
         mc_paste: mc_paste {
-            label = "Paste";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -488,7 +451,6 @@
         };
 
         mc_save: mc_save {
-            label = "Save";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -501,7 +463,6 @@
         };
 
         mc_save_esc: mc_save_esc {
-            label = "Save + Esc";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -516,7 +477,6 @@
         };
 
         mc_seln: mc_seln {
-            label = "Select Line";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -534,18 +494,15 @@
     behaviors {
         hm: homerow-mods {
             compatible = "zmk,behavior-hold-tap";
-            label = "homehow-mods";
             #binding-cells = <2>;
             tapping-term-ms = <175>;
             flavor = "tap-preferred";
             quick-tap-ms = <200>;
-            global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
 
         msl: layer-tap-with-stick-layer {
             compatible = "zmk,behavior-hold-tap";
-            label = "layer-tap-with-stick-layer";
             #binding-cells = <2>;
             tapping-term-ms = <175>;
             flavor = "tap-preferred";
@@ -555,7 +512,6 @@
 
         msk: layer-tap-with-stick-key {
             compatible = "zmk,behavior-hold-tap";
-            label = "layer-tap-with-stick-key";
             #binding-cells = <2>;
             tapping-term-ms = <175>;
             flavor = "tap-preferred";
@@ -565,7 +521,6 @@
 
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_TO_0";
             bindings = <&mo>, <&to_layer_0>;
 
             #binding-cells = <2>;

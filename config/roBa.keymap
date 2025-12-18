@@ -558,13 +558,11 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LCTRL>,
-                <&kp LSHFT>,
+                <&kp LCTRL &kp LSHFT>,
                 <&macro_tap>,
                 <&kp S>,
                 <&macro_release>,
-                <&kp LSHFT>,
-                <&kp LCTRL>;
+                <&kp LSHFT &kp LCTRL>;
         };
 
         mc_seln: mc_seln {
@@ -689,10 +687,10 @@
 
         ARROW {
             bindings = <
-&kp ESCAPE      &kp LC(TAB)         &kp UP_ARROW    &kp LA(TAB)          &mc_undo                               &trans    &kp TAB             &kp UP       &kp LS(TAB)          &kp BACKSPACE
-&kp TAB         &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW      &mc_paste  &trans       &kp PAGE_UP    &kp HOME  &kp LEFT            &kp DOWN     &kp RIGHT            &kp END
-&kp LEFT_SHIFT  &kp LG(LEFT_ARROW)  &kp LG(TAB)     &kp LG(RIGHT_ARROW)  &mc_copy   &mc_cut      &kp PAGE_DOWN  &trans    &kp LG(LEFT_ARROW)  &kp LG(TAB)  &kp LG(RIGHT_ARROW)  &caps_word
-&trans          &trans              &trans          &trans               &trans     &trans       &trans         &trans                                                          &trans
+&kp ESCAPE      &kp LC(TAB)         &kp UP_ARROW    &kp LA(TAB)          &mc_undo                               &mc_save_all  &kp TAB             &kp UP       &kp LS(TAB)          &kp BACKSPACE
+&kp TAB         &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW      &mc_paste  &trans       &kp PAGE_UP    &kp HOME      &kp LEFT            &kp DOWN     &kp RIGHT            &kp END
+&kp LEFT_SHIFT  &kp LG(LEFT_ARROW)  &kp LG(TAB)     &kp LG(RIGHT_ARROW)  &mc_copy   &mc_cut      &kp PAGE_DOWN  &trans        &kp LG(LEFT_ARROW)  &kp LG(TAB)  &kp LG(RIGHT_ARROW)  &caps_word
+&trans          &trans              &trans          &trans               &trans     &trans       &trans         &trans                                                              &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(RIGHT_ARROW) LC(LEFT_ARROW)>;

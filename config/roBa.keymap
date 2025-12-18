@@ -499,7 +499,7 @@
         };
 
         mc_cut: mc_cut {
-            label = "Copy";
+            label = "Cut";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =

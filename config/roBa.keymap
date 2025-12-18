@@ -498,6 +498,19 @@
                 <&kp LCTRL>;
         };
 
+        mc_cut: mc_cut {
+            label = "Copy";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&kp X>,
+                <&macro_release>,
+                <&kp LCTRL>;
+        };
+
         mc_paste: mc_paste {
             label = "Paste";
             compatible = "zmk,behavior-macro";

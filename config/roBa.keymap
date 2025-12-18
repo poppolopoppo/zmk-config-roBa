@@ -614,6 +614,7 @@
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
             bindings = <&mo>, <&to_layer_0>;
+
             #binding-cells = <2>;
             tapping-term-ms = <250>;
             flavor = "balanced";
@@ -627,10 +628,10 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W         &kp E         &kp R  &kp T                                                          &kp Y        &kp U        &lt 5 I    &kp O       &kp P
-&kp A             &kp S         &kp D         &kp F  &kp G  &kp LG(LS(S))               &kp MINUS                   &kp H        &hm_r RCTRL J  &kp K      &hm_r RALT L  &kp SQT
-&hm_shift LEFT_SHIFT Z  &kp X         &kp C         &kp V  &kp B  &kp COLON                   &lt_to_layer_0 9 SEMICOLON  &kp N        &kp M        &kp COMMA  &kp DOT     &hm_shift RIGHT_SHIFT SLASH
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &mo 6  &mo 2  &lt_to_layer_0 3 SPACE      &kp BACKSPACE               &lt 1 ENTER                                      &lt_to_layer_0 7 DEL
+&kp Q                   &kp W         &kp E         &kp R  &kp T                                                          &kp Y        &kp U          &lt 5 I    &kp O         &kp P
+&kp A                   &kp S         &kp D         &kp F  &kp G  &kp LG(LS(S))               &kp MINUS                   &kp H        &hm_r RCTRL J  &kp K      &hm_r RALT L  &kp SQT
+&hm_shift LEFT_SHIFT Z  &kp X         &kp C         &kp V  &kp B  &kp COLON                   &lt_to_layer_0 9 SEMICOLON  &kp N        &kp M          &kp COMMA  &kp DOT       &hm_shift RIGHT_SHIFT SLASH
+&kp LCTRL               &kp LEFT_WIN  &kp LEFT_ALT  &mo 6  &mo 2  &lt_to_layer_0 3 SPACE      &kp BACKSPACE               &lt 1 ENTER                                          &lt_to_layer_0 7 DEL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
@@ -660,10 +661,10 @@
 
         ARROW {
             bindings = <
-&kp ESCAPE      &kp LC(LS(TAB))     &kp UP_ARROW    &kp LC(TAB)          &trans                              &trans    &kp LS(LA(TAB))  &kp UP    &kp LA(TAB)  &kp BACKSPACE
-&kp TAB         &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW      &kp END  &trans      &kp PAGE_UP    &kp HOME  &kp LEFT         &kp DOWN  &kp RIGHT    &kp END
-&kp LEFT_SHIFT  &kp LG(LEFT_ARROW)  &kp LG(TAB)     &kp LG(RIGHT_ARROW)  &trans   &trans      &kp PAGE_DOWN  &trans    &none            &trans    &none        &caps_word
-&trans          &trans              &trans          &trans               &trans   &trans      &trans         &trans                                            &trans
+&kp ESCAPE      &kp LC(TAB)         &kp UP_ARROW    &kp LA(TAB)          &trans                             &trans    &kp TAB             &kp UP       &kp LS(TAB)          &kp BACKSPACE
+&kp TAB         &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW      &trans  &trans      &kp PAGE_UP    &kp HOME  &kp LEFT            &kp DOWN     &kp RIGHT            &kp END
+&kp LEFT_SHIFT  &kp LG(LEFT_ARROW)  &kp LG(TAB)     &kp LG(RIGHT_ARROW)  &trans  &trans      &kp PAGE_DOWN  &trans    &kp LG(LEFT_ARROW)  &kp LG(TAB)  &kp LG(RIGHT_ARROW)  &caps_word
+&trans          &trans              &trans          &trans               &trans  &trans      &trans         &trans                                                          &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(RIGHT_ARROW) LC(LEFT_ARROW)>;

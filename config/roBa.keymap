@@ -639,13 +639,12 @@
 
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
-            bindings = <&mo>, <&to_layer_0>;
-
             #binding-cells = <2>;
-            tapping-term-ms = <250>;
-            flavor = "balanced";
-            quick-tap-ms = <200>;
-            require-prior-idle-ms = <200>;
+            tapping-term-ms = <200>;
+            flavor = "tap-prefered";
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <0>;
+            bindings = <&mo>, <&to_layer_0>;
         };
     };
 

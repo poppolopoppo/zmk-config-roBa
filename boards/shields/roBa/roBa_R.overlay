@@ -73,5 +73,5 @@
 
 &trackball_split {
     device = <&trackball>;
-    input-processors = <&zip_ble_report_rate_limit 16>;
+    input-processors = <&zip_ble_report_rate_limit 8>;
 };

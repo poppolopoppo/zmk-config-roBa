@@ -2,6 +2,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/input_transform.h>
 #include <input/processors.dtsi>
 
 &mt {
@@ -613,20 +614,13 @@
             codes = <INPUT_REL_X INPUT_REL_Y>;
         };
 
-        swap_xy: swap_xy {
-            compatible = "zmk,input-processor-transform";
-            #input-processor-cells = <1>;
-            type = <INPUT_EV_REL>;
-            x-codes = <INPUT_REL_Y>;
-            y-codes = <INPUT_REL_X>;
-        };
     };
 
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         status = "okay";
         device = <&trackball>;
-        input-processors = <&temp_layer 4 600>, <&swap_xy 0>;
+        input-processors = <&temp_layer 4 600>, <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>;
 
         scroll_layer {
             layers = <5>;
@@ -635,7 +629,7 @@
 
         snipe_layer {
             layers = <7>;
-            input-processors = <&snipe_scaler 3 8>, <&swap_xy 0>;
+            input-processors = <&snipe_scaler 3 8>, <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>;
         };
     };
 

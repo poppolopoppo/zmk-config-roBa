@@ -1,4 +1,5 @@
 #include "roBa.dtsi"
+#include <input/processors/report_rate_limit.dtsi>
 
 &default_transform {
     col-offset = <6>;
@@ -56,4 +57,21 @@
         zephyr,axis-x = <INPUT_REL_X>;
         zephyr,axis-y = <INPUT_REL_Y>;
     };
+};
+
+/ {
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        trackball_split: trackball@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+        };
+    };
+};
+
+&trackball_split {
+    device = <&trackball>;
+    input-processors = <&zip_ble_report_rate_limit 16>;
 };

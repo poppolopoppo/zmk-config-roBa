@@ -6,3 +6,5 @@ url: https://github.com/poppolopoppo/zmk-config-roBa
 requires: [xiao_ble]
 features:
   - keys
+  - pointing
+  - sensors

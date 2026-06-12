@@ -52,7 +52,7 @@
         res-cpi = <800>;
         invert-x;
         invert-y;
-        // smart-mode; // Disabled - can cause erratic/teleporting behavior
+        smart-mode;
         zephyr,axis-x = <INPUT_REL_X>;
         zephyr,axis-y = <INPUT_REL_Y>;
     };

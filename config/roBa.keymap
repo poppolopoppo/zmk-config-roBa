@@ -620,13 +620,21 @@
             type = <INPUT_EV_REL>;
             codes = <INPUT_REL_X INPUT_REL_Y>;
         };
+
+        swap_xy: swap_xy {
+            compatible = "zmk,input-processor-transform";
+            #input-processor-cells = <1>;
+            type = <INPUT_EV_REL>;
+            x-codes = <INPUT_REL_Y>;
+            y-codes = <INPUT_REL_X>;
+        };
     };
 
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         status = "okay";
         device = <&trackball>;
-        input-processors = <&temp_layer 4 600>;
+        input-processors = <&temp_layer 4 600>, <&swap_xy 0>;
 
         scroll_layer {
             layers = <5>;
@@ -635,7 +643,7 @@
 
         snipe_layer {
             layers = <7>;
-            input-processors = <&snipe_scaler 3 8>;
+            input-processors = <&snipe_scaler 3 8>, <&swap_xy 0>;
         };
     };
 

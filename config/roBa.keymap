@@ -604,6 +604,14 @@
         };
     };
 
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        snipe_scroll {
+            if-layers = <5 7>;
+            then-layer = <9>;
+        };
+    };
+
     input_processors {
         temp_layer: temp_layer {
             compatible = "zmk,input-processor-temp-layer";
@@ -627,6 +635,13 @@
                 , <INPUT_REL_Y INPUT_REL_HWHEEL>
                 ;
         };
+
+        snipe_scroll_scaler: snipe_scroll_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_WHEEL INPUT_REL_HWHEEL>;
+        };
     };
 
     trackball_listener: trackball_listener {
@@ -634,6 +649,12 @@
         status = "okay";
         device = <&trackball>;
         input-processors = <&temp_layer 4 600>, <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>;
+
+        snipe_scroll_layer {
+            layers = <9>;
+            input-processors = <&custom_scroll_mapper>, <&zip_scroll_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, <&snipe_scroll_scaler 1 8>;
+            process-next;
+        };
 
         scroll_layer {
             layers = <5>;

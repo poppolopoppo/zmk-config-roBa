@@ -511,11 +511,15 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LCTRL &kp LSHFT>,
+                <&kp LCTRL>,
+                <&macro_press>,
+                <&kp LSHFT>,
                 <&macro_tap>,
                 <&kp S>,
                 <&macro_release>,
-                <&kp LSHFT &kp LCTRL>;
+                <&kp LSHFT>,
+                <&macro_release>,
+                <&kp LCTRL>;
         };
 
         mc_seln: mc_seln {

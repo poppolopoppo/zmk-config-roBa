@@ -81,8 +81,8 @@
         // ├á (Alt+0224)
 
         ac_agrv_l: ac_agrv_l {
-            wait-ms = <0>;
-            tap-ms = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -96,6 +96,7 @@
                 <&kp KP_NUMBER_2>,
                 <&macro_tap>,
                 <&kp KP_NUMBER_4>,
+                <&macro_wait_time 40>,
                 <&macro_release>,
                 <&kp LALT>;
 
@@ -104,8 +105,8 @@
         // ├Ç (Alt+0192)
 
         ac_agrv_u: ac_agrv_u {
-            wait-ms = <0>;
-            tap-ms = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -119,6 +120,7 @@
                 <&kp KP_NUMBER_9>,
                 <&macro_tap>,
                 <&kp KP_NUMBER_2>,
+                <&macro_wait_time 40>,
                 <&macro_release>,
                 <&kp LALT>;
 
@@ -127,8 +129,8 @@
         // ├¿ (Alt+0232)
 
         ac_egrv_l: ac_egrv_l {
-            wait-ms = <0>;
-            tap-ms = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -142,6 +144,7 @@
                 <&kp KP_NUMBER_3>,
                 <&macro_tap>,
                 <&kp KP_NUMBER_2>,
+                <&macro_wait_time 40>,
                 <&macro_release>,
                 <&kp LALT>;
 
@@ -150,8 +153,8 @@
         // ├ê (Alt+0200)
 
         ac_egrv_u: ac_egrv_u {
-            wait-ms = <0>;
-            tap-ms = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -165,6 +168,7 @@
                 <&kp KP_NUMBER_0>,
                 <&macro_tap>,
                 <&kp KP_NUMBER_0>,
+                <&macro_wait_time 40>,
                 <&macro_release>,
                 <&kp LALT>;
 
@@ -173,8 +177,8 @@
         // ├⌐ (Alt+0233)
 
         ac_eacu_l: ac_eacu_l {
-            wait-ms = <0>;
-            tap-ms = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -188,6 +192,7 @@
                 <&kp KP_NUMBER_3>,
                 <&macro_tap>,
                 <&kp KP_NUMBER_3>,
+                <&macro_wait_time 40>,
                 <&macro_release>,
                 <&kp LALT>;
 
@@ -196,8 +201,8 @@
         // ├ë (Alt+0201)
 
         ac_eacu_u: ac_eacu_u {
-            wait-ms = <0>;
-            tap-ms = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -211,6 +216,7 @@
                 <&kp KP_NUMBER_0>,
                 <&macro_tap>,
                 <&kp KP_NUMBER_1>,
+                <&macro_wait_time 40>,
                 <&macro_release>,
                 <&kp LALT>;
 
@@ -219,8 +225,8 @@
         // ├╣ (Alt+0249)
 
         ac_ugrv_l: ac_ugrv_l {
-            wait-ms = <0>;
-            tap-ms = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -234,6 +240,7 @@
                 <&kp KP_NUMBER_4>,
                 <&macro_tap>,
                 <&kp KP_NUMBER_9>,
+                <&macro_wait_time 40>,
                 <&macro_release>,
                 <&kp LALT>;
 
@@ -242,8 +249,8 @@
         // ├Ö (Alt+0217)
 
         ac_ugrv_u: ac_ugrv_u {
-            wait-ms = <0>;
-            tap-ms = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -257,6 +264,7 @@
                 <&kp KP_NUMBER_1>,
                 <&macro_tap>,
                 <&kp KP_NUMBER_7>,
+                <&macro_wait_time 40>,
                 <&macro_release>,
                 <&kp LALT>;
 
@@ -265,8 +273,8 @@
         // ├┤ (Alt+0244)
 
         ac_ocir_l: ac_ocir_l {
-            wait-ms = <0>;
-            tap-ms = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -280,6 +288,7 @@
                 <&kp KP_NUMBER_4>,
                 <&macro_tap>,
                 <&kp KP_NUMBER_4>,
+                <&macro_wait_time 40>,
                 <&macro_release>,
                 <&kp LALT>;
 
@@ -288,8 +297,8 @@
         // ├ö (Alt+0212)
 
         ac_ocir_u: ac_ocir_u {
-            wait-ms = <0>;
-            tap-ms = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -303,6 +312,7 @@
                 <&kp KP_NUMBER_1>,
                 <&macro_tap>,
                 <&kp KP_NUMBER_2>,
+                <&macro_wait_time 40>,
                 <&macro_release>,
                 <&kp LALT>;
 
@@ -311,8 +321,8 @@
         // ├º (Alt+0231)
 
         ac_ccdi_l: ac_ccdi_l {
-            wait-ms = <0>;
-            tap-ms = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -326,6 +336,7 @@
                 <&kp KP_NUMBER_3>,
                 <&macro_tap>,
                 <&kp KP_NUMBER_1>,
+                <&macro_wait_time 40>,
                 <&macro_release>,
                 <&kp LALT>;
 
@@ -334,8 +345,8 @@
         // ├ç (Alt+0199)
 
         ac_ccdi_u: ac_ccdi_u {
-            wait-ms = <0>;
-            tap-ms = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -349,6 +360,7 @@
                 <&kp KP_NUMBER_9>,
                 <&macro_tap>,
                 <&kp KP_NUMBER_9>,
+                <&macro_wait_time 40>,
                 <&macro_release>,
                 <&kp LALT>;
 

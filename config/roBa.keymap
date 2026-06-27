@@ -51,7 +51,7 @@
         compatible = "zmk,combos";
 
         tab {
-            timeout-ms = <30>;
+            timeout-ms = <40>;
             require-prior-idle-ms = <175>;
             bindings = <&kp TAB>;
             key-positions = <11 12>;
@@ -59,7 +59,7 @@
         };
 
         shift_tab {
-            timeout-ms = <30>;
+            timeout-ms = <40>;
             require-prior-idle-ms = <175>;
             bindings = <&kp LS(TAB)>;
             key-positions = <12 13>;
@@ -67,14 +67,14 @@
         };
 
         double_quotation {
-            timeout-ms = <30>;
+            timeout-ms = <40>;
             require-prior-idle-ms = <175>;
             bindings = <&kp DOUBLE_QUOTES>;
             key-positions = <20 21>;
         };
 
         eq {
-            timeout-ms = <30>;
+            timeout-ms = <40>;
             require-prior-idle-ms = <175>;
             bindings = <&kp EQUAL>;
             key-positions = <24 25>;
@@ -82,11 +82,15 @@
         };
 
         ctrl+alt+del {
+            timeout-ms = <40>;
+            require-prior-idle-ms = <175>;
             bindings = <&kp LC(LA(DELETE))>;
             key-positions = <34 42>;
         };
 
         Gaming {
+            timeout-ms = <40>;
+            require-prior-idle-ms = <175>;
             bindings = <&tog 8>;
             key-positions = <0 1 8 9>;
         };
@@ -104,8 +108,8 @@
         // à (Alt+0224)
 
         ac_agrv_l: ac_agrv_l {
-            wait-ms = <0>;
-            tap-ms = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -128,8 +132,8 @@
         // À (Alt+0192)
 
         ac_agrv_u: ac_agrv_u {
-            wait-ms = <0>;
-            tap-ms = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -152,8 +156,8 @@
         // è (Alt+0232)
 
         ac_egrv_l: ac_egrv_l {
-            wait-ms = <0>;
-            tap-ms = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -176,8 +180,8 @@
         // È (Alt+0200)
 
         ac_egrv_u: ac_egrv_u {
-            wait-ms = <0>;
-            tap-ms = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -200,8 +204,8 @@
         // é (Alt+0233)
 
         ac_eacu_l: ac_eacu_l {
-            wait-ms = <0>;
-            tap-ms = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -224,8 +228,8 @@
         // É (Alt+0201)
 
         ac_eacu_u: ac_eacu_u {
-            wait-ms = <0>;
-            tap-ms = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -248,8 +252,8 @@
         // ù (Alt+0249)
 
         ac_ugrv_l: ac_ugrv_l {
-            wait-ms = <0>;
-            tap-ms = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -272,8 +276,8 @@
         // Ù (Alt+0217)
 
         ac_ugrv_u: ac_ugrv_u {
-            wait-ms = <0>;
-            tap-ms = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -296,8 +300,8 @@
         // ô (Alt+0244)
 
         ac_ocir_l: ac_ocir_l {
-            wait-ms = <0>;
-            tap-ms = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -320,8 +324,8 @@
         // Ô (Alt+0212)
 
         ac_ocir_u: ac_ocir_u {
-            wait-ms = <0>;
-            tap-ms = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -344,8 +348,8 @@
         // ç (Alt+0231)
 
         ac_ccdi_l: ac_ccdi_l {
-            wait-ms = <0>;
-            tap-ms = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -368,8 +372,8 @@
         // Ç (Alt+0199)
 
         ac_ccdi_u: ac_ccdi_u {
-            wait-ms = <0>;
-            tap-ms = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -592,7 +596,7 @@
             flavor = "balanced";
             quick-tap-ms = <175>;
             require-prior-idle-ms = <175>;
-            hold-trigger-key-positions = <6 7 8 9 10 17 18 19 20 21 22 28 29 30 31 32 33 39 40 41 42 43>;
+            hold-trigger-key-positions = <5 6 7 8 9 16 17 18 19 20 21 28 29 30 31 32 33 40 41 42>;
             hold-trigger-on-release;
             bindings = <&kp>, <&kp>;
         };
@@ -604,7 +608,7 @@
             flavor = "balanced";
             quick-tap-ms = <175>;
             require-prior-idle-ms = <175>;
-            hold-trigger-key-positions = <0 1 2 3 4 11 12 13 14 15 16 22 23 24 25 26 27 33 34 35 36 37 38>;
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 15 16 22 23 24 25 26 27 28 34 35 36 37 38 39>;
             hold-trigger-on-release;
             bindings = <&kp>, <&kp>;
         };
@@ -612,24 +616,20 @@
         hm_shift_l: homerow-mods-shift-left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <280>;
+            tapping-term-ms = <200>;
             flavor = "balanced";
             quick-tap-ms = <175>;
             require-prior-idle-ms = <175>;
-            hold-trigger-key-positions = <6 7 8 9 10 17 18 19 20 21 22 28 29 30 31 32 33 39 40 41 42 43>;
-            hold-trigger-on-release;
             bindings = <&kp>, <&kp>;
         };
 
         hm_shift_r: homerow-mods-shift-right {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <280>;
+            tapping-term-ms = <200>;
             flavor = "balanced";
             quick-tap-ms = <175>;
             require-prior-idle-ms = <175>;
-            hold-trigger-key-positions = <0 1 2 3 4 11 12 13 14 15 16 22 23 24 25 26 27 33 34 35 36 37 38>;
-            hold-trigger-on-release;
             bindings = <&kp>, <&kp>;
         };
 

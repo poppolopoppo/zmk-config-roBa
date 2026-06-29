@@ -5,7 +5,7 @@ on:
   push:
     paths:
       - "config/roBa.keymap"
-      - "keymap_drawer.config.yaml"
+      - "keymap-drawer/config.yaml"
       - "config/roBa.dtsi"
 
 jobs:
@@ -18,6 +18,6 @@ jobs:
       amend_commit: false
       keymap_patterns: "config/*.keymap"
       json_path: "config"
-      config_path: "keymap-drawer/roBa.yaml"
+      config_path: "keymap-drawer/config.yaml"
       output_folder: "keymap-drawer"
       destination: "both"

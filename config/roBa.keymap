@@ -108,8 +108,8 @@
         // à (Alt+0224)
 
         ac_agrv_l: ac_agrv_l {
-            wait-ms = <40>;
-            tap-ms = <40>;
+            wait-ms = <5>;
+            tap-ms = <5>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -132,8 +132,8 @@
         // À (Alt+0192)
 
         ac_agrv_u: ac_agrv_u {
-            wait-ms = <40>;
-            tap-ms = <40>;
+            wait-ms = <5>;
+            tap-ms = <5>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -156,8 +156,8 @@
         // è (Alt+0232)
 
         ac_egrv_l: ac_egrv_l {
-            wait-ms = <40>;
-            tap-ms = <40>;
+            wait-ms = <5>;
+            tap-ms = <5>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -180,8 +180,8 @@
         // È (Alt+0200)
 
         ac_egrv_u: ac_egrv_u {
-            wait-ms = <40>;
-            tap-ms = <40>;
+            wait-ms = <5>;
+            tap-ms = <5>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -204,8 +204,8 @@
         // é (Alt+0233)
 
         ac_eacu_l: ac_eacu_l {
-            wait-ms = <40>;
-            tap-ms = <40>;
+            wait-ms = <5>;
+            tap-ms = <5>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -228,8 +228,8 @@
         // É (Alt+0201)
 
         ac_eacu_u: ac_eacu_u {
-            wait-ms = <40>;
-            tap-ms = <40>;
+            wait-ms = <5>;
+            tap-ms = <5>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -252,8 +252,8 @@
         // ù (Alt+0249)
 
         ac_ugrv_l: ac_ugrv_l {
-            wait-ms = <40>;
-            tap-ms = <40>;
+            wait-ms = <5>;
+            tap-ms = <5>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -276,8 +276,8 @@
         // Ù (Alt+0217)
 
         ac_ugrv_u: ac_ugrv_u {
-            wait-ms = <40>;
-            tap-ms = <40>;
+            wait-ms = <5>;
+            tap-ms = <5>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -300,8 +300,8 @@
         // ô (Alt+0244)
 
         ac_ocir_l: ac_ocir_l {
-            wait-ms = <40>;
-            tap-ms = <40>;
+            wait-ms = <5>;
+            tap-ms = <5>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -324,8 +324,8 @@
         // Ô (Alt+0212)
 
         ac_ocir_u: ac_ocir_u {
-            wait-ms = <40>;
-            tap-ms = <40>;
+            wait-ms = <5>;
+            tap-ms = <5>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -348,8 +348,8 @@
         // ç (Alt+0231)
 
         ac_ccdi_l: ac_ccdi_l {
-            wait-ms = <40>;
-            tap-ms = <40>;
+            wait-ms = <5>;
+            tap-ms = <5>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -372,8 +372,8 @@
         // Ç (Alt+0199)
 
         ac_ccdi_u: ac_ccdi_u {
-            wait-ms = <40>;
-            tap-ms = <40>;
+            wait-ms = <5>;
+            tap-ms = <5>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =

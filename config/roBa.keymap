@@ -75,7 +75,6 @@
 
         eq {
             timeout-ms = <40>;
-            require-prior-idle-ms = <175>;
             bindings = <&kp EQUAL>;
             key-positions = <24 25>;
             layers = <0 2>;

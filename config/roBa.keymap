@@ -664,6 +664,14 @@
             bindings = <&mo>, <&to_layer_0>;
         };
 
+        lt_scroll: layer-tap-scroll {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <175>;
+            flavor = "balanced";
+            bindings = <&mo>, <&kp>;
+        };
+
         lt_to_layer_0_space: lt_to_layer_0_space {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -680,7 +688,7 @@
 
         default_layer {
             bindings = <
-&kp Q                   &kp W         &kp E         &kp R  &kp T                                                          &kp Y        &kp U          &lt 5 I    &kp O         &kp P
+&kp Q                   &kp W         &kp E         &kp R  &kp T                                                          &kp Y        &kp U          &lt_scroll 5 I    &kp O         &kp P
 &kp A                   &kp S         &kp D         &kp F  &kp G  &kp LG(LS(S))               &kp MINUS                   &kp H        &hm_r RCTRL J  &kp K      &hm_r RALT L  &kp SQT
 &hm_shift_l LEFT_SHIFT Z  &kp X         &kp C         &kp V  &kp B  &kp COLON                   &lt_to_layer_0 9 SEMICOLON  &kp N        &kp M          &kp COMMA  &kp DOT       &hm_shift_r RIGHT_SHIFT SLASH
 &kp LCTRL               &kp LEFT_WIN  &kp LEFT_ALT  &mo 6  &mo 2  &lt_to_layer_0_space 3 SPACE      &kp BACKSPACE               &lt 1 ENTER                                          &lt_to_layer_0 7 DEL

@@ -392,66 +392,6 @@
             label = "Ç";
         };
 
-        ac_ccdi: ac_ccdi {
-            label = "çÇ";
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&ac_ccdi_l>, <&ac_ccdi_u>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        ac_agrv: ac_agrv {
-            label = "àÀ";
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&ac_agrv_l>, <&ac_agrv_u>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        ac_egrv: ac_egrv {
-            label = "èÈ";
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&ac_egrv_l>, <&ac_egrv_u>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        ac_eacu: ac_eacu {
-            label = "éÉ";
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&ac_eacu_l>, <&ac_eacu_u>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        ac_ugrv: ac_ugrv {
-            label = "ùÙ";
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&ac_ugrv_l>, <&ac_ugrv_u>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        ac_ocir: ac_ocir {
-            label = "ôÔ";
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&ac_ocir_l>, <&ac_ocir_u>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
         mc_find: mc_find {
             label = "Find";
             compatible = "zmk,behavior-macro";
@@ -779,10 +719,10 @@
 
         ACCENTS {
             bindings = <
-&trans    &trans  &ac_egrv  &ac_eacu  &trans                      &trans  &ac_ugrv  &trans  &ac_ocir  &trans
-&ac_agrv  &trans  &trans    &trans    &trans  &trans      &trans  &trans  &trans    &trans  &trans    &trans
-&trans    &trans  &ac_ccdi  &trans    &trans  &trans      &trans  &trans  &trans    &trans  &trans    &trans
-&trans    &trans  &trans    &trans    &trans  &trans      &trans  &trans                              &trans
+&ac_eacu_u  &ac_egrv_u  &ac_egrv_l  &ac_eacu_l  &ac_ocir_u                &ac_ugrv_u  &ac_ugrv_l  &ac_agrv_u  &ac_ocir_l  &trans
+&ac_agrv_l  &trans      &trans      &trans      &trans    &trans    &trans  &trans      &trans      &trans      &trans      &trans
+&trans      &ac_ccdi_u  &ac_ccdi_l  &trans      &trans    &trans    &trans  &trans      &trans      &trans      &trans      &trans
+&trans      &trans      &trans      &trans      &trans    &trans    &trans  &trans                                  &trans
             >;
         };
     };

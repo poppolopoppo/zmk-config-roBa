@@ -397,20 +397,17 @@ layers:
   - ENTER
   - LALT
   ACCENTS:
+  - '&ac_eacu_u'
+  - '&ac_egrv_u'
+  - '&ac_egrv_l'
+  - '&ac_eacu_l'
+  - '&ac_ocir_u'
+  - '&ac_ugrv_u'
+  - '&ac_ugrv_l'
+  - '&ac_agrv_u'
+  - '&ac_ocir_l'
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: '&ac_egrv_l', s: '&ac_egrv_u'}
-  - {t: '&ac_eacu_l', s: '&ac_eacu_u'}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: '&ac_ugrv_l', s: '&ac_ugrv_u'}
-  - {t: ▽, type: trans}
-  - {t: '&ac_ocir_l', s: '&ac_ocir_u'}
-  - {t: ▽, type: trans}
-  - {t: '&ac_agrv_l', s: '&ac_agrv_u'}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '&ac_agrv_l'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -421,7 +418,10 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '&ac_ccdi_l', s: '&ac_ccdi_u'}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&ac_ccdi_u'
+  - '&ac_ccdi_l'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}

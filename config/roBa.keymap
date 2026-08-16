@@ -628,10 +628,10 @@
 
         default_layer {
             bindings = <
-&kp Q                   &kp W         &kp E         &kp R  &kp T                                                          &kp Y        &kp U          &lt_scroll 5 I    &kp O         &kp P
-&kp A                   &kp S         &kp D         &kp F  &kp G  &kp LG(LS(S))               &kp MINUS                   &kp H        &hm_r RCTRL J  &kp K      &hm_r RALT L  &kp SQT
-&hm_shift_l LEFT_SHIFT Z  &kp X         &kp C         &kp V  &kp B  &kp COLON                   &lt_to_layer_0 9 SEMICOLON  &kp N        &kp M          &kp COMMA  &kp DOT       &hm_shift_r RIGHT_SHIFT SLASH
-&kp LCTRL               &kp LEFT_WIN  &kp LEFT_ALT  &mo 6  &mo 2  &lt_to_layer_0_space 3 SPACE      &kp BACKSPACE               &lt 1 ENTER                                          &lt_to_layer_0 7 DEL
+&kp Q                     &kp W         &kp E         &kp R  &kp T                                                                &kp Y        &kp U          &lt_scroll 5 I  &kp O         &kp P
+&kp A                     &kp S         &kp D         &kp F  &kp G  &kp LG(LS(S))                     &kp MINUS                   &kp H        &hm_r RCTRL J  &kp K           &hm_r RALT L  &kp SQT
+&hm_shift_l LEFT_SHIFT Z  &kp X         &kp C         &kp V  &kp B  &lt_to_layer_0 9 COLON            &lt_to_layer_0 9 SEMICOLON  &kp N        &kp M          &kp COMMA       &kp DOT       &hm_shift_r RIGHT_SHIFT SLASH
+&kp LCTRL                 &kp LEFT_WIN  &kp LEFT_ALT  &mo 6  &mo 2  &lt_to_layer_0_space 3 SPACE      &kp BACKSPACE               &lt 1 ENTER                                               &lt_to_layer_0 7 DEL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
@@ -674,17 +674,17 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB4  &trans    &mkp MB5  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
             >;
         };
 
         SCROLL {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&trans  &trans  &trans  &trans  &trans                        &trans    &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans    &trans    &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans    &trans    &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &mkp MB4  &mkp MB5                          &trans
             >;
         };
 
@@ -699,10 +699,10 @@
 
         SNIPE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB4  &trans    &mkp MB5  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
+&trans  &trans  &trans  &trans  &trans                        &trans    &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans    &trans    &mkp MB1  &mkp MB3  &mkp MB2  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans    &trans    &mkp MB4  &trans    &mkp MB5  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &mkp MB4  &mkp MB5                                &trans
             >;
         };
 
@@ -719,10 +719,10 @@
 
         ACCENTS {
             bindings = <
-&ac_eacu_u  &ac_egrv_u  &ac_egrv_l  &ac_eacu_l  &ac_ocir_u                &ac_ugrv_u  &ac_ugrv_l  &ac_agrv_u  &ac_ocir_l  &trans
-&ac_agrv_l  &trans      &trans      &trans      &trans    &trans    &trans  &trans      &trans      &trans      &trans      &trans
-&trans      &ac_ccdi_u  &ac_ccdi_l  &trans      &trans    &trans    &trans  &trans      &trans      &trans      &trans      &trans
-&trans      &trans      &trans      &trans      &trans    &trans    &trans  &trans                                  &trans
+&ac_eacu_u  &ac_egrv_u  &ac_egrv_l  &ac_eacu_l  &ac_ocir_u                      &ac_ugrv_u  &ac_ugrv_l  &ac_agrv_u  &ac_ocir_l  &trans
+&ac_agrv_l  &trans      &trans      &trans      &trans      &trans      &trans  &trans      &trans      &trans      &trans      &trans
+&trans      &ac_ccdi_u  &ac_ccdi_l  &trans      &trans      &trans      &trans  &trans      &trans      &trans      &trans      &trans
+&trans      &trans      &trans      &trans      &trans      &trans      &trans  &trans                                          &trans
             >;
         };
     };

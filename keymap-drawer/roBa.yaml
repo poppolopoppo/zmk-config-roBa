@@ -175,7 +175,7 @@ layers:
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - DELETE
   MOUSE:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}

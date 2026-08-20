@@ -631,7 +631,7 @@
 &kp Q                     &kp W         &kp E         &kp R  &kp T                                                                &kp Y        &kp U          &lt_scroll 5 I  &kp O         &kp P
 &kp A                     &kp S         &kp D         &kp F  &kp G  &kp LG(LS(S))                     &kp MINUS                   &kp H        &hm_r RCTRL J  &kp K           &hm_r RALT L  &kp SQT
 &hm_shift_l LEFT_SHIFT Z  &kp X         &kp C         &kp V  &kp B  &lt_to_layer_0 9 COLON            &lt_to_layer_0 9 SEMICOLON  &kp N        &kp M          &kp COMMA       &kp DOT       &hm_shift_r RIGHT_SHIFT SLASH
-&ml LCTRL 10              &ml LGUI 10   &ml LALT 10   &mo 6  &mo 2  &lt_to_layer_0_space 3 SPACE      &kp BACKSPACE               &lt 1 ENTER                                               &lt_to_layer_0 7 DEL
+&lt 10 LCTRL              &lt 10 LGUI   &lt 10 LALT   &mo 6  &mo 2  &lt_to_layer_0_space 3 SPACE      &kp BACKSPACE               &lt 1 ENTER                                               &lt_to_layer_0 7 DEL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;

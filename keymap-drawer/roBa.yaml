@@ -35,9 +35,9 @@ layers:
   - ','
   - .
   - {t: /, h: RIGHT SHIFT}
-  - {t: LCTRL, h: MOD_HELD}
-  - {t: LGUI, h: MOD_HELD}
-  - {t: LALT, h: MOD_HELD}
+  - '&ml 10 LCTRL'
+  - '&ml 10 LGUI'
+  - '&ml 10 LALT'
   - SERVICE
   - NUM
   - {t: '&to_layer_0 SPACE', h: ARROW}
@@ -475,7 +475,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - /
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}

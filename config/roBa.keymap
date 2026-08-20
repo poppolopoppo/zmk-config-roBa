@@ -46,6 +46,19 @@
     // };
 };
 
+// Custom mod-layer behavior: hold = activate layer, tap = send modifier.
+// Uses hold-preferred so that pressing another key while holding the mod
+// immediately activates the layer (sending plain keys, not shortcuts).
+ml: behavior_mod_layer {
+    compatible = "zmk,behavior-hold-tap";
+    label = "MOD_LAYER";
+    #binding-cells = <2>;
+    tapping-term-ms = <200>;
+    flavor = "hold-preferred";
+    quick-tap-ms = <150>;
+    require-prior-idle-ms = <150>;
+};
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -631,7 +644,7 @@
 &kp Q                     &kp W         &kp E         &kp R  &kp T                                                                &kp Y        &kp U          &lt_scroll 5 I  &kp O         &kp P
 &kp A                     &kp S         &kp D         &kp F  &kp G  &kp LG(LS(S))                     &kp MINUS                   &kp H        &hm_r RCTRL J  &kp K           &hm_r RALT L  &kp SQT
 &hm_shift_l LEFT_SHIFT Z  &kp X         &kp C         &kp V  &kp B  &lt_to_layer_0 9 COLON            &lt_to_layer_0 9 SEMICOLON  &kp N        &kp M          &kp COMMA       &kp DOT       &hm_shift_r RIGHT_SHIFT SLASH
-&lt 10 LCTRL               &lt 10 LGUI    &lt 10 LALT    &mo 6  &mo 2  &lt_to_layer_0_space 3 SPACE      &kp BACKSPACE               &lt 1 ENTER                                               &lt_to_layer_0 7 DEL
+&ml 10 LCTRL               &ml 10 LGUI    &ml 10 LALT    &mo 6  &mo 2  &lt_to_layer_0_space 3 SPACE      &kp BACKSPACE               &lt 1 ENTER                                               &lt_to_layer_0 7 DEL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;

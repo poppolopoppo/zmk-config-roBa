@@ -49,13 +49,17 @@
 // Custom mod-layer behavior: hold = activate layer (&mo), tap = sticky modifier (&sk).
 // Sticky key holds the modifier until the next key is released, enabling proper
 // shortcuts like Ctrl+Z while still allowing hold-to-layer for MOD_HELD.
-ml: mod_layer {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    flavor = "hold-preferred";
-    tapping-term-ms = <200>;
-    quick-tap-ms = <150>;
-    bindings = <&mo>, <&sk>;
+/ {
+    behaviors {
+        ml: mod_layer {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            bindings = <&mo>, <&sk>;
+        };
+    };
 };
 
 / {

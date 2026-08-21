@@ -299,10 +299,10 @@ layers:
   - {t: BT, h: '1'}
   - {t: BT, h: '2'}
   - BT CLR
-  - {t: ▽, type: trans}
   - LCTRL
   - LGUI
-  - {t: LALT, type: held}
+  - LALT
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}

@@ -46,17 +46,16 @@
     // };
 };
 
-// Custom mod-layer behavior: hold = activate layer, tap = send modifier.
-// Uses hold-preferred so that pressing another key while holding the mod
-// immediately activates the layer (sending plain keys, not shortcuts).
-ml: behavior_mod_layer {
+// Custom mod-layer behavior: hold = activate layer (&mo), tap = sticky modifier (&sk).
+// Sticky key holds the modifier until the next key is released, enabling proper
+// shortcuts like Ctrl+Z while still allowing hold-to-layer for MOD_HELD.
+ml: mod_layer {
     compatible = "zmk,behavior-hold-tap";
-    label = "MOD_LAYER";
     #binding-cells = <2>;
-    tapping-term-ms = <200>;
     flavor = "hold-preferred";
+    tapping-term-ms = <200>;
     quick-tap-ms = <150>;
-    require-prior-idle-ms = <150>;
+    bindings = <&mo>, <&sk>;
 };
 
 / {
@@ -644,7 +643,7 @@ ml: behavior_mod_layer {
 &kp Q                     &kp W         &kp E         &kp R  &kp T                                                                &kp Y        &kp U          &lt_scroll 5 I  &kp O         &kp P
 &kp A                     &kp S         &kp D         &kp F  &kp G  &kp LG(LS(S))                     &kp MINUS                   &kp H        &hm_r RCTRL J  &kp K           &hm_r RALT L  &kp SQT
 &hm_shift_l LEFT_SHIFT Z  &kp X         &kp C         &kp V  &kp B  &lt_to_layer_0 9 COLON            &lt_to_layer_0 9 SEMICOLON  &kp N        &kp M          &kp COMMA       &kp DOT       &hm_shift_r RIGHT_SHIFT SLASH
-&ml 10 LCTRL               &ml 10 LGUI    &ml 10 LALT    &mo 6  &mo 2  &lt_to_layer_0_space 3 SPACE      &kp BACKSPACE               &lt 1 ENTER                                               &lt_to_layer_0 7 DEL
+ &ml 10 LCTRL               &ml 10 LGUI    &ml 10 LALT    &mo 6  &mo 2  &lt_to_layer_0_space 3 SPACE      &kp BACKSPACE               &lt 1 ENTER                                               &lt_to_layer_0 7 DEL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
@@ -655,7 +654,7 @@ ml: behavior_mod_layer {
 &trans  &trans  &trans  &trans  &trans                       &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
 &trans  &trans  &trans  &trans  &trans  &trans      &kp F13  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
 &trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans  &trans  &trans  &trans  &kp F11
-&kp LCTRL  &kp LGUI  &kp LALT  &trans  &trans  &trans      &trans   &trans                          &kp F12
+ &kp LCTRL  &kp LGUI  &kp LALT  &trans  &trans  &trans      &trans   &trans                          &kp F12
             >;
 
             sensor-bindings = <&inc_dec_kp TAB LS(TAB)>;
@@ -666,7 +665,7 @@ ml: behavior_mod_layer {
 &kp MINUS          &kp N7  &kp N8  &kp N9  &kp PLUS                                          &kp CARET         &kp AMPERSAND      &kp TILDE       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
 &kp SLASH          &kp N4  &kp N5  &kp N6  &kp ASTERISK  &kp LC(LA(N0))      &kp UNDERSCORE  &kp EXCLAMATION   &kp AT_SIGN        &kp HASH        &kp DOLLAR            &kp PERCENT
 &mt LEFT_SHIFT N0  &kp N1  &kp N2  &kp N3  &kp PERIOD    &kp EQUAL           &kp GRAVE       &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE       &kp BACKSLASH
-&kp LCTRL          &kp LGUI  &kp LALT  &trans  &trans        &trans              &trans          &trans                                                                     &kp PIPE
+ &kp LCTRL           &kp LGUI  &kp LALT  &trans  &trans        &trans              &trans          &trans                                                                     &kp PIPE
             >;
 
             sensor-bindings = <&inc_dec_kp F3 LS(F3)>;
@@ -677,7 +676,7 @@ ml: behavior_mod_layer {
 &kp ESCAPE      &kp LC(LS(TAB))     &kp UP_ARROW    &kp LC(TAB)          &mc_undo                               &mc_save_all  &kp LS(TAB)       &kp UP       &kp TAB             &kp BACKSPACE
 &kp TAB         &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW      &mc_paste  &trans       &kp PAGE_UP    &kp HOME      &kp LEFT          &kp DOWN     &kp RIGHT           &kp END
 &kp LEFT_SHIFT  &kp LG(LEFT_ARROW)  &kp LG(TAB)     &kp LG(RIGHT_ARROW)  &mc_copy   &mc_cut      &kp PAGE_DOWN  &trans        &kp LG(UP_ARROW)  &kp LG(TAB)  &kp LG(DOWN_ARROW)  &caps_word
-&kp LCTRL        &kp LGUI            &kp LALT        &trans               &trans     &trans       &trans         &trans                                                           &kp DELETE
+ &kp LCTRL        &kp LGUI            &kp LALT        &trans               &trans     &trans       &trans         &trans                                                           &kp DELETE
             >;
 
             sensor-bindings = <&inc_dec_kp LC(RIGHT_ARROW) LC(LEFT_ARROW)>;
@@ -688,7 +687,7 @@ ml: behavior_mod_layer {
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans    &trans
-&kp LCTRL  &kp LGUI  &kp LALT  &trans  &trans  &trans      &trans  &trans                                &trans
+ &kp LCTRL  &kp LGUI  &kp LALT  &trans  &trans  &trans      &trans  &trans                                &trans
             >;
         };
 
@@ -697,7 +696,7 @@ ml: behavior_mod_layer {
 &trans  &trans  &trans  &trans  &trans                        &trans    &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans    &trans    &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans    &trans    &trans  &trans  &trans  &trans
-&kp LCTRL  &kp LGUI  &kp LALT  &trans  &trans  &trans      &mkp MB4  &mkp MB5                          &trans
+ &kp LCTRL  &kp LGUI  &kp LALT  &trans  &trans  &trans      &mkp MB4  &mkp MB5                          &trans
             >;
         };
 
@@ -706,7 +705,7 @@ ml: behavior_mod_layer {
 &trans  &trans        &trans            &trans        &trans                                       &trans  &trans        &trans        &trans        &trans
 &trans  &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT    &trans  &bootloader         &kp KP_NUMLOCK   &trans  &trans        &trans        &trans        &trans
 &trans  &kp NUMBER_1  &kp NUMBER_2      &kp NUMBER_3  &trans  &kp SCROLLLOCK      &kp PAUSE_BREAK  &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR
-&trans  &kp LCTRL  &kp LGUI      &kp LALT          &trans        &trans                                       &trans  &trans                                            &bt BT_CLR_ALL
+ &kp LCTRL  &kp LGUI      &kp LALT        &trans        &trans  &trans              &trans           &trans                                            &bt BT_CLR_ALL
             >;
         };
 
@@ -715,7 +714,7 @@ ml: behavior_mod_layer {
 &trans  &trans  &trans  &trans  &trans                        &trans    &trans    &trans    &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans    &trans    &mkp MB1  &mkp MB3  &mkp MB2  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans    &trans    &mkp MB4  &trans    &mkp MB5  &trans
-&kp LCTRL  &kp LGUI  &kp LALT  &trans  &trans  &trans      &mkp MB4  &mkp MB5                                &trans
+ &kp LCTRL  &kp LGUI  &kp LALT  &trans  &trans  &trans      &mkp MB4  &mkp MB5                                &trans
             >;
         };
 
@@ -735,7 +734,7 @@ ml: behavior_mod_layer {
 &ac_eacu_u  &ac_egrv_u  &ac_egrv_l  &ac_eacu_l  &ac_ocir_u                      &ac_ugrv_u  &ac_ugrv_l  &ac_agrv_u  &ac_ocir_l  &trans
 &ac_agrv_l  &trans      &trans      &trans      &trans      &trans      &trans  &trans      &trans      &trans      &trans      &trans
 &trans      &ac_ccdi_u  &ac_ccdi_l  &trans      &trans      &trans      &trans  &trans      &trans      &trans      &trans      &trans
-&kp LCTRL    &kp LGUI    &kp LALT    &trans      &trans      &trans      &trans  &trans                                          &trans
+ &kp LCTRL    &kp LGUI    &kp LALT    &trans      &trans      &trans      &trans  &trans                                          &trans
             >;
         };
 
@@ -743,10 +742,10 @@ ml: behavior_mod_layer {
         // Strips HRM/layer-tap so shortcuts like Ctrl+Z, Ctrl+I, Ctrl+;, Ctrl+DEL work as plain keys.
         MOD_HELD {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                       &trans  &trans  &kp I    &trans  &trans
-&kp A   &kp S   &kp D   &kp F   &trans  &trans      &trans  &trans  &kp J   &kp K   &kp L   &trans
-&kp Z   &trans  &trans  &trans  &trans  &kp COLON   &kp SEMICOLON  &trans  &trans  &trans  &trans  &kp SLASH
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &kp DEL
+ &trans  &trans  &trans  &trans  &trans                       &trans  &trans  &kp I    &trans  &trans
+ &kp A   &kp S   &kp D   &kp F   &trans  &trans      &trans  &trans  &kp J   &kp K   &kp L   &trans
+ &kp Z   &trans  &trans  &trans  &trans  &kp COLON   &kp SEMICOLON  &trans  &trans  &trans  &trans  &kp SLASH
+ &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &kp DEL
             >;
         };
     };

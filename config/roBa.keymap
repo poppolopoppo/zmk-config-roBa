@@ -689,10 +689,10 @@
 
         ARROW {
             bindings = <
-&kp ESCAPE      &mc_save_all        &kp LS(UP_ARROW)    &mc_redo             &mc_undo                               &trans    &trans    &kp UP    &trans     &kp BACKSPACE
-&kp TAB         &kp LS(LEFT_ARROW)  &kp LS(DOWN_ARROW)  &kp LS(RIGHT_ARROW)  &mc_paste  &trans       &kp PAGE_UP    &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT  &kp END
-&kp LEFT_SHIFT  &kp LG(LEFT_ARROW)  &kp LG(TAB)         &kp LG(RIGHT_ARROW)  &mc_copy   &mc_cut      &kp PAGE_DOWN  &trans    &trans    &trans    &trans     &caps_word
-&kp LCTRL       &kp LGUI            &kp LALT            &trans               &trans     &trans       &trans         &trans                                   &kp DELETE
+&kp ESCAPE      &mc_save_all        &kp LS(UP_ARROW)    &mc_redo             &mc_undo                               &trans    &kp LS(TAB)  &kp UP    &kp TAB    &kp BACKSPACE
+&kp TAB         &kp LS(LEFT_ARROW)  &kp LS(DOWN_ARROW)  &kp LS(RIGHT_ARROW)  &mc_paste  &trans       &kp PAGE_UP    &kp HOME  &kp LEFT     &kp DOWN  &kp RIGHT  &kp END
+&kp LEFT_SHIFT  &kp LG(LEFT_ARROW)  &kp LG(TAB)         &kp LG(RIGHT_ARROW)  &mc_copy   &mc_cut      &kp PAGE_DOWN  &trans    &trans       &trans    &trans     &caps_word
+&kp LCTRL       &kp LGUI            &kp LALT            &trans               &trans     &trans       &trans         &trans                                      &kp DELETE
             >;
 
             sensor-bindings = <&inc_dec_kp LC(RIGHT_ARROW) LC(LEFT_ARROW)>;

@@ -1,0 +1,21 @@
+# Copyright (c) 2026 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+description: |
+  Modifier combined with a momentary layer (QMK LM() equivalent).
+
+  On press: synchronously presses the modifier keycode and activates the layer.
+  On release: deactivates the layer and releases the modifier.
+
+  Binding parameters:
+    param1 = layer index (applied to the first `bindings` entry, e.g. &mo)
+    param2 = keycode     (applied to the second `bindings` entry, e.g. &kp)
+
+compatible: "zmk,behavior-mod-layer"
+
+include: two_param.yaml
+
+properties:
+  bindings:
+    type: phandles
+    required: true

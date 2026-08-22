@@ -1,0 +1,4 @@
+config ZMK_BEHAVIOR_MOD_LAYER
+	bool "Enable mod-layer behavior"
+	default y
+	depends on DT_HAS_ZMK_BEHAVIOR_MOD_LAYER_ENABLED

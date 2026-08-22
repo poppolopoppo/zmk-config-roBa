@@ -1,0 +1,21 @@
+{
+  "feature": "custom zmk,behavior-mod-layer (QMK LM equivalent) + minimal ZMK Studio metadata",
+  "date": "2026-08-21",
+  "claims": [
+    { "id": "C1", "claim": "&ml press synchronously invokes &kp(param2) then &mo(param1); release reverses", "owner": "user-hardware", "evidence": "structured checklist per mod key" },
+    { "id": "C2", "claim": "no regressions: layers 1-9 plain mods, MOD_HELD strips HRM/shift/taps, macros/combos intact", "owner": "user-hardware", "evidence": "regression sweep checklist" },
+    { "id": "C3", "claim": "CI green on roBa_L, roBa_R(studio), settings_reset incl. module root pickup", "owner": "orchestrator", "evidence": "gh run watch build.yml" },
+    { "id": "C4", "claim": "Studio shows layer/keycode domains for ml keys without crash", "owner": "user-studio", "evidence": "Studio connect + edit session" },
+    { "id": "C5", "claim": "missed-modifier race eliminated (mechanism-level + bounded stress sample)", "owner": "user-hardware+code-argument", "evidence": "20x fast-roll stress per key; sync single-listener invocation argument" }
+  ],
+  "prePushStaticCheck": {
+    "status": "pending",
+    "references": [
+      "zmk v0.3-branch app/src/behaviors/behavior_sticky_key.c (BEHAVIOR_DT_INST_DEFINE, zmk_behavior_invoke_binding 3-arg, ZMK_KEYMAP_EXTRACT_BINDING)",
+      "zmk v0.3-branch app/src/behaviors/behavior_hold_tap.c (two-child parameter metadata aggregation)",
+      "zmk v0.3-branch app/dts/bindings/behaviors/zmk,behavior-hold-tap.yaml (bindings phandles required, two_param.yaml include)"
+    ]
+  },
+  "affordances": [],
+  "escalation": "RTT log build tracing binding invocations if hardware anomalies persist"
+}

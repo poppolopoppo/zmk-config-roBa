@@ -139,9 +139,9 @@ layers:
   - '&mc_redo'
   - '&mc_undo'
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Sft+TAB
   - UP
-  - {t: ▽, type: trans}
+  - TAB
   - BACKSPACE
   - TAB
   - Sft+LEFT ARROW

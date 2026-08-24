@@ -134,19 +134,19 @@ layers:
   - '|'
   ARROW:
   - ESCAPE
-  - Ctl+Sft+TAB
-  - UP ARROW
-  - Ctl+TAB
-  - '&mc_undo'
   - '&mc_save_all'
+  - Sft+UP ARROW
+  - '&mc_redo'
+  - '&mc_undo'
+  - {t: ▽, type: trans}
   - Sft+TAB
   - UP
   - TAB
   - BACKSPACE
   - TAB
-  - LEFT ARROW
-  - DOWN ARROW
-  - RIGHT ARROW
+  - Sft+LEFT ARROW
+  - Sft+DOWN ARROW
+  - Sft+RIGHT ARROW
   - '&mc_paste'
   - {t: ▽, type: trans}
   - PAGE UP
@@ -163,9 +163,9 @@ layers:
   - '&mc_cut'
   - PAGE DOWN
   - {t: ▽, type: trans}
-  - Gui+UP ARROW
-  - Gui+TAB
-  - Gui+DOWN ARROW
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - '&caps_word'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -287,12 +287,12 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '1'
-  - '2'
-  - '3'
-  - {t: ▽, type: trans}
-  - SCROLLLOCK
+  - Sft+Gui+1
+  - Sft+Gui+2
+  - Sft+Gui+3
+  - Sft+Gui+4
+  - Sft+Gui+5
+  - Sft+Gui+6
   - PAUSE BREAK
   - {t: ▽, type: trans}
   - {t: BT, h: '0'}

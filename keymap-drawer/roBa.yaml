@@ -134,20 +134,20 @@ layers:
   - '|'
   ARROW:
   - ESCAPE
-  - '&mc_save_all'
-  - Sft+UP ARROW
-  - '&mc_redo'
   - '&mc_undo'
-  - {t: ▽, type: trans}
+  - Alt+UP ARROW
+  - '&mc_redo'
+  - '&mc_cut'
+  - '&mc_save_all'
   - Sft+TAB
   - UP
   - TAB
   - BACKSPACE
   - TAB
-  - Sft+LEFT ARROW
-  - Sft+DOWN ARROW
-  - Sft+RIGHT ARROW
-  - '&mc_paste'
+  - Alt+LEFT ARROW
+  - Alt+DOWN ARROW
+  - Alt+RIGHT ARROW
+  - '&mc_copy'
   - {t: ▽, type: trans}
   - PAGE UP
   - HOME
@@ -159,8 +159,8 @@ layers:
   - Gui+LEFT ARROW
   - Gui+TAB
   - Gui+RIGHT ARROW
-  - '&mc_copy'
-  - '&mc_cut'
+  - '&mc_paste'
+  - '&mc_selall'
   - PAGE DOWN
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -265,16 +265,16 @@ layers:
   - '&mkp MB5'
   - {t: ▽, type: trans}
   SERVICE:
-  - OUT TOG
-  - OUT BLE
-  - OUT USB
-  - BT PRV
-  - BT NXT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
+  - {t: BT, h: '3'}
+  - {t: BT, h: '4'}
   - {t: ▽, type: trans}
   - PREV
   - PLAY PAUSE
@@ -295,9 +295,9 @@ layers:
   - Sft+Gui+6
   - PAUSE BREAK
   - {t: ▽, type: trans}
-  - {t: BT, h: '0'}
-  - {t: BT, h: '1'}
-  - {t: BT, h: '2'}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - BT CLR
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}

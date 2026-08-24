@@ -265,11 +265,11 @@ layers:
   - '&mkp MB5'
   - {t: ▽, type: trans}
   SERVICE:
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - OUT TOG
+  - OUT BLE
+  - OUT USB
+  - BT PRV
+  - BT NXT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}

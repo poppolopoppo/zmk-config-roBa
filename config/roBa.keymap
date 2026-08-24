@@ -530,13 +530,7 @@
             compatible = "zmk,behavior-macro";
             label = "MC_REDO";
             #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL &kp LEFT_SHIFT>,
-                <&macro_tap>,
-                <&kp Z>,
-                <&macro_release>,
-                <&kp LEFT_SHIFT &kp LCTRL>;
+            bindings = <&kp LC(Y)>;
         };
     };
 

@@ -265,8 +265,8 @@ layers:
   - '&mkp MB5'
   - {t: ▽, type: trans}
   SERVICE:
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Ctl+Sft+ESC
+  - Sft+Ctl+Gui+P
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -275,7 +275,7 @@ layers:
   - {t: BT, h: '2'}
   - {t: BT, h: '3'}
   - {t: BT, h: '4'}
-  - {t: ▽, type: trans}
+  - Ctl+Sft+A
   - PREV
   - PLAY PAUSE
   - NEXT

@@ -1038,9 +1038,9 @@
         // real KP_* (not number row). Lone-Alt menu-focus if digits drop.
         ACCENTS {
             bindings = <
-&ac_agrv  &ac_egrv  &ac_eacu  &ac_ugrv  &ac_ocir                       &ac_ccdi  &trans    &trans    &trans    &trans
-&ac_acir  &ac_ecir  &ac_icir  &ac_ucir  &trans    &trans      &trans    &trans    &trans    &trans    &trans    &trans
-&ac_etrm  &ac_itrm  &ac_utrm  &ac_oe    &ac_euro  &trans      &trans    &trans    &trans    &trans    &trans    &trans
+&ac_acir  &ac_egrv  &ac_eacu  &ac_ecir  &trans                        &ac_euro  &ac_ugrv  &ac_icir  &ac_ocir  &ac_oe
+&ac_agrv  &trans    &trans    &trans    &trans    &trans      &trans    &ac_ucir  &trans    &ac_itrm  &trans    &trans
+&trans    &trans    &ac_ccdi  &trans    &trans    &trans      &trans    &trans    &trans    &trans    &trans    &trans
 &trans    &trans    &trans    &trans    &trans    &trans      &trans    &trans                                          &trans
             >;
         };

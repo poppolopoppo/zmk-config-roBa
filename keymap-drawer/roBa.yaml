@@ -397,22 +397,20 @@ layers:
   - ENTER
   - LALT
   ACCENTS:
-  - '&ac_eacu_u'
-  - '&ac_egrv_u'
-  - '&ac_egrv_l'
-  - '&ac_eacu_l'
-  - '&ac_ocir_u'
-  - '&ac_ugrv_u'
-  - '&ac_ugrv_l'
-  - '&ac_agrv_u'
-  - '&ac_ocir_l'
-  - {t: ▽, type: trans}
-  - '&ac_agrv_l'
+  - {t: '&ac_agrv_l', s: '&ac_agrv_u'}
+  - {t: '&ac_egrv_l', s: '&ac_egrv_u'}
+  - {t: '&ac_eacu_l', s: '&ac_eacu_u'}
+  - {t: '&ac_ugrv_l', s: '&ac_ugrv_u'}
+  - {t: '&ac_ocir_l', s: '&ac_ocir_u'}
+  - {t: '&ac_ccdi_l', s: '&ac_ccdi_u'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: '&ac_acir_l', s: '&ac_acir_u'}
+  - {t: '&ac_ecir_l', s: '&ac_ecir_u'}
+  - {t: '&ac_icir_l', s: '&ac_icir_u'}
+  - {t: '&ac_ucir_l', s: '&ac_ucir_u'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -420,10 +418,12 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&ac_ccdi_u'
-  - '&ac_ccdi_l'
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: '&ac_etrm_l', s: '&ac_etrm_u'}
+  - {t: '&ac_itrm_l', s: '&ac_itrm_u'}
+  - {t: '&ac_utrm_l', s: '&ac_utrm_u'}
+  - {t: '&ac_oe_l', s: '&ac_oe_u'}
+  - '&ac_euro'
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}

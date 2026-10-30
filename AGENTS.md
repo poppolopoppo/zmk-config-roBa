@@ -23,7 +23,7 @@ This repository is the ZMK firmware configuration for **RoBa** (pOpPolLoPpoBa), 
 | Left   | Seeed XIAO BLE (nRF52840) | Peripheral | EC11 rotary encoder                     |
 
 - **Matrix:** 4 rows × 11 columns, diode `col2row`, GPIO `ACTIVE_HIGH | PULL_DOWN`
-- **Physical keys:** 42 keys (10 per row × 4 rows + 2 thumb cluster keys per side)
+- **Physical keys:** 43 keys (matrix positions 0–42: 10 + 12 + 12 + 9)
 - **Left column GPIOs:** `xiao_d 10,9,8,7, gpio0 10, gpio0 9` (6 columns)
 - **Right column GPIOs:** `xiao_d 10,9,8,7, gpio0 10` (5 columns, offset +6)
 - **Row GPIOs:** `xiao_d 1,2,3,6`
@@ -80,14 +80,6 @@ This repository is the ZMK firmware configuration for **RoBa** (pOpPolLoPpoBa), 
 | `.github/workflows/build.yml` | GitHub Actions: build firmware on push/PR |
 | `.github/workflows/draw.yml` | GitHub Actions: regenerate SVG on keymap/config changes |
 
-### Variant / Reference Files
-
-| File | Purpose |
-|------|---------|
-| `main_keymap.txt` | Older keymap variant (fewer HRM variants, shorter terms, no `lt_scroll`, mod-morph accents) |
-| `main_keymap_raw.txt` | Identical to `main_keymap.txt` |
-| `zmk_update_keymap_raw.txt` | **Experimental future version** — input processors, conditional layers, mod-morph accents, `zip_*_transform`, `hold-preferred` on `lt_to_layer_0` |
-
 ---
 
 ## Active Keymap Architecture (`config/roBa.keymap`)
@@ -114,7 +106,7 @@ This repository is the ZMK firmware configuration for **RoBa** (pOpPolLoPpoBa), 
 | Alias | Tapping Term | Flavor | Quick Tap | Require Idle | Hold-Trigger Positions | Hold-Trigger-on-Release |
 |-------|-------------|--------|-----------|-------------|----------------------|:---:|
 | `hm_l` | 280ms | balanced | 175ms | 175ms | Right hand + right thumb (positions 5–9, 16–21, 28–33, 40–42) | Yes |
-| `hm_r` | 280ms | balanced | 175ms | 175ms | Left hand + left thumb (positions 0–4, 10–16, 22–28, 34–39) | Yes |
+| `hm_r` | 280ms | balanced | 175ms | 175ms | Left hand + left thumb (positions 0–4, 10–15, 22–27, 34–39) | Yes |
 | `hm_shift_l` | 175ms | balanced | 175ms | — | Right hand positions (same as `hm_l`) | Yes |
 | `hm_shift_r` | 175ms | balanced | 175ms | — | Left hand positions (same as `hm_r`) | Yes |
 
@@ -142,16 +134,30 @@ This repository is the ZMK firmware configuration for **RoBa** (pOpPolLoPpoBa), 
 | `&sl` | — | — | (quick-release, 2000ms timeout) | — |
 | `&sk` | — | — | (quick-release, 2000ms timeout) | — |
 
-### Combos (6)
+### Combos (8)
 
 | Combo | Keys | Binding | Timeout | Require Idle | Layers |
 |-------|------|---------|---------|-------------|--------|
-| tab | 11, 12 | `TAB` | 40ms | 175ms | 0 |
-| shift_tab | 12, 13 | `LS(TAB)` | 40ms | 175ms | 0 |
-| double_quotation | 20, 21 | `DOUBLE_QUOTES` | 40ms | 175ms | All |
-| eq | 24, 25 | `EQUAL` | 40ms | — | 0, 2 |
-| ctrl+alt+del | 34, 42 | `LC(LA(DELETE))` | 40ms | 175ms | All |
-| Gaming | 0, 1, 8, 9 | `&tog 8` (GAMING toggle) | 40ms | 175ms | All |
+| tab | 11, 12 (S, D) | `TAB` | 40ms | 175ms | 0 |
+| shift_tab | 12, 13 (D, F) | `LS(TAB)` | 40ms | 175ms | 0 |
+| double_quotation | 20, 21 (L, `'`) | `DOUBLE_QUOTES` | 40ms | 175ms | All |
+| mb1 | 18, 19 (J, K) | `&mkp MB1` (left click) | 40ms | 100ms | All |
+| mb2 | 19, 20 (K, L) | `&mkp MB2` (right click) | 40ms | 100ms | All |
+| eq | 24, 25 (C, V) | `EQUAL` | 40ms | — | 0, 2 |
+| ctrl+alt+del | 34, 42 (LCTRL, DEL) | `LC(LA(DELETE))` | 40ms | 175ms | All |
+| Gaming | 0, 1, 8, 9 (Q, W, O, P) | `&tog 8` (GAMING toggle) | 40ms | 175ms | All |
+
+`mb1`/`mb2` are layer-independent clicks: they work on any layer and after the
+AutoMouse layer expired, so a click never turns into `j`/`k`/`l`. Their
+`require-prior-idle-ms` is fed only by keyboard key taps (not by trackball
+movement or `&mkp` clicks), so it suppresses fast `jk`/`kl` rolls during typing
+without delaying a click after using the ball. Holding the chord holds the
+mouse button (click-hold / short drag).
+
+Tradeoff accepted on the GAMING layer (8): the chords are active there too, so
+a simultaneous J+K / K+L press fires a click mid-game. This is deliberate — with
+GAMING active, AutoMouse can never make layer 4 the highest layer, so the chords
+are the only way to click while gaming.
 
 ### Macros (18)
 
@@ -204,7 +210,7 @@ This repository is the ZMK firmware configuration for **RoBa** (pOpPolLoPpoBa), 
 | `INVERT_SCROLL_X` | y | Invert scroll X |
 | `SCROLL_TICK` | 16 | Scroll sensitivity (lower = faster) |
 | `AUTOMOUSE_TIMEOUT_MS` | 700 | AutoMouse layer timeout after movement |
-| `MOVEMENT_THRESHOLD` | 0 | Detect all motion |
+| `MOVEMENT_THRESHOLD` | 5 | Movement needed to trigger AutoMouse (higher = less sensitive; driver default 5) |
 | `POLLING_RATE_125_SW` | y | 125 Hz software polling |
 | `SMART_ALGORITHM` | y | Improved tracking |
 | `RUN_DOWNSHIFT_TIME_MS` | 3264 | Power-saving downshift delay |
@@ -218,7 +224,9 @@ This repository is the ZMK firmware configuration for **RoBa** (pOpPolLoPpoBa), 
 | 5 | SCROLL | `&lt_scroll` on I hold | XY → scroll wheel |
 | 7 | SNIPE | `&lt_to_layer_0` on DEL hold | 300 CPI precision aiming, same buttons as MOUSE |
 
-The `snipe-layers = <7>` property in `roBa_R.overlay` tells the PMW3610 driver to enter low-CPI mode when layer 7 is active.
+The `snipe-layers = <7>` property in `roBa_R.overlay` tells the PMW3610 driver to enter low-CPI mode when layer 7 is active. Layer 7 (hold DEL) is also the deterministic click mode: it never times out, so repeated clicks need no ball movement.
+
+AutoMouse (layer 4) is refreshed **only by ball movement above `MOVEMENT_THRESHOLD`** — clicks never refresh the timer (see `pmw3610.c`). Layer-independent clicks are therefore covered by the `mb1`/`mb2` chords, not the timeout. Because layer state is a bitmask (not refcounted), a manually activated layer 4 would still be cleared by the driver's pending timer.
 
 ---
 
@@ -245,27 +253,9 @@ When editing `roBa.keymap`, also update `keymap-drawer/roBa.yaml` to keep the vi
 
 ---
 
-## Experimental / Future Features (`zmk_update_keymap_raw.txt`)
-
-This file contains an experimental evolution of the keymap with:
-
-- **Conditional Layers** — `snipe_scroll` layer 9 activates when both SCROLL (5) and SNIPE (7) are active
-- **Input Processors** — Per-layer input processing chains on the `trackball_listener`:
-  - Default: `temp_layer` (auto-layer-4 for 600ms on movement) + `zip_xy_transform` (swap + invert X)
-  - SCROLL layer (5): `custom_scroll_mapper` (REL_X→WHEEL, REL_Y→HWHEEL) + `zip_scroll_transform` (invert X+Y) + scaler 1:4
-  - SNIPE layer (7): scaler 3:8 + `zip_xy_transform`
-  - SNIPE_SCROLL layer (9): scroll mapper + `zip_scroll_transform` + scaler 1:8
-- **Mod-Morph Accents** — `ac_agrv`, `ac_egrv`, etc. combine lower/upper with Shift
-- **`hold-preferred`** on `lt_to_layer_0` — only 1 behavioral diff from active keymap
-- **No `lt_scroll`** — uses plain `&lt 5 I` instead
-- **No `lt_to_layer_0_space`** — uses `&lt_to_layer_0 3 SPACE` with `hold-preferred`
-- **Unified `hm_shift`** — single shift variant at 200ms (vs active's 175ms left/right split)
-
----
-
 ## Typical Tasks & Agent Guidelines
 
-1. **The active keymap file is `config/roBa.keymap`** — always edit this, not the `.txt` variants.
+1. **The active keymap file is `config/roBa.keymap`** — always edit this one.
 2. **Keep `keymap-drawer/roBa.yaml` in sync** when changing keymap bindings (or rely on CI to regenerate, but local sync is preferred for consistency).
 3. **The `.conf` files use Japanese-style comments** with detailed explanations — preserve this style when adding new config options.
 4. **Home row mod key positions** are 0-indexed GPIO matrix positions, not physical positions. Refer to `roBa.dtsi` for the `RC(row,col)` → position mapping.
@@ -276,18 +266,23 @@ This file contains an experimental evolution of the keymap with:
 
 ### Key Positions Reference
 
-Position mapping from matrix coordinates:
+Position mapping from matrix coordinates (order of `default_transform` in `roBa.dtsi`;
+the transform has 10 + 12 + 12 + 9 = 43 positions):
+
 ```
-RC(0,0)  RC(0,1)  RC(0,2)  RC(0,3)  RC(0,4)                RC(0,6)  RC(0,7)  RC(0,8)  RC(0,9)  RC(0,10)     ← row 0
- 0         1         2         3         4          5     6     7         8         9        10         11    ← positions
+RC(0,0)  RC(0,1)  RC(0,2)  RC(0,3)  RC(0,4)          RC(0,6)  RC(0,7)  RC(0,8)  RC(0,9)  RC(0,10)  ← row 0
+ 0 Q      1 W      2 E      3 R      4 T               5 Y      6 U      7 I      8 O      9 P
 
-RC(1,0)  RC(1,1)  RC(1,2)  RC(1,3)  RC(1,4)  RC(1,5)    RC(3,6)  RC(1,6)  RC(1,7)  RC(1,8)  RC(1,9)  RC(1,10)  ← row 1
-12        13        14        15        16        17      18        19        20        21        22        23
+RC(1,0)  RC(1,1)  RC(1,2)  RC(1,3)  RC(1,4)  RC(1,5)  RC(3,6)  RC(1,6)  RC(1,7)  RC(1,8)  RC(1,9)  RC(1,10)  ← row 1
+10 A    11 S     12 D     13 F     14 G     15 LG(LS(S))  16 MINUS  17 H  18 J  19 K  20 L  21 '
 
-RC(2,0)  RC(2,1)  RC(2,2)  RC(2,3)  RC(2,4)  RC(2,5)    RC(3,7)  RC(2,6)  RC(2,7)  RC(2,8)  RC(2,9)  RC(2,10)  ← row 2
-24        25        26        27        28        29      30        31        32        33        34        35
+RC(2,0)  RC(2,1)  RC(2,2)  RC(2,3)  RC(2,4)  RC(2,5)  RC(3,7)  RC(2,6)  RC(2,7)  RC(2,8)  RC(2,9)  RC(2,10)  ← row 2
+22 Z    23 X     24 C     25 V     26 B     27 COLON     28 SEMICOLON  29 N  30 M  31 COMMA  32 DOT  33 SLASH
 
-RC(3,0)  RC(3,1)  RC(3,2)  RC(3,3)  RC(3,4)  RC(3,5)    RC(3,8)  RC(3,9)                      RC(3,10)   ← row 3
-36        37        38      (39)      (40)      (41)       42        43                                     44
+RC(3,0)  RC(3,1)  RC(3,2)  RC(3,3)  RC(3,4)  RC(3,5)  RC(3,8)  RC(3,9)              RC(3,10)   ← row 3
+34 LCTRL 35 WIN  36 ALT   37 mo 6  38 mo 2  39 SPACE   40 BSPACE  41 ENTER            42 DEL
 ```
-Parenthesized positions (39–41) are the left thumb cluster. 42–43 are right thumb inner. 44 is the right thumb outer key.
+
+Left-side positions: `0–4`, `10–15`, `22–27`, `34–39`. Right-side positions:
+`5–9`, `16–21`, `28–33`, `40–42`. These are the ranges the `hold-trigger-key-positions`
+of `hm_l`/`hm_r` rely on.

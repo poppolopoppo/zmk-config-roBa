@@ -74,6 +74,26 @@
             key-positions = <20 21>;
         };
 
+        // Layer-independent mouse clicks: work on every layer, even after the
+        // AutoMouse layer expired (no movement needed). require-prior-idle-ms only
+        // tracks keyboard key taps (never trackball movement or mkp clicks), so it
+        // guards against fast jk/kl rolls during typing without delaying a click
+        // after using the ball. Holding the chord keeps the button pressed
+        // (click-hold / short drag).
+        mb1 {
+            timeout-ms = <40>;
+            require-prior-idle-ms = <100>;
+            bindings = <&mkp MB1>;
+            key-positions = <18 19>;
+        };
+
+        mb2 {
+            timeout-ms = <40>;
+            require-prior-idle-ms = <100>;
+            bindings = <&mkp MB2>;
+            key-positions = <19 20>;
+        };
+
         eq {
             timeout-ms = <40>;
             bindings = <&kp EQUAL>;

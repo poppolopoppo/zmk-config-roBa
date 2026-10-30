@@ -449,6 +449,10 @@ combos:
   l: [default]
 - p: [20, 21]
   k: '"'
+- p: [18, 19]
+  k: '&mkp MB1'
+- p: [19, 20]
+  k: '&mkp MB2'
 - p: [24, 25]
   k: '='
   l: [default, NUM]

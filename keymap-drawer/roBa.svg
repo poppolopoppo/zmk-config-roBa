@@ -911,7 +911,8 @@ path.combo { stroke: #7f7f7f; }
 <g transform="translate(253, 99)" class="key keypos-14">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
-<text x="0" y="-4" class="key tap"><tspan style="font-size: 88%">&amp;mc_copy</tspan></text>
+<text x="0" y="-4" class="key tap">Copy</text>
+<text x="0" y="-24" class="key shifted"><tspan style="font-size: 78%">Term Copy</tspan></text>
 </g>
 <g transform="translate(309, 112)" class="key trans keypos-15">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans side"/>
@@ -979,7 +980,8 @@ path.combo { stroke: #7f7f7f; }
 <g transform="translate(253, 155)" class="key keypos-26">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
-<text x="0" y="-4" class="key tap"><tspan style="font-size: 78%">&amp;mc_paste</tspan></text>
+<text x="0" y="-4" class="key tap">Paste</text>
+<text x="0" y="-24" class="key shifted"><tspan style="font-size: 70%">Term Paste</tspan></text>
 </g>
 <g transform="translate(309, 168)" class="key keypos-27">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
@@ -1618,21 +1620,15 @@ path.combo { stroke: #7f7f7f; }
 <tspan x="0" dy="-0.6em">KP</tspan><tspan x="0" dy="1.2em">NUMLOCK</tspan>
 </text>
 </g>
-<g transform="translate(504, 99)" class="key keypos-17">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
-<text x="0" y="-4" class="key tap">
-<tspan x="0" dy="-0.9em">Term</tspan><tspan x="0" dy="1.2em">Copy</tspan>
-</text>
-<text x="0" y="24" class="key hold"><tspan style="font-size: 78%">Ctl+Sft+C</tspan></text>
+<g transform="translate(504, 99)" class="key trans keypos-17">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key trans"/>
+<text x="0" y="-4" class="key trans tap">▽</text>
 </g>
-<g transform="translate(560, 92)" class="key keypos-18">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
-<text x="0" y="-4" class="key tap">
-<tspan x="0" dy="-0.9em">Term</tspan><tspan x="0" dy="1.2em">Paste</tspan>
-</text>
-<text x="0" y="24" class="key hold"><tspan style="font-size: 78%">Ctl+Sft+V</tspan></text>
+<g transform="translate(560, 92)" class="key trans keypos-18">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key trans"/>
+<text x="0" y="-4" class="key trans tap">▽</text>
 </g>
 <g transform="translate(617, 84)" class="key keypos-19">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>

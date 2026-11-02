@@ -147,7 +147,7 @@ layers:
   - Alt+LEFT ARROW
   - Alt+DOWN ARROW
   - Alt+RIGHT ARROW
-  - {t: Copy, s: 'Term Copy'}
+  - {t: Copy, s: Term Copy}
   - {t: ▽, type: trans}
   - PAGE UP
   - HOME
@@ -159,7 +159,7 @@ layers:
   - Gui+LEFT ARROW
   - Gui+TAB
   - Gui+RIGHT ARROW
-  - {t: Paste, s: 'Term Paste'}
+  - {t: Paste, s: Term Paste}
   - '&mc_selall'
   - PAGE DOWN
   - {t: ▽, type: trans}

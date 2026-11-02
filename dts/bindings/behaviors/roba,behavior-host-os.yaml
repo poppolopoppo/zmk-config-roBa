@@ -1,0 +1,3 @@
+description: Select the host OS used by RoBa shortcuts and accent macros (0 Linux, 1 Windows, 2 toggle)
+compatible: "roba,behavior-host-os"
+include: one_param.yaml

@@ -136,7 +136,7 @@ layers:
   - ESCAPE
   - '&mc_undo'
   - Alt+UP ARROW
-  - '&mc_redo'
+  - Redo
   - '&mc_cut'
   - '&mc_save_all'
   - Sft+TAB
@@ -265,11 +265,11 @@ layers:
   - '&mkp MB5'
   - {t: ▽, type: trans}
   SERVICE:
-  - Ctl+Sft+ESC
+  - {t: 'System Monitor', h: 'Win: Task Mgr'}
   - Sft+Ctl+Gui+P
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: OS, h: toggle}
   - {t: BT, h: '0'}
   - {t: BT, h: '1'}
   - {t: BT, h: '2'}
@@ -287,12 +287,12 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Sft+Gui+1
-  - Sft+Gui+2
-  - Sft+Gui+3
-  - Sft+Gui+4
-  - Sft+Gui+5
-  - Sft+Gui+6
+  - {t: 'Task 1', h: 'OS'}
+  - {t: 'Task 2', h: 'OS'}
+  - {t: 'Task 3', h: 'OS'}
+  - {t: 'Task 4', h: 'OS'}
+  - {t: 'Task 5', h: 'OS'}
+  - {t: 'Task 6', h: 'OS'}
   - PAUSE BREAK
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -397,31 +397,31 @@ layers:
   - ENTER
   - LALT
   ACCENTS:
-  - {t: '&ac_acir_l', s: '&ac_acir_u'}
-  - {t: '&ac_egrv_l', s: '&ac_egrv_u'}
-  - {t: '&ac_eacu_l', s: '&ac_eacu_u'}
-  - {t: '&ac_ecir_l', s: '&ac_ecir_u'}
+  - {t: 'â', s: 'Â'}
+  - {t: 'è', s: 'È'}
+  - {t: 'é', s: 'É'}
+  - {t: 'ê', s: 'Ê'}
   - {t: ▽, type: trans}
-  - '&ac_euro'
-  - {t: '&ac_ugrv_l', s: '&ac_ugrv_u'}
-  - {t: '&ac_icir_l', s: '&ac_icir_u'}
-  - {t: '&ac_ocir_l', s: '&ac_ocir_u'}
-  - {t: '&ac_oe_l', s: '&ac_oe_u'}
-  - {t: '&ac_agrv_l', s: '&ac_agrv_u'}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '€'
+  - {t: 'ù', s: 'Ù'}
+  - {t: 'î', s: 'Î'}
+  - {t: 'ô', s: 'Ô'}
+  - {t: 'œ', s: 'Œ'}
+  - {t: 'à', s: 'À'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '&ac_ucir_l', s: '&ac_ucir_u'}
-  - {t: ▽, type: trans}
-  - {t: '&ac_itrm_l', s: '&ac_itrm_u'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: 'û', s: 'Û'}
+  - {t: ▽, type: trans}
+  - {t: 'ï', s: 'Ï'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '&ac_ccdi_l', s: '&ac_ccdi_u'}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: 'ç', s: 'Ç'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}

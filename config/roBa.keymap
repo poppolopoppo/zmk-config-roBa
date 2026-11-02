@@ -4,6 +4,8 @@
 #include <dt-bindings/zmk/modifiers.h>
 #include <dt-bindings/zmk/pointing.h>
 
+#include <dt-bindings/roba/host-os.h>
+
 &mt {
     tapping-term-ms = <200>;
     flavor = "balanced";
@@ -124,12 +126,22 @@
             label = "TO_LAYER_0";
         };
 
-        // Windows Alt+Numpad codes (ANSI, leading 0).
-        // Windows-only: requires NumLock ON, real KP_* (not number row).
+        // Accent macros for both hosts; ac_* selectors choose at runtime.
+        // Linux setup: see README.md. Shift selects explicit uppercase sequences.
 
         // à (Alt+0224)
 
-        ac_agrv_l: ac_agrv_l {
+        ac_agrv_l_linux: ac_agrv_l_linux {
+            wait-ms = <5>;
+            tap-ms = <5>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp K_APPLICATION>,
+                <&kp GRAVE>, <&kp A>;
+            label = "à";
+        };
+
+        ac_agrv_l_windows: ac_agrv_l_windows {
             wait-ms = <5>;
             tap-ms = <5>;
             compatible = "zmk,behavior-macro";
@@ -146,7 +158,17 @@
 
         // À (Alt+0192)
 
-        ac_agrv_u: ac_agrv_u {
+        ac_agrv_u_linux: ac_agrv_u_linux {
+            wait-ms = <5>;
+            tap-ms = <5>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp K_APPLICATION>,
+                <&kp GRAVE>, <&kp LS(A)>;
+            label = "À";
+        };
+
+        ac_agrv_u_windows: ac_agrv_u_windows {
             wait-ms = <5>;
             tap-ms = <5>;
             compatible = "zmk,behavior-macro";
@@ -163,7 +185,17 @@
 
         // è (Alt+0232)
 
-        ac_egrv_l: ac_egrv_l {
+        ac_egrv_l_linux: ac_egrv_l_linux {
+            wait-ms = <5>;
+            tap-ms = <5>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp K_APPLICATION>,
+                <&kp GRAVE>, <&kp E>;
+            label = "è";
+        };
+
+        ac_egrv_l_windows: ac_egrv_l_windows {
             wait-ms = <5>;
             tap-ms = <5>;
             compatible = "zmk,behavior-macro";
@@ -180,7 +212,17 @@
 
         // È (Alt+0200)
 
-        ac_egrv_u: ac_egrv_u {
+        ac_egrv_u_linux: ac_egrv_u_linux {
+            wait-ms = <5>;
+            tap-ms = <5>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp K_APPLICATION>,
+                <&kp GRAVE>, <&kp LS(E)>;
+            label = "È";
+        };
+
+        ac_egrv_u_windows: ac_egrv_u_windows {
             wait-ms = <5>;
             tap-ms = <5>;
             compatible = "zmk,behavior-macro";
@@ -197,7 +239,17 @@
 
         // é (Alt+0233)
 
-        ac_eacu_l: ac_eacu_l {
+        ac_eacu_l_linux: ac_eacu_l_linux {
+            wait-ms = <5>;
+            tap-ms = <5>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp K_APPLICATION>,
+                <&kp SQT>, <&kp E>;
+            label = "é";
+        };
+
+        ac_eacu_l_windows: ac_eacu_l_windows {
             wait-ms = <5>;
             tap-ms = <5>;
             compatible = "zmk,behavior-macro";
@@ -214,7 +266,17 @@
 
         // É (Alt+0201)
 
-        ac_eacu_u: ac_eacu_u {
+        ac_eacu_u_linux: ac_eacu_u_linux {
+            wait-ms = <5>;
+            tap-ms = <5>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp K_APPLICATION>,
+                <&kp SQT>, <&kp LS(E)>;
+            label = "É";
+        };
+
+        ac_eacu_u_windows: ac_eacu_u_windows {
             wait-ms = <5>;
             tap-ms = <5>;
             compatible = "zmk,behavior-macro";
@@ -231,7 +293,17 @@
 
         // ù (Alt+0249)
 
-        ac_ugrv_l: ac_ugrv_l {
+        ac_ugrv_l_linux: ac_ugrv_l_linux {
+            wait-ms = <5>;
+            tap-ms = <5>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp K_APPLICATION>,
+                <&kp GRAVE>, <&kp U>;
+            label = "ù";
+        };
+
+        ac_ugrv_l_windows: ac_ugrv_l_windows {
             wait-ms = <5>;
             tap-ms = <5>;
             compatible = "zmk,behavior-macro";
@@ -248,7 +320,17 @@
 
         // Ù (Alt+0217)
 
-        ac_ugrv_u: ac_ugrv_u {
+        ac_ugrv_u_linux: ac_ugrv_u_linux {
+            wait-ms = <5>;
+            tap-ms = <5>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp K_APPLICATION>,
+                <&kp GRAVE>, <&kp LS(U)>;
+            label = "Ù";
+        };
+
+        ac_ugrv_u_windows: ac_ugrv_u_windows {
             wait-ms = <5>;
             tap-ms = <5>;
             compatible = "zmk,behavior-macro";
@@ -265,7 +347,17 @@
 
         // ô (Alt+0244)
 
-        ac_ocir_l: ac_ocir_l {
+        ac_ocir_l_linux: ac_ocir_l_linux {
+            wait-ms = <5>;
+            tap-ms = <5>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp K_APPLICATION>,
+                <&kp CARET>, <&kp O>;
+            label = "ô";
+        };
+
+        ac_ocir_l_windows: ac_ocir_l_windows {
             wait-ms = <5>;
             tap-ms = <5>;
             compatible = "zmk,behavior-macro";
@@ -282,7 +374,17 @@
 
         // Ô (Alt+0212)
 
-        ac_ocir_u: ac_ocir_u {
+        ac_ocir_u_linux: ac_ocir_u_linux {
+            wait-ms = <5>;
+            tap-ms = <5>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp K_APPLICATION>,
+                <&kp CARET>, <&kp LS(O)>;
+            label = "Ô";
+        };
+
+        ac_ocir_u_windows: ac_ocir_u_windows {
             wait-ms = <5>;
             tap-ms = <5>;
             compatible = "zmk,behavior-macro";
@@ -299,7 +401,17 @@
 
         // ç (Alt+0231)
 
-        ac_ccdi_l: ac_ccdi_l {
+        ac_ccdi_l_linux: ac_ccdi_l_linux {
+            wait-ms = <5>;
+            tap-ms = <5>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp K_APPLICATION>,
+                <&kp COMMA>, <&kp C>;
+            label = "ç";
+        };
+
+        ac_ccdi_l_windows: ac_ccdi_l_windows {
             wait-ms = <5>;
             tap-ms = <5>;
             compatible = "zmk,behavior-macro";
@@ -316,7 +428,17 @@
 
         // Ç (Alt+0199)
 
-        ac_ccdi_u: ac_ccdi_u {
+        ac_ccdi_u_linux: ac_ccdi_u_linux {
+            wait-ms = <5>;
+            tap-ms = <5>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp K_APPLICATION>,
+                <&kp COMMA>, <&kp LS(C)>;
+            label = "Ç";
+        };
+
+        ac_ccdi_u_windows: ac_ccdi_u_windows {
             wait-ms = <5>;
             tap-ms = <5>;
             compatible = "zmk,behavior-macro";
@@ -333,7 +455,17 @@
 
         // â (Alt+0226)
 
-        ac_acir_l: ac_acir_l {
+        ac_acir_l_linux: ac_acir_l_linux {
+            wait-ms = <5>;
+            tap-ms = <5>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp K_APPLICATION>,
+                <&kp CARET>, <&kp A>;
+            label = "â";
+        };
+
+        ac_acir_l_windows: ac_acir_l_windows {
             wait-ms = <5>;
             tap-ms = <5>;
             compatible = "zmk,behavior-macro";
@@ -350,7 +482,17 @@
 
         // Â (Alt+0194)
 
-        ac_acir_u: ac_acir_u {
+        ac_acir_u_linux: ac_acir_u_linux {
+            wait-ms = <5>;
+            tap-ms = <5>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp K_APPLICATION>,
+                <&kp CARET>, <&kp LS(A)>;
+            label = "Â";
+        };
+
+        ac_acir_u_windows: ac_acir_u_windows {
             wait-ms = <5>;
             tap-ms = <5>;
             compatible = "zmk,behavior-macro";
@@ -367,7 +509,17 @@
 
         // ê (Alt+0234)
 
-        ac_ecir_l: ac_ecir_l {
+        ac_ecir_l_linux: ac_ecir_l_linux {
+            wait-ms = <5>;
+            tap-ms = <5>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp K_APPLICATION>,
+                <&kp CARET>, <&kp E>;
+            label = "ê";
+        };
+
+        ac_ecir_l_windows: ac_ecir_l_windows {
             wait-ms = <5>;
             tap-ms = <5>;
             compatible = "zmk,behavior-macro";
@@ -384,7 +536,17 @@
 
         // Ê (Alt+0202)
 
-        ac_ecir_u: ac_ecir_u {
+        ac_ecir_u_linux: ac_ecir_u_linux {
+            wait-ms = <5>;
+            tap-ms = <5>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp K_APPLICATION>,
+                <&kp CARET>, <&kp LS(E)>;
+            label = "Ê";
+        };
+
+        ac_ecir_u_windows: ac_ecir_u_windows {
             wait-ms = <5>;
             tap-ms = <5>;
             compatible = "zmk,behavior-macro";
@@ -401,7 +563,17 @@
 
         // î (Alt+0238)
 
-        ac_icir_l: ac_icir_l {
+        ac_icir_l_linux: ac_icir_l_linux {
+            wait-ms = <5>;
+            tap-ms = <5>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp K_APPLICATION>,
+                <&kp CARET>, <&kp I>;
+            label = "î";
+        };
+
+        ac_icir_l_windows: ac_icir_l_windows {
             wait-ms = <5>;
             tap-ms = <5>;
             compatible = "zmk,behavior-macro";
@@ -418,7 +590,17 @@
 
         // Î (Alt+0206)
 
-        ac_icir_u: ac_icir_u {
+        ac_icir_u_linux: ac_icir_u_linux {
+            wait-ms = <5>;
+            tap-ms = <5>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp K_APPLICATION>,
+                <&kp CARET>, <&kp LS(I)>;
+            label = "Î";
+        };
+
+        ac_icir_u_windows: ac_icir_u_windows {
             wait-ms = <5>;
             tap-ms = <5>;
             compatible = "zmk,behavior-macro";
@@ -435,7 +617,17 @@
 
         // û (Alt+0251)
 
-        ac_ucir_l: ac_ucir_l {
+        ac_ucir_l_linux: ac_ucir_l_linux {
+            wait-ms = <5>;
+            tap-ms = <5>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp K_APPLICATION>,
+                <&kp CARET>, <&kp U>;
+            label = "û";
+        };
+
+        ac_ucir_l_windows: ac_ucir_l_windows {
             wait-ms = <5>;
             tap-ms = <5>;
             compatible = "zmk,behavior-macro";
@@ -452,7 +644,17 @@
 
         // Û (Alt+0219)
 
-        ac_ucir_u: ac_ucir_u {
+        ac_ucir_u_linux: ac_ucir_u_linux {
+            wait-ms = <5>;
+            tap-ms = <5>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp K_APPLICATION>,
+                <&kp CARET>, <&kp LS(U)>;
+            label = "Û";
+        };
+
+        ac_ucir_u_windows: ac_ucir_u_windows {
             wait-ms = <5>;
             tap-ms = <5>;
             compatible = "zmk,behavior-macro";
@@ -469,7 +671,17 @@
 
         // ë (Alt+0235)
 
-        ac_etrm_l: ac_etrm_l {
+        ac_etrm_l_linux: ac_etrm_l_linux {
+            wait-ms = <5>;
+            tap-ms = <5>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp K_APPLICATION>,
+                <&kp DOUBLE_QUOTES>, <&kp E>;
+            label = "ë";
+        };
+
+        ac_etrm_l_windows: ac_etrm_l_windows {
             wait-ms = <5>;
             tap-ms = <5>;
             compatible = "zmk,behavior-macro";
@@ -486,7 +698,17 @@
 
         // Ë (Alt+0203)
 
-        ac_etrm_u: ac_etrm_u {
+        ac_etrm_u_linux: ac_etrm_u_linux {
+            wait-ms = <5>;
+            tap-ms = <5>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp K_APPLICATION>,
+                <&kp DOUBLE_QUOTES>, <&kp LS(E)>;
+            label = "Ë";
+        };
+
+        ac_etrm_u_windows: ac_etrm_u_windows {
             wait-ms = <5>;
             tap-ms = <5>;
             compatible = "zmk,behavior-macro";
@@ -503,7 +725,17 @@
 
         // ï (Alt+0239)
 
-        ac_itrm_l: ac_itrm_l {
+        ac_itrm_l_linux: ac_itrm_l_linux {
+            wait-ms = <5>;
+            tap-ms = <5>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp K_APPLICATION>,
+                <&kp DOUBLE_QUOTES>, <&kp I>;
+            label = "ï";
+        };
+
+        ac_itrm_l_windows: ac_itrm_l_windows {
             wait-ms = <5>;
             tap-ms = <5>;
             compatible = "zmk,behavior-macro";
@@ -520,7 +752,17 @@
 
         // Ï (Alt+0207)
 
-        ac_itrm_u: ac_itrm_u {
+        ac_itrm_u_linux: ac_itrm_u_linux {
+            wait-ms = <5>;
+            tap-ms = <5>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp K_APPLICATION>,
+                <&kp DOUBLE_QUOTES>, <&kp LS(I)>;
+            label = "Ï";
+        };
+
+        ac_itrm_u_windows: ac_itrm_u_windows {
             wait-ms = <5>;
             tap-ms = <5>;
             compatible = "zmk,behavior-macro";
@@ -537,7 +779,17 @@
 
         // ü (Alt+0252)
 
-        ac_utrm_l: ac_utrm_l {
+        ac_utrm_l_linux: ac_utrm_l_linux {
+            wait-ms = <5>;
+            tap-ms = <5>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp K_APPLICATION>,
+                <&kp DOUBLE_QUOTES>, <&kp U>;
+            label = "ü";
+        };
+
+        ac_utrm_l_windows: ac_utrm_l_windows {
             wait-ms = <5>;
             tap-ms = <5>;
             compatible = "zmk,behavior-macro";
@@ -554,7 +806,17 @@
 
         // Ü (Alt+0220)
 
-        ac_utrm_u: ac_utrm_u {
+        ac_utrm_u_linux: ac_utrm_u_linux {
+            wait-ms = <5>;
+            tap-ms = <5>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp K_APPLICATION>,
+                <&kp DOUBLE_QUOTES>, <&kp LS(U)>;
+            label = "Ü";
+        };
+
+        ac_utrm_u_windows: ac_utrm_u_windows {
             wait-ms = <5>;
             tap-ms = <5>;
             compatible = "zmk,behavior-macro";
@@ -571,7 +833,17 @@
 
         // œ (Alt+0156)
 
-        ac_oe_l: ac_oe_l {
+        ac_oe_l_linux: ac_oe_l_linux {
+            wait-ms = <5>;
+            tap-ms = <5>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp K_APPLICATION>,
+                <&kp O>, <&kp E>;
+            label = "œ";
+        };
+
+        ac_oe_l_windows: ac_oe_l_windows {
             wait-ms = <5>;
             tap-ms = <5>;
             compatible = "zmk,behavior-macro";
@@ -588,7 +860,17 @@
 
         // Œ (Alt+0140)
 
-        ac_oe_u: ac_oe_u {
+        ac_oe_u_linux: ac_oe_u_linux {
+            wait-ms = <5>;
+            tap-ms = <5>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp K_APPLICATION>,
+                <&kp LS(O)>, <&kp LS(E)>;
+            label = "Œ";
+        };
+
+        ac_oe_u_windows: ac_oe_u_windows {
             wait-ms = <5>;
             tap-ms = <5>;
             compatible = "zmk,behavior-macro";
@@ -605,7 +887,17 @@
 
         // € (Alt+0128, single macro, no upper — bind directly, no morph)
 
-        ac_euro: ac_euro {
+        ac_euro_linux: ac_euro_linux {
+            wait-ms = <5>;
+            tap-ms = <5>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp K_APPLICATION>,
+                <&kp E>, <&kp EQUAL>;
+            label = "€";
+        };
+
+        ac_euro_windows: ac_euro_windows {
             wait-ms = <5>;
             tap-ms = <5>;
             compatible = "zmk,behavior-macro";
@@ -754,15 +1046,386 @@
                 <&kp LSHFT>;
         };
 
-        mc_redo: mc_redo {
+        mc_redo_linux: mc_redo_linux {
             compatible = "zmk,behavior-macro";
-            label = "MC_REDO";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LS(Z))>;
+            label = "Redo (linux)";
+        };
+
+        mc_redo_windows: mc_redo_windows {
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(Y)>;
+            label = "Redo (windows)";
+        };
+
+        mc_task_manager_linux: mc_task_manager_linux {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(ESC)>;
+            label = "System Monitor / Task Manager (linux)";
+        };
+
+        mc_task_manager_windows: mc_task_manager_windows {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LS(ESC))>;
+            label = "System Monitor / Task Manager (windows)";
+        };
+
+        mc_task_1_linux: mc_task_1_linux {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(NUMBER_1)>;
+            label = "Task 1 (linux)";
+        };
+
+        mc_task_1_windows: mc_task_1_windows {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LG(NUMBER_1))>;
+            label = "Task 1 (windows)";
+        };
+
+        mc_task_2_linux: mc_task_2_linux {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(NUMBER_2)>;
+            label = "Task 2 (linux)";
+        };
+
+        mc_task_2_windows: mc_task_2_windows {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LG(NUMBER_2))>;
+            label = "Task 2 (windows)";
+        };
+
+        mc_task_3_linux: mc_task_3_linux {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(NUMBER_3)>;
+            label = "Task 3 (linux)";
+        };
+
+        mc_task_3_windows: mc_task_3_windows {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LG(NUMBER_3))>;
+            label = "Task 3 (windows)";
+        };
+
+        mc_task_4_linux: mc_task_4_linux {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(NUMBER_4)>;
+            label = "Task 4 (linux)";
+        };
+
+        mc_task_4_windows: mc_task_4_windows {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LG(NUMBER_4))>;
+            label = "Task 4 (windows)";
+        };
+
+        mc_task_5_linux: mc_task_5_linux {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(NUMBER_5)>;
+            label = "Task 5 (linux)";
+        };
+
+        mc_task_5_windows: mc_task_5_windows {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LG(NUMBER_5))>;
+            label = "Task 5 (windows)";
+        };
+
+        mc_task_6_linux: mc_task_6_linux {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(NUMBER_6)>;
+            label = "Task 6 (linux)";
+        };
+
+        mc_task_6_windows: mc_task_6_windows {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LG(NUMBER_6))>;
+            label = "Task 6 (windows)";
         };
     };
 
     behaviors {
+        // SERVICE+T selects Linux or Windows for these shortcuts and accents.
+        mc_redo: mc_redo {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&mc_redo_linux>, <&mc_redo_windows>;
+            label = "Redo";
+        };
+
+        mc_task_manager: mc_task_manager {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&mc_task_manager_linux>, <&mc_task_manager_windows>;
+            label = "System Monitor / Task Manager";
+        };
+
+        mc_task_1: mc_task_1 {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&mc_task_1_linux>, <&mc_task_1_windows>;
+            label = "Task 1";
+        };
+
+        mc_task_2: mc_task_2 {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&mc_task_2_linux>, <&mc_task_2_windows>;
+            label = "Task 2";
+        };
+
+        mc_task_3: mc_task_3 {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&mc_task_3_linux>, <&mc_task_3_windows>;
+            label = "Task 3";
+        };
+
+        mc_task_4: mc_task_4 {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&mc_task_4_linux>, <&mc_task_4_windows>;
+            label = "Task 4";
+        };
+
+        mc_task_5: mc_task_5 {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&mc_task_5_linux>, <&mc_task_5_windows>;
+            label = "Task 5";
+        };
+
+        mc_task_6: mc_task_6 {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&mc_task_6_linux>, <&mc_task_6_windows>;
+            label = "Task 6";
+        };
+
+        host_os: host_os {
+            compatible = "roba,behavior-host-os";
+            #binding-cells = <1>;
+            label = "Host OS";
+        };
+
+        ac_agrv_l: ac_agrv_l {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&ac_agrv_l_linux>, <&ac_agrv_l_windows>;
+            label = "à";
+        };
+
+        ac_agrv_u: ac_agrv_u {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&ac_agrv_u_linux>, <&ac_agrv_u_windows>;
+            label = "À";
+        };
+
+        ac_egrv_l: ac_egrv_l {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&ac_egrv_l_linux>, <&ac_egrv_l_windows>;
+            label = "è";
+        };
+
+        ac_egrv_u: ac_egrv_u {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&ac_egrv_u_linux>, <&ac_egrv_u_windows>;
+            label = "È";
+        };
+
+        ac_eacu_l: ac_eacu_l {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&ac_eacu_l_linux>, <&ac_eacu_l_windows>;
+            label = "é";
+        };
+
+        ac_eacu_u: ac_eacu_u {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&ac_eacu_u_linux>, <&ac_eacu_u_windows>;
+            label = "É";
+        };
+
+        ac_ugrv_l: ac_ugrv_l {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&ac_ugrv_l_linux>, <&ac_ugrv_l_windows>;
+            label = "ù";
+        };
+
+        ac_ugrv_u: ac_ugrv_u {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&ac_ugrv_u_linux>, <&ac_ugrv_u_windows>;
+            label = "Ù";
+        };
+
+        ac_ocir_l: ac_ocir_l {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&ac_ocir_l_linux>, <&ac_ocir_l_windows>;
+            label = "ô";
+        };
+
+        ac_ocir_u: ac_ocir_u {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&ac_ocir_u_linux>, <&ac_ocir_u_windows>;
+            label = "Ô";
+        };
+
+        ac_ccdi_l: ac_ccdi_l {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&ac_ccdi_l_linux>, <&ac_ccdi_l_windows>;
+            label = "ç";
+        };
+
+        ac_ccdi_u: ac_ccdi_u {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&ac_ccdi_u_linux>, <&ac_ccdi_u_windows>;
+            label = "Ç";
+        };
+
+        ac_acir_l: ac_acir_l {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&ac_acir_l_linux>, <&ac_acir_l_windows>;
+            label = "â";
+        };
+
+        ac_acir_u: ac_acir_u {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&ac_acir_u_linux>, <&ac_acir_u_windows>;
+            label = "Â";
+        };
+
+        ac_ecir_l: ac_ecir_l {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&ac_ecir_l_linux>, <&ac_ecir_l_windows>;
+            label = "ê";
+        };
+
+        ac_ecir_u: ac_ecir_u {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&ac_ecir_u_linux>, <&ac_ecir_u_windows>;
+            label = "Ê";
+        };
+
+        ac_icir_l: ac_icir_l {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&ac_icir_l_linux>, <&ac_icir_l_windows>;
+            label = "î";
+        };
+
+        ac_icir_u: ac_icir_u {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&ac_icir_u_linux>, <&ac_icir_u_windows>;
+            label = "Î";
+        };
+
+        ac_ucir_l: ac_ucir_l {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&ac_ucir_l_linux>, <&ac_ucir_l_windows>;
+            label = "û";
+        };
+
+        ac_ucir_u: ac_ucir_u {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&ac_ucir_u_linux>, <&ac_ucir_u_windows>;
+            label = "Û";
+        };
+
+        ac_etrm_l: ac_etrm_l {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&ac_etrm_l_linux>, <&ac_etrm_l_windows>;
+            label = "ë";
+        };
+
+        ac_etrm_u: ac_etrm_u {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&ac_etrm_u_linux>, <&ac_etrm_u_windows>;
+            label = "Ë";
+        };
+
+        ac_itrm_l: ac_itrm_l {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&ac_itrm_l_linux>, <&ac_itrm_l_windows>;
+            label = "ï";
+        };
+
+        ac_itrm_u: ac_itrm_u {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&ac_itrm_u_linux>, <&ac_itrm_u_windows>;
+            label = "Ï";
+        };
+
+        ac_utrm_l: ac_utrm_l {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&ac_utrm_l_linux>, <&ac_utrm_l_windows>;
+            label = "ü";
+        };
+
+        ac_utrm_u: ac_utrm_u {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&ac_utrm_u_linux>, <&ac_utrm_u_windows>;
+            label = "Ü";
+        };
+
+        ac_oe_l: ac_oe_l {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&ac_oe_l_linux>, <&ac_oe_l_windows>;
+            label = "œ";
+        };
+
+        ac_oe_u: ac_oe_u {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&ac_oe_u_linux>, <&ac_oe_u_windows>;
+            label = "Œ";
+        };
+
+        ac_euro: ac_euro {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&ac_euro_linux>, <&ac_euro_windows>;
+            label = "€";
+        };
+
         hm_l: homerow-mods-left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -899,8 +1562,8 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        // Mod-morph CAN wrap Alt-combo macros; outer Shift is consumed
-        // and selects the _u variant which itself sends its own Alt-code.
+        // Mod-morph consumes outer Shift and selects the _u variant,
+        // which sends its own uppercase Compose sequence or Windows Alt-code.
         // Do NOT set keep-mods.
 
         ac_acir: ac_acir {
@@ -1004,7 +1667,7 @@
 &trans          &trans              &trans              &trans               &trans     &trans          &trans         &trans                                          &kp DELETE
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(RIGHT_ARROW) LC(LEFT_ARROW)>;
+            sensor-bindings = <&inc_dec_kp LC(PAGE_DOWN) LC(PAGE_UP)>;
         };
 
         MOUSE {
@@ -1027,9 +1690,9 @@
 
         SERVICE {
             bindings = <
-&kp LC(LS(ESC))       &kp LS(LC(LG(P)))     &trans                &trans                &trans                                                           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&mc_task_manager       &kp LS(LC(LG(P)))     &trans                &trans                &host_os ROBA_OS_TOGGLE                                                           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
 &kp LC(LS(A))         &kp C_PREV            &kp C_PLAY_PAUSE      &kp C_NEXT            &trans                &bootloader               &kp KP_NUMLOCK   &trans        &trans        &trans        &trans        &trans
-&kp LS(LG(NUMBER_1))  &kp LS(LG(NUMBER_2))  &kp LS(LG(NUMBER_3))  &kp LS(LG(NUMBER_4))  &kp LS(LG(NUMBER_5))  &kp LS(LG(NUMBER_6))      &kp PAUSE_BREAK  &trans        &trans        &trans        &trans        &bt BT_CLR
+&mc_task_1  &mc_task_2  &mc_task_3  &mc_task_4  &mc_task_5  &mc_task_6      &kp PAUSE_BREAK  &trans        &trans        &trans        &trans        &bt BT_CLR
 &trans                &trans                &trans                &trans                &trans                &trans                    &trans           &trans                                                  &bt BT_CLR_ALL
             >;
         };
@@ -1054,8 +1717,8 @@
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
-        // ACCENTS: Windows-only, requires NumLock ON (check SERVICE KP_NUMLOCK LED),
-        // real KP_* (not number row). Lone-Alt menu-focus if digits drop.
+        // ACCENTS: SERVICE+T toggles Linux / Windows; Linux is selected at boot.
+        // Linux Compose needs compose:menu; Windows needs NumLock ON.
         ACCENTS {
             bindings = <
 &ac_acir  &ac_egrv  &ac_eacu  &ac_ecir  &trans                        &ac_euro  &ac_ugrv  &ac_icir  &ac_ocir  &ac_oe

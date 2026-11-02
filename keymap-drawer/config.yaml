@@ -39,7 +39,32 @@ draw_config:
 parse_config:
   preprocess: true
   skip_binding_parsing: false
-  raw_binding_map: {}
+  raw_binding_map:
+    '&mc_redo': Redo
+    '&mc_task_manager': {t: 'System Monitor', h: 'Win: Task Mgr'}
+    '&mc_task_1': {t: 'Task 1', h: 'OS'}
+    '&mc_task_2': {t: 'Task 2', h: 'OS'}
+    '&mc_task_3': {t: 'Task 3', h: 'OS'}
+    '&mc_task_4': {t: 'Task 4', h: 'OS'}
+    '&mc_task_5': {t: 'Task 5', h: 'OS'}
+    '&mc_task_6': {t: 'Task 6', h: 'OS'}
+    '&ac_agrv': {t: 'à', s: 'À'}
+    '&ac_egrv': {t: 'è', s: 'È'}
+    '&ac_eacu': {t: 'é', s: 'É'}
+    '&ac_ugrv': {t: 'ù', s: 'Ù'}
+    '&ac_ocir': {t: 'ô', s: 'Ô'}
+    '&ac_ccdi': {t: 'ç', s: 'Ç'}
+    '&ac_acir': {t: 'â', s: 'Â'}
+    '&ac_ecir': {t: 'ê', s: 'Ê'}
+    '&ac_icir': {t: 'î', s: 'Î'}
+    '&ac_ucir': {t: 'û', s: 'Û'}
+    '&ac_etrm': {t: 'ë', s: 'Ë'}
+    '&ac_itrm': {t: 'ï', s: 'Ï'}
+    '&ac_utrm': {t: 'ü', s: 'Ü'}
+    '&ac_oe': {t: 'œ', s: 'Œ'}
+    '&ac_euro': '€'
+    '&host_os ROBA_OS_TOGGLE': {t: OS, h: toggle}
+    '&host_os 2': {t: OS, h: toggle}
   sticky_label: sticky
   toggle_label: toggle
   tap_toggle_label: tap-toggle

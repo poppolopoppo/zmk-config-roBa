@@ -63,6 +63,8 @@ This repository is the ZMK firmware configuration for **RoBa** (pOpPolLoPpoBa), 
 |------|---------|
 | `config/roBa.keymap` | **ACTIVE keymap** — edit this file |
 | `config/roBa.json` | Layout definition for keymap-drawer (44 keys, 2 encoders) |
+| `src/behavior_host_os.c` | Runtime host selector and shortcut/accent dispatch (central-side state) |
+| `dts/bindings/behaviors/roba,behavior-*.yaml` | Devicetree schemas for the custom host behaviors |
 | `config/west.yml` | West manifest (ZMK version, custom driver remotes) |
 | `build.yaml` | CI build matrix |
 | `boards/shields/roBa/roBa.dtsi` | Common hardware definitions (matrix, encoder, trackball, physical layout, transform) |
@@ -97,7 +99,7 @@ This repository is the ZMK firmware configuration for **RoBa** (pOpPolLoPpoBa), 
 | 6 | `SERVICE` | `&mo 6` on thumb | Media, Bluetooth, system keys, bootloader |
 | 7 | `SNIPE` | `&lt_to_layer_0` on DEL | Low-CPI precision aiming (300 CPI), same buttons as MOUSE |
 | 8 | `GAMING` | Combo `Gaming` (toggle) | WASD layout, no home row mods, plain keys |
-| 9 | `ACCENTS` | `&lt_to_layer_0` on `;` | French/Portuguese accented characters (Alt+code macros) |
+| 9 | `ACCENTS` | `&lt_to_layer_0` on `;` | French/Portuguese accented characters (Linux Compose; optional Windows Alt+codes) |
 
 ### Custom Behaviors
 
@@ -161,7 +163,16 @@ are the only way to click while gaming.
 
 ### Macros (18)
 
-#### Accent Characters (12) — Windows Alt+Keypad codes
+#### Accent Characters — Linux Compose / optional Windows Alt+Keypad
+
+The default is Linux Compose with a US QWERTY host layout and `compose:menu`.
+SERVICE+T toggles Linux/Windows for accents, Redo, SERVICE+Q, and SERVICE
+taskbar gestures (positions 22–27). Linux sends Ctrl+Shift+Z, Meta+Esc, and
+Meta+1–6; Windows retains Ctrl+Y, Ctrl+Shift+Esc, and Meta+Shift+1–6.
+The mode is global, defaults to Linux after reboot, and is not persisted.
+Windows uses the original Alt+keypad sequences with NumLock on. Shift
+mod-morphs select explicit uppercase macros.
+See README.md for KDE setup. The following table lists the legacy Windows codes.
 
 | Macro | Char | Alt+Code | Lowercase | Uppercase | Macro | Char | Alt+Code |
 |-------|------|----------|-----------|-----------|-------|------|----------|
@@ -210,7 +221,7 @@ are the only way to click while gaming.
 | `INVERT_SCROLL_X` | y | Invert scroll X |
 | `SCROLL_TICK` | 16 | Scroll sensitivity (lower = faster) |
 | `AUTOMOUSE_TIMEOUT_MS` | 700 | AutoMouse layer timeout after movement |
-| `MOVEMENT_THRESHOLD` | 5 | Movement needed to trigger AutoMouse (higher = less sensitive; driver default 5) |
+| `MOVEMENT_THRESHOLD` | 2 | Movement needed to trigger AutoMouse (higher = less sensitive; driver default 5) |
 | `POLLING_RATE_125_SW` | y | 125 Hz software polling |
 | `SMART_ALGORITHM` | y | Improved tracking |
 | `RUN_DOWNSHIFT_TIME_MS` | 3264 | Power-saving downshift delay |
@@ -237,7 +248,7 @@ AutoMouse (layer 4) is refreshed **only by ball movement above `MOVEMENT_THRESHO
 | `default_layer` (0) | `C_VOLUME_UP` / `C_VOLUME_DOWN` |
 | `FUNCTION` (1) | `TAB` / `LS(TAB)` |
 | `NUM` (2) | `F3` / `LS(F3)` |
-| `ARROW` (3) | `LC(RIGHT_ARROW)` / `LC(LEFT_ARROW)` (browser tab switching) |
+| `ARROW` (3) | `LC(PAGE_DOWN)` / `LC(PAGE_UP)` (next/previous browser tab) |
 | `GAMING` (8) | `C_VOLUME_UP` / `C_VOLUME_DOWN` |
 
 ---

@@ -1,0 +1,8 @@
+description: Dispatch to Linux or Windows behavior according to the selected host OS
+compatible: "roba,behavior-os-select"
+include: zero_param.yaml
+properties:
+  bindings:
+    type: phandle-array
+    required: true
+    description: Two zero-parameter behaviors, Linux first and Windows second

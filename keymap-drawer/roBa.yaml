@@ -147,7 +147,7 @@ layers:
   - Alt+LEFT ARROW
   - Alt+DOWN ARROW
   - Alt+RIGHT ARROW
-  - '&mc_copy'
+  - {t: Copy, s: 'Term Copy'}
   - {t: ▽, type: trans}
   - PAGE UP
   - HOME
@@ -159,7 +159,7 @@ layers:
   - Gui+LEFT ARROW
   - Gui+TAB
   - Gui+RIGHT ARROW
-  - '&mc_paste'
+  - {t: Paste, s: 'Term Paste'}
   - '&mc_selall'
   - PAGE DOWN
   - {t: ▽, type: trans}
@@ -282,8 +282,8 @@ layers:
   - {t: ▽, type: trans}
   - '&bootloader'
   - KP NUMLOCK
-  - {t: Term Copy, h: Ctl+Sft+C}
-  - {t: Term Paste, h: Ctl+Sft+V}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: Clipboard, h: Gui+V}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}

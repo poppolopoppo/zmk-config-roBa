@@ -36,16 +36,21 @@ class HostOsTests(unittest.TestCase):
         self.assertEqual([b.strip() for b in bindings[22:28]],
                          [f'&mc_task_{i}' for i in range(1, 7)])
         self.assertEqual([b.strip() for b in bindings[17:20]],
-                         ['&mc_terminal_copy', '&mc_terminal_paste', '&mc_clipboard_history'])
-        for name, key in [('mc_terminal_copy', 'LC(LS(C))'),
-                          ('mc_terminal_paste', 'LC(LS(V))'),
-                          ('mc_clipboard_history', 'LG(V)')]:
+                         ['&trans', '&trans', '&mc_clipboard_history'])
+        for name, key in [('mc_clipboard_history', 'LG(V)')]:
             body = re.search(rf'{name}: {name} \{{(.*?)\n        \}};', source, re.S)[1]
             self.assertEqual(re.findall(r'<&kp ([^>]+)>', body), [key])
         default = source.split('        default_layer {')[1].split('>;')[0]
         self.assertIn('&mc_screenshot', default)
         arrow = source.split('        ARROW {')[1].split('        MOUSE {')[0]
         self.assertIn('&mc_redo', arrow)
+        for name, key in [('mc_copy', 'C'), ('mc_paste', 'V'), ('mc_cut', 'X')]:
+            body = re.search(rf'{name}: {name} \{{(.*?)\n        \}};', source, re.S)[1]
+            self.assertIn(f'&{name}', arrow)
+            # Existing macros hold Ctrl and tap the letter, preserving physical Shift.
+            self.assertEqual(re.findall(r'<&kp ([^>]+)>', body), ['LCTRL', key, 'LCTRL'])
+        self.assertNotIn('mc_terminal_copy', source)
+        self.assertNotIn('mc_terminal_paste', source)
         self.assertIn('sensor-bindings = <&inc_dec_kp LC(PAGE_DOWN) LC(PAGE_UP)>;', arrow)
 
     def test_runtime_dispatch(self):

@@ -53,12 +53,16 @@ Linux Compose checks also use libxkbcommon).
 
 | Keys | Action | Output |
 | --- | --- | --- |
-| SERVICE + H | Terminal copy | Ctrl+Shift+C |
-| SERVICE + J | Terminal paste | Ctrl+Shift+V |
+| ARROW + Copy | Desktop copy | Ctrl+C |
+| Shift + ARROW + Copy | Terminal copy | Ctrl+Shift+C |
+| ARROW + Paste | Desktop paste | Ctrl+V |
+| Shift + ARROW + Paste | Terminal paste | Ctrl+Shift+V |
 | SERVICE + K | Clipboard history | Meta+V |
 
-These shortcuts send the same keys in both host modes. Desktop copy/paste
-bindings remain unchanged. Clipboard history requires the host's history
+Hold Shift while tapping the existing ARROW-layer Copy/Paste keys to use
+terminal clipboard shortcuts. The macros preserve held Shift; no separate
+terminal bindings are needed. Cut remains Ctrl+X. SERVICE+H/J are transparent
+again. These shortcuts send the same keys in both host modes. Clipboard history requires the host's history
 feature to be enabled (Klipper on KDE or clipboard history on Windows).
 The screenshot key stays at its existing position; SERVICE+T selects its
 Linux or Windows sequence. The Linux sequence uses Spectacle's configured

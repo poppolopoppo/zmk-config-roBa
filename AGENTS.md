@@ -172,7 +172,8 @@ Meta+1–6; Windows retains Ctrl+Y, Ctrl+Shift+Esc, and Meta+Shift+1–6.
 The mode is global, defaults to Linux after reboot, and is not persisted.
 Windows uses the original Alt+keypad sequences with NumLock on. Shift
 mod-morphs select explicit uppercase macros.
-SERVICE+H/J send terminal copy/paste (Ctrl+Shift+C/V); SERVICE+K opens
+Hold Shift with the existing ARROW-layer mc_copy/mc_paste keys for terminal
+copy/paste (Ctrl+Shift+C/V); SERVICE+H/J are transparent. SERVICE+K opens
 clipboard history (Meta+V). The screenshot key sends Meta+Shift+PrintScreen
 on Linux or Meta+Shift+S on Windows.
 See README.md for KDE setup. The following table lists the legacy Windows codes.

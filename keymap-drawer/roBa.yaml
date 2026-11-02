@@ -16,7 +16,7 @@ layers:
   - D
   - F
   - G
-  - {t: 'Screenshot', h: 'OS'}
+  - {t: Screenshot, h: OS}
   - '-'
   - H
   - {t: J, h: RCTRL}
@@ -265,7 +265,7 @@ layers:
   - '&mkp MB5'
   - {t: ▽, type: trans}
   SERVICE:
-  - {t: 'System Monitor', h: 'Win: Task Mgr'}
+  - {t: System Monitor, h: 'Win: Task Mgr'}
   - Sft+Ctl+Gui+P
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -282,17 +282,17 @@ layers:
   - {t: ▽, type: trans}
   - '&bootloader'
   - KP NUMLOCK
-  - {t: 'Term Copy', h: 'Ctl+Sft+C'}
-  - {t: 'Term Paste', h: 'Ctl+Sft+V'}
-  - {t: 'Clipboard', h: 'Gui+V'}
+  - {t: Term Copy, h: Ctl+Sft+C}
+  - {t: Term Paste, h: Ctl+Sft+V}
+  - {t: Clipboard, h: Gui+V}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: 'Task 1', h: 'OS'}
-  - {t: 'Task 2', h: 'OS'}
-  - {t: 'Task 3', h: 'OS'}
-  - {t: 'Task 4', h: 'OS'}
-  - {t: 'Task 5', h: 'OS'}
-  - {t: 'Task 6', h: 'OS'}
+  - {t: Task 1, h: OS}
+  - {t: Task 2, h: OS}
+  - {t: Task 3, h: OS}
+  - {t: Task 4, h: OS}
+  - {t: Task 5, h: OS}
+  - {t: Task 6, h: OS}
   - PAUSE BREAK
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -397,31 +397,31 @@ layers:
   - ENTER
   - LALT
   ACCENTS:
-  - {t: 'â', s: 'Â'}
-  - {t: 'è', s: 'È'}
-  - {t: 'é', s: 'É'}
-  - {t: 'ê', s: 'Ê'}
+  - {t: â, s: Â}
+  - {t: è, s: È}
+  - {t: é, s: É}
+  - {t: ê, s: Ê}
   - {t: ▽, type: trans}
-  - '€'
-  - {t: 'ù', s: 'Ù'}
-  - {t: 'î', s: 'Î'}
-  - {t: 'ô', s: 'Ô'}
-  - {t: 'œ', s: 'Œ'}
-  - {t: 'à', s: 'À'}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - €
+  - {t: ù, s: Ù}
+  - {t: î, s: Î}
+  - {t: ô, s: Ô}
+  - {t: œ, s: Œ}
+  - {t: à, s: À}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: 'û', s: 'Û'}
-  - {t: ▽, type: trans}
-  - {t: 'ï', s: 'Ï'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: û, s: Û}
+  - {t: ▽, type: trans}
+  - {t: ï, s: Ï}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: 'ç', s: 'Ç'}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ç, s: Ç}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}

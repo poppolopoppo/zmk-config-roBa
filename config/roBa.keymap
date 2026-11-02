@@ -119,6 +119,41 @@
     };
 
     macros {
+        mc_terminal_copy: mc_terminal_copy {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LS(C))>;
+            label = "Terminal Copy";
+        };
+
+        mc_terminal_paste: mc_terminal_paste {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LS(V))>;
+            label = "Terminal Paste";
+        };
+
+        mc_clipboard_history: mc_clipboard_history {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(V)>;
+            label = "Clipboard History";
+        };
+
+        mc_screenshot_linux: mc_screenshot_linux {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(LS(PRINTSCREEN))>;
+            label = "Screenshot (Linux)";
+        };
+
+        mc_screenshot_windows: mc_screenshot_windows {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(LS(S))>;
+            label = "Screenshot (Windows)";
+        };
+
         to_layer_0: to_layer_0 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
@@ -1160,6 +1195,13 @@
     };
 
     behaviors {
+        mc_screenshot: mc_screenshot {
+            compatible = "roba,behavior-os-select";
+            #binding-cells = <0>;
+            bindings = <&mc_screenshot_linux>, <&mc_screenshot_windows>;
+            label = "Screenshot";
+        };
+
         // SERVICE+T selects Linux or Windows for these shortcuts and accents.
         mc_redo: mc_redo {
             compatible = "roba,behavior-os-select";
@@ -1629,7 +1671,7 @@
         default_layer {
             bindings = <
 &kp Q                     &kp W         &kp E         &kp R  &kp T                                                                &kp Y        &kp U          &lt_scroll 5 I  &kp O         &kp P
-&kp A                     &kp S         &kp D         &kp F  &kp G  &kp LG(LS(S))                     &kp MINUS                   &kp H        &hm_r RCTRL J  &kp K           &hm_r RALT L  &kp SQT
+&kp A                     &kp S         &kp D         &kp F  &kp G  &mc_screenshot                     &kp MINUS                   &kp H        &hm_r RCTRL J  &kp K           &hm_r RALT L  &kp SQT
 &hm_shift_l LEFT_SHIFT Z  &kp X         &kp C         &kp V  &kp B  &lt_to_layer_0 9 COLON            &lt_to_layer_0 9 SEMICOLON  &kp N        &kp M          &kp COMMA       &kp DOT       &hm_shift_r RIGHT_SHIFT SLASH
 &kp LCTRL                 &kp LEFT_WIN  &kp LEFT_ALT  &mo 6  &mo 2  &lt_to_layer_0_space 3 SPACE      &kp BACKSPACE               &lt 1 ENTER                                               &lt_to_layer_0 7 DEL
             >;
@@ -1691,7 +1733,7 @@
         SERVICE {
             bindings = <
 &mc_task_manager       &kp LS(LC(LG(P)))     &trans                &trans                &host_os ROBA_OS_TOGGLE                                                           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&kp LC(LS(A))         &kp C_PREV            &kp C_PLAY_PAUSE      &kp C_NEXT            &trans                &bootloader               &kp KP_NUMLOCK   &trans        &trans        &trans        &trans        &trans
+&kp LC(LS(A))         &kp C_PREV            &kp C_PLAY_PAUSE      &kp C_NEXT            &trans                &bootloader               &kp KP_NUMLOCK   &mc_terminal_copy        &mc_terminal_paste        &mc_clipboard_history        &trans        &trans
 &mc_task_1  &mc_task_2  &mc_task_3  &mc_task_4  &mc_task_5  &mc_task_6      &kp PAUSE_BREAK  &trans        &trans        &trans        &trans        &bt BT_CLR
 &trans                &trans                &trans                &trans                &trans                &trans                    &trans           &trans                                                  &bt BT_CLR_ALL
             >;

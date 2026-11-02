@@ -38,6 +38,7 @@ No additional Windows software is required. The selected mode also controls thes
 | ARROW-layer Redo | Ctrl+Shift+Z | Ctrl+Y |
 | SERVICE + Q | Meta+Esc (System Monitor) | Ctrl+Shift+Esc (Task Manager) |
 | SERVICE taskbar gestures (positions 22–27) | Meta+1–6 | Meta+Shift+1–6 |
+| Existing screenshot key (position 15) | Meta+Shift+PrintScreen (region capture) | Meta+Shift+S |
 
 The ARROW-layer encoder switches browser tabs in either mode: clockwise sends
 Ctrl+PageDown (next tab), counterclockwise sends Ctrl+PageUp (previous tab).
@@ -47,3 +48,18 @@ The runtime selector is a local ZMK behavior in `src/behavior_host_os.c`,
 compiled through this repository's Zephyr module. Its native tests can be run
 with `python3 -m unittest discover -s tests` (requires a C compiler and PyYAML;
 Linux Compose checks also use libxkbcommon).
+
+## Clipboard shortcuts
+
+| Keys | Action | Output |
+| --- | --- | --- |
+| SERVICE + H | Terminal copy | Ctrl+Shift+C |
+| SERVICE + J | Terminal paste | Ctrl+Shift+V |
+| SERVICE + K | Clipboard history | Meta+V |
+
+These shortcuts send the same keys in both host modes. Desktop copy/paste
+bindings remain unchanged. Clipboard history requires the host's history
+feature to be enabled (Klipper on KDE or clipboard history on Windows).
+The screenshot key stays at its existing position; SERVICE+T selects its
+Linux or Windows sequence. The Linux sequence uses Spectacle's configured
+region-capture action. No KRunner binding is added.

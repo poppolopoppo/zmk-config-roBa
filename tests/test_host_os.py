@@ -19,6 +19,7 @@ class HostOsTests(unittest.TestCase):
         pairs = {
             'mc_redo': ('LC(LS(Z))', 'LC(Y)'),
             'mc_task_manager': ('LG(ESC)', 'LC(LS(ESC))'),
+            'mc_screenshot': ('LG(LS(PRINTSCREEN))', 'LG(LS(S))'),
             **{f'mc_task_{i}': (f'LG(NUMBER_{i})', f'LS(LG(NUMBER_{i}))')
                for i in range(1, 7)},
         }
@@ -34,6 +35,15 @@ class HostOsTests(unittest.TestCase):
         self.assertEqual(bindings[0].strip(), '&mc_task_manager')
         self.assertEqual([b.strip() for b in bindings[22:28]],
                          [f'&mc_task_{i}' for i in range(1, 7)])
+        self.assertEqual([b.strip() for b in bindings[17:20]],
+                         ['&mc_terminal_copy', '&mc_terminal_paste', '&mc_clipboard_history'])
+        for name, key in [('mc_terminal_copy', 'LC(LS(C))'),
+                          ('mc_terminal_paste', 'LC(LS(V))'),
+                          ('mc_clipboard_history', 'LG(V)')]:
+            body = re.search(rf'{name}: {name} \{{(.*?)\n        \}};', source, re.S)[1]
+            self.assertEqual(re.findall(r'<&kp ([^>]+)>', body), [key])
+        default = source.split('        default_layer {')[1].split('>;')[0]
+        self.assertIn('&mc_screenshot', default)
         arrow = source.split('        ARROW {')[1].split('        MOUSE {')[0]
         self.assertIn('&mc_redo', arrow)
         self.assertIn('sensor-bindings = <&inc_dec_kp LC(PAGE_DOWN) LC(PAGE_UP)>;', arrow)

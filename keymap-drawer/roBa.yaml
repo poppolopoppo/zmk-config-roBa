@@ -16,7 +16,7 @@ layers:
   - D
   - F
   - G
-  - Gui+Sft+S
+  - {t: 'Screenshot', h: 'OS'}
   - '-'
   - H
   - {t: J, h: RCTRL}
@@ -282,9 +282,9 @@ layers:
   - {t: ▽, type: trans}
   - '&bootloader'
   - KP NUMLOCK
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: 'Term Copy', h: 'Ctl+Sft+C'}
+  - {t: 'Term Paste', h: 'Ctl+Sft+V'}
+  - {t: 'Clipboard', h: 'Gui+V'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: 'Task 1', h: 'OS'}

@@ -40,6 +40,10 @@ parse_config:
   preprocess: true
   skip_binding_parsing: false
   raw_binding_map:
+    '&mc_terminal_copy': {t: 'Term Copy', h: 'Ctl+Sft+C'}
+    '&mc_terminal_paste': {t: 'Term Paste', h: 'Ctl+Sft+V'}
+    '&mc_clipboard_history': {t: 'Clipboard', h: 'Gui+V'}
+    '&mc_screenshot': {t: 'Screenshot', h: 'OS'}
     '&mc_redo': Redo
     '&mc_task_manager': {t: 'System Monitor', h: 'Win: Task Mgr'}
     '&mc_task_1': {t: 'Task 1', h: 'OS'}
